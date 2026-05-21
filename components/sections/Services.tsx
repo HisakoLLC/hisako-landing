@@ -138,7 +138,7 @@ export function Services() {
                 <span className="absolute top-[12px] left-[12px] font-mono text-[10px] text-[#888888]">
                   {service.num}
                 </span>
-                <div className="flex flex-col gap-4 mt-4">
+                <div className="flex flex-col gap-4 mt-6">
                   <h3 className="font-sans text-[20px] font-medium text-[#F5F5F0] leading-snug">
                     {service.title}
                   </h3>

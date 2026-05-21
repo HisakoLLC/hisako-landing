@@ -1,6 +1,7 @@
 "use client";
 
 import { m, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -12,8 +13,9 @@ export function Hero() {
   ];
 
   return (
-    <section id="hero" className="relative min-h-[100svh] bg-[#0A0A0A] flex flex-col justify-center overflow-hidden pt-[140px]">
-      <style dangerouslySetInnerHTML={{__html: `
+    <section id="hero" className="relative min-h-[100svh] bg-[#0A0A0A] flex flex-col justify-center overflow-hidden pt-[64px]">
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes scroll-ticker {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -26,26 +28,23 @@ export function Hero() {
       {/* Right Asterisk */}
       <m.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.06 }}
+        animate={{ opacity: 0.08 }}
         transition={{ delay: shouldReduceMotion ? 0 : 0.5, duration: shouldReduceMotion ? 0 : 1 }}
-        className="absolute right-[-40px] top-1/2 -translate-y-1/2 pointer-events-none hidden md:block z-0"
+        className="absolute right-[-160px] top-1/2 -translate-y-1/2 pointer-events-none hidden md:block z-0"
       >
-        <svg 
-          className="w-[340px] h-[340px] animate-[spin_40s_linear_infinite]"
-          viewBox="0 0 100 100" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g stroke="currentColor" strokeWidth="3" strokeLinecap="square">
-            <line x1="50" y1="5" x2="50" y2="95" />
-            <line x1="11" y1="27.5" x2="89" y2="72.5" />
-            <line x1="11" y1="72.5" x2="89" y2="27.5" />
-          </g>
-        </svg>
+        <Image
+          src="/logo.png"
+          alt=""
+          width={600}
+          height={600}
+          priority
+          className="w-[480px] h-[480px] lg:w-[600px] lg:h-[600px] animate-[spin_30s_linear_infinite]"
+          style={{ width: '320px', height: '320px' }}
+        />
       </m.div>
 
-      <div className="container relative z-10 flex-1 flex flex-col justify-center py-20 md:py-24">
-        
+      <div className="max-w-[1280px] w-full mx-auto px-6 relative z-10 flex-1 flex flex-col justify-center py-20 md:py-24">
+
         {/* Top-left Label */}
         <m.div
           initial={{ opacity: 0, y: 10 }}
@@ -59,7 +58,7 @@ export function Hero() {
         </m.div>
 
         {/* Display Headline */}
-        <div className="flex flex-col mb-10">
+        <div className="flex flex-col mb-12">
           {headlineLines.map((text, i) => (
             <div key={i} className="overflow-hidden pb-2 -mb-2">
               <m.h1
@@ -70,9 +69,8 @@ export function Hero() {
                   delay: shouldReduceMotion ? 0 : 0.3 + i * 0.12,
                   ease: [0.16, 1, 0.3, 1], // reveal easing
                 }}
-                className={`font-display text-[clamp(2.5rem,8vw,4.5rem)] md:text-[clamp(4rem,9vw,9rem)] leading-[0.92] tracking-tight text-[#F5F5F0] ${
-                  i === headlineLines.length - 1 ? "pr-8" : ""
-                }`}
+                className={`font-display text-[clamp(2.5rem,8vw,4.5rem)] md:text-[clamp(4rem,9vw,9rem)] leading-[0.92] tracking-tight text-[#F5F5F0] ${i === headlineLines.length - 1 ? "pr-8" : ""
+                  }`}
               >
                 {text}
               </m.h1>
@@ -85,30 +83,30 @@ export function Hero() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ delay: shouldReduceMotion ? 0 : 0.8, duration: shouldReduceMotion ? 0 : 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          className="h-[1px] w-full bg-[#2A2A2A] origin-left mb-8"
+          className="h-[1px] w-full bg-[#2A2A2A] origin-left mb-12"
         />
 
         {/* Two Columns */}
-        <m.div 
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: shouldReduceMotion ? 0 : 1.0, duration: shouldReduceMotion ? 0 : 0.8 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-10"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-16"
         >
           <div className="max-w-[400px]">
             <p className="font-sans text-[16px] text-[#F5F5F0] leading-[1.6]">
               Hisako is a hybrid software agency and tech product studio. We design, build, and scale digital systems for businesses and build our own global SaaS products.
             </p>
           </div>
-          
-          <div className="flex flex-col sm:flex-row gap-8 lg:ml-auto w-full lg:w-auto items-start">
+
+          <div className="flex flex-col sm:flex-row gap-12 lg:ml-auto w-full lg:w-auto">
             <div>
-              <div className="font-display text-[64px] text-[#F5F5F0] leading-none mb-4">12+</div>
-              <div className="font-mono text-[10px] text-[#666666] uppercase tracking-[0.15em]">Projects Delivered</div>
+              <div className="font-display text-5xl md:text-[48px] text-[#F5F5F0] leading-none mb-4">12+</div>
+              <div className="font-mono text-[10px] text-[#888888] uppercase tracking-widest">Projects Delivered</div>
             </div>
             <div>
-              <div className="font-display text-[64px] text-[#F5F5F0] leading-none mb-4">2+</div>
-              <div className="font-mono text-[10px] text-[#666666] uppercase tracking-[0.15em]">Products in Development</div>
+              <div className="font-display text-5xl md:text-[48px] text-[#F5F5F0] leading-none mb-4">2+</div>
+              <div className="font-mono text-[10px] text-[#888888] uppercase tracking-widest">Products in Development</div>
             </div>
           </div>
         </m.div>
@@ -146,7 +144,7 @@ export function Hero() {
         <div className="animate-ticker flex w-max font-mono text-[11px] text-[#888888] uppercase tracking-widest">
           {[...Array(10)].map((_, i) => (
             <span key={i} className="pl-4 whitespace-nowrap">
-              SOFTWARE AGENCY · PRODUCT STUDIO · VENDOFLOW · NAIROBI · GLOBAL ·
+              SOFTWARE AGENCY · PRODUCT STUDIO · VENDOFLOW · PASSR · DESIGN STUDIO · NAIROBI · GLOBAL · UI/UX · WEB & MOBILE DEVELOPMENT
             </span>
           ))}
         </div>
