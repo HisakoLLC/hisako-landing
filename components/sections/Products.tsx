@@ -38,7 +38,7 @@ export function Products() {
             transition={{ delay: shouldReduceMotion ? 0 : 0.1 }}
             className="font-display text-4xl md:text-5xl lg:text-[72px] leading-[1] tracking-tight text-[#F5F5F0] mb-4"
           >
-            We Don't Just Build for Clients.
+            We Don&apos;t Just Build for Clients.
           </m.h2>
           
           <m.div 

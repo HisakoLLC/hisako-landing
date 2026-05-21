@@ -61,7 +61,7 @@ export function Nav() {
             href="#contact"
             className="flex items-center justify-center h-[32px] px-5 border border-[#F5F5F0] text-[#F5F5F0] text-[11px] uppercase tracking-widest hover:bg-[#F5F5F0] hover:text-[#0A0A0A] transition-colors duration-200"
           >
-            Let's Talk
+            Let&apos;s Talk
           </Link>
         </div>
 
@@ -113,7 +113,7 @@ export function Nav() {
               onClick={() => setMobileMenuOpen(false)}
               className="inline-flex items-center justify-center h-[48px] px-8 border border-[#F5F5F0] text-[#F5F5F0] text-[12px] uppercase tracking-widest hover:bg-[#F5F5F0] hover:text-[#0A0A0A] transition-colors duration-200"
             >
-              Let's Talk
+              Let&apos;s Talk
             </Link>
           </div>
         </div>

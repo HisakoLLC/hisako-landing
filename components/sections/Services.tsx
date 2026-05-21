@@ -53,7 +53,7 @@ export function Services() {
     hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
     visible: { 
       opacity: 1, y: 0,
-      transition: { duration: shouldReduceMotion ? 0 : 0.6, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: shouldReduceMotion ? 0 : 0.6, ease: [0.16, 1, 0.3, 1] as const }
     }
   };
 
@@ -169,13 +169,13 @@ export function Services() {
         >
           <div className="max-w-2xl">
             <p className="font-display italic text-2xl md:text-[28px] text-[#F5F5F0] leading-[1.4]">
-              "We don't just write code — we build systems that solve real business problems."
+              &quot;We don&apos;t just write code — we build systems that solve real business problems.&quot;
             </p>
           </div>
           
           <div className="flex flex-col gap-6 w-full lg:w-auto shrink-0">
             <p className="font-sans text-[15px] text-[#888888] max-w-[300px]">
-              Ready to transform your technical operations? Let's discuss your next project.
+              Ready to transform your technical operations? Let&apos;s discuss your next project.
             </p>
             <a
               href="#contact"

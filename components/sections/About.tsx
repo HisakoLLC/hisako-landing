@@ -98,7 +98,7 @@ export function About() {
           className="w-full border-t border-b border-[#2A2A2A] py-16 md:py-24 flex items-center justify-center my-8 md:my-16"
         >
           <h4 className="font-display italic text-3xl md:text-[40px] text-[#F5F5F0] text-center px-4 max-w-4xl leading-tight">
-            "Build once. Own it. Scale globally."
+            &quot;Build once. Own it. Scale globally.&quot;
           </h4>
         </m.div>
 

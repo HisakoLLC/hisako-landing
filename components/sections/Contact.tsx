@@ -44,7 +44,7 @@ export function Contact() {
           >
             <div className="flex flex-col gap-6">
               <h2 className="font-display text-5xl md:text-[56px] text-[#F5F5F0] leading-none tracking-tight">
-                Let's build something serious.
+                Let&apos;s build something serious.
               </h2>
               <p className="font-sans text-[16px] md:text-[18px] text-[#F5F5F0] leading-[1.6] max-w-[480px]">
                 We work with businesses, founders, and teams who are building products that matter.
