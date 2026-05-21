@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #F5F5F0;
+  
+  --color-black: #0A0A0A;
+  --color-white: #F5F5F0;
+  --color-mid: #1A1A1A;
+  --color-surface: #111111;
+  --color-border: #2A2A2A;
+  --color-muted: #888888;
+  --color-accent: #F5F5F0;
+
+  --card: #111111;
+  --card-foreground: #F5F5F0;
+  --popover: #111111;
+  --popover-foreground: #F5F5F0;
+  --primary: #F5F5F0;
+  --primary-foreground: #0A0A0A;
+  --secondary: #1A1A1A;
+  --secondary-foreground: #F5F5F0;
+  --muted: #1A1A1A;
+  --muted-foreground: #888888;
+  --accent: #1A1A1A;
+  --accent-foreground: #F5F5F0;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #F5F5F0;
+  --border: #2A2A2A;
+  --input: #2A2A2A;
+  --ring: #2A2A2A;
+  --radius: 0rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --font-display: var(--font-playfair);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-ibm-plex);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility Focus Visible */
+*:focus-visible {
+  outline: 2px solid #F5F5F0;
+  outline-offset: 4px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 0;
+}
+
+/* Selection */
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
