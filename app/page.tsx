@@ -38,7 +38,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             onClick={scrollToTop}
-            className="fixed bottom-[32px] right-[32px] z-[90] w-[44px] h-[44px] bg-transparent border border-[#2A2A2A] hover:border-[#F5F5F0] flex items-center justify-center transition-colors duration-300 cursor-pointer rounded-none"
+            className="fixed bottom-[32px] right-[32px] z-[90] w-[44px] h-[44px] bg-transparent border border-[#161616] hover:border-[#ffffff] flex items-center justify-center transition-colors duration-300 cursor-pointer rounded-none"
             aria-label="Scroll to top"
           >
             <svg 

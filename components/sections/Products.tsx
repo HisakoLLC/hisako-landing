@@ -7,7 +7,7 @@ export function Products() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="products" className="min-h-screen pt-20 md:pt-32 pb-20 md:pb-32 border-b border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden">
+    <section id="products" className="min-h-screen pt-20 md:pt-32 pb-20 md:pb-32 border-b border-[#161616] bg-[#000000] overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marquee-right {
           0% { transform: translateX(-50%); }
@@ -36,7 +36,7 @@ export function Products() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: shouldReduceMotion ? 0 : 0.1 }}
-            className="font-display text-4xl md:text-5xl lg:text-[72px] leading-[1] tracking-tight text-[#F5F5F0] mb-4"
+            className="font-display font-black text-4xl md:text-5xl lg:text-[72px] leading-[0.9] tracking-tighter uppercase text-[#ffffff] mb-4"
           >
             We Don&apos;t Just Build for Clients.
           </m.h2>
@@ -47,10 +47,10 @@ export function Products() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: shouldReduceMotion ? 0 : 0.2 }}
           >
-            <h3 className="font-display text-2xl md:text-[32px] text-[#888888] mb-8">
+            <h3 className="font-display font-black text-2xl md:text-[32px] text-[#888888] tracking-tighter uppercase mb-8">
               We build for ourselves too.
             </h3>
-            <p className="font-sans text-[16px] text-[#F5F5F0] leading-[1.6] max-w-[480px]">
+            <p className="font-sans text-[16px] text-[#ffffff] leading-[1.6] max-w-[480px]">
               Beyond client work, Hisako owns and develops its own software products — designed for scale, built for longevity.
             </p>
           </m.div>
@@ -64,9 +64,9 @@ export function Products() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ delay: shouldReduceMotion ? 0 : 0.3 }}
-        className="w-full border-t border-b border-[#2A2A2A] py-6 bg-[#0A0A0A]"
+        className="w-full border-t border-b border-[#161616] py-6 bg-[#000000]"
       >
-        <div className="animate-marquee-right flex w-max font-mono text-[24px] md:text-[32px] text-[#F5F5F0] uppercase tracking-widest">
+        <div className="animate-marquee-right flex w-max font-mono text-[24px] md:text-[32px] text-[#ffffff] uppercase tracking-widest">
           {[...Array(10)].map((_, i) => (
             <span key={i} className="pl-8 whitespace-nowrap">
               HISAKO BUILDS · HISAKO OWNS · HISAKO SCALES ·
@@ -83,7 +83,7 @@ export function Products() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full bg-[#111111] border border-[#2A2A2A] flex flex-col lg:flex-row overflow-hidden"
+          className="w-full bg-[#090909] border border-[#161616] flex flex-col lg:flex-row overflow-hidden"
         >
           {/* Left Side 60% */}
           <div className="w-full lg:w-[60%] p-[64px] flex flex-col justify-between">
@@ -93,7 +93,7 @@ export function Products() {
               </span>
               
               <div>
-                <h3 className="font-display text-5xl md:text-[72px] text-[#F5F5F0] leading-none mb-2">
+                <h3 className="font-display font-black text-5xl md:text-[72px] text-[#ffffff] tracking-tighter uppercase leading-none mb-2">
                   VendoFlow
                 </h3>
                 <p className="font-sans text-[22px] text-[#888888] leading-[1.4]">
@@ -101,7 +101,7 @@ export function Products() {
                 </p>
               </div>
 
-              <p className="font-sans text-[16px] text-[#F5F5F0] leading-[1.6] max-w-[480px] mt-4">
+              <p className="font-sans text-[16px] text-[#ffffff] leading-[1.6] max-w-[480px] mt-4">
                 VendoFlow is a next-generation point-of-sale and business management platform for retail businesses.
               </p>
 
@@ -112,20 +112,20 @@ export function Products() {
                   "Sales Analytics & Reporting",
                   "Multi-location Operations"
                 ].map((feature, i) => (
-                  <div key={i} className="pl-4 border-l border-[#2A2A2A] hover:border-[#555555] transition-colors duration-300">
-                    <span className="font-sans text-[15px] text-[#F5F5F0]">{feature}</span>
+                  <div key={i} className="pl-4 border-l border-[#161616] hover:border-[#555555] transition-colors duration-300">
+                    <span className="font-sans text-[15px] text-[#ffffff]">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-8 mt-auto pt-8 border-t border-[#2A2A2A]">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-8 mt-auto pt-8 border-t border-[#161616]">
               <span className="font-mono text-[10px] text-[#888888] uppercase tracking-widest">
                 [ STATUS: IN DEVELOPMENT ]
               </span>
               <a
                 href="#vendoflow"
-                className="inline-flex items-center justify-center h-[48px] px-8 bg-transparent text-[#F5F5F0] font-sans text-sm uppercase tracking-widest hover:bg-[#F5F5F0] hover:text-[#0A0A0A] border border-[#F5F5F0] transition-colors duration-300 sm:ml-auto w-fit"
+                className="inline-flex items-center justify-center h-[48px] px-8 bg-transparent text-[#eb3f25] font-sans font-medium text-[11px] uppercase tracking-widest hover:bg-[#eb3f25] hover:text-[#ffffff] border border-[#eb3f25] transition-colors duration-300 sm:ml-auto w-fit"
               >
                 Learn More →
               </a>
@@ -133,7 +133,7 @@ export function Products() {
           </div>
 
           {/* Right Side 40% */}
-          <div className="w-full lg:w-[40%] min-h-[320px] lg:min-h-full relative border-t lg:border-t-0 lg:border-l border-[#2A2A2A]">
+          <div className="w-full lg:w-[40%] min-h-[320px] lg:min-h-full relative border-t lg:border-t-0 lg:border-l border-[#161616]">
             {/* [IMAGE: Urban Oasis Bookstore & Boutique.png] */}
             <Image 
               src="/images/Urban Oasis Bookstore & Boutique.png"
@@ -163,7 +163,7 @@ export function Products() {
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="font-display text-3xl md:text-[40px] text-[#F5F5F0]"
+            className="font-display font-black tracking-tighter text-3xl md:text-[40px] text-[#ffffff] uppercase"
           >
             More from the Studio
           </m.h3>
@@ -175,11 +175,11 @@ export function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
-              className="p-8 border border-[#2A2A2A] flex flex-col justify-between min-h-[240px] bg-transparent hover:border-[#444444] transition-colors duration-300"
+              className="p-8 border border-[#161616] flex flex-col justify-between min-h-[240px] bg-transparent hover:border-[#444444] transition-colors duration-300"
             >
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-start">
-                  <h4 className="font-sans text-[24px] font-medium text-[#F5F5F0]">Passr</h4>
+                  <h4 className="font-sans text-[24px] font-medium text-[#ffffff]">Passr</h4>
                   <span className="font-mono text-[10px] text-[#888888] uppercase tracking-widest mt-2">[ IN BUILD ]</span>
                 </div>
                 <p className="font-sans text-[15px] text-[#888888] leading-[1.6]">
@@ -194,11 +194,11 @@ export function Products() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.1 }}
-              className="p-8 border border-[#2A2A2A] flex flex-col justify-between min-h-[240px] bg-transparent opacity-50"
+              className="p-8 border border-[#161616] flex flex-col justify-between min-h-[240px] bg-transparent opacity-50"
             >
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-start">
-                  <h4 className="font-mono text-[14px] text-[#F5F5F0] tracking-widest">[ STEALTH ]</h4>
+                  <h4 className="font-mono text-[14px] text-[#ffffff] tracking-widest">[ STEALTH ]</h4>
                 </div>
                 <p className="font-sans text-[15px] text-[#888888] leading-[1.6]">
                   A new product under development. Details coming soon.

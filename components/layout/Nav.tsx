@@ -41,7 +41,7 @@ export function Nav() {
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="Hisako Logo" width={28} height={28} priority className="h-[28px] w-auto" />
-            <span className="font-mono text-[11px] tracking-[0.2em] text-[#F5F5F0]">HISAKO</span>
+            <span className="font-mono text-[11px] tracking-[0.2em] text-[#ffffff]">HISAKO</span>
           </Link>
         </div>
 
@@ -51,7 +51,7 @@ export function Nav() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="uppercase font-sans font-medium text-[11px] tracking-widest text-[#888888] hover:text-[#F5F5F0] transition-colors duration-200"
+                className="font-mono text-[11px] uppercase tracking-widest text-[#888888] hover:text-[#eb3f25] transition-colors duration-200"
               >
                 {link.name}
               </Link>
@@ -59,14 +59,14 @@ export function Nav() {
           </div>
           <Link
             href="#contact"
-            className="flex items-center justify-center min-w-[100px] h-[32px] px-[20px] ml-6 border border-[#F5F5F0] text-[#F5F5F0] font-mono text-[10px] uppercase tracking-widest hover:bg-[#F5F5F0] hover:text-[#0A0A0A] transition-colors duration-200 rounded-none"
+            className="ml-6 min-w-[100px] h-[32px] inline-flex items-center justify-center bg-[#eb3f25] text-[#ffffff] font-sans font-medium text-[10px] uppercase tracking-[0.15em] hover:bg-transparent hover:text-[#eb3f25] border border-[#eb3f25] transition-colors duration-200"
           >
             Let&apos;s Talk
           </Link>
         </div>
 
         <button
-          className="md:hidden text-[#F5F5F0]"
+          className="md:hidden text-[#ffffff]"
           onClick={() => setMobileMenuOpen(true)}
           aria-expanded={mobileMenuOpen}
           aria-label="Open menu"
@@ -80,15 +80,15 @@ export function Nav() {
         initial={{ y: "-100%" }}
         animate={{ y: mobileMenuOpen ? "0%" : "-100%" }}
         transition={{ duration: shouldReduceMotion ? 0 : 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-        className="fixed inset-0 z-[200] bg-[#0A0A0A] flex flex-col px-6 py-8"
+        className="fixed inset-0 z-[200] bg-[#000000] flex flex-col px-6 py-8"
       >
-        <div className="flex justify-between items-center h-[64px] -mt-8 -mx-6 px-6 border-b border-[#2A2A2A]">
+        <div className="flex justify-between items-center h-[64px] -mt-8 -mx-6 px-6 border-b border-[#161616]">
           <Link href="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
             <Image src="/logo.png" alt="Hisako Logo" width={28} height={28} priority className="h-[28px] w-auto" />
-            <span className="font-mono text-[11px] tracking-[0.2em] text-[#F5F5F0]">HISAKO</span>
+            <span className="font-mono text-[11px] tracking-[0.2em] text-[#ffffff]">HISAKO</span>
           </Link>
           <button
-            className="text-[#F5F5F0]"
+            className="text-[#ffffff]"
             onClick={() => setMobileMenuOpen(false)}
             aria-expanded={mobileMenuOpen}
             aria-label="Close menu"
@@ -102,7 +102,7 @@ export function Nav() {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="uppercase font-display text-2xl text-[#F5F5F0] tracking-wider"
+              className="uppercase font-display text-2xl text-[#ffffff] tracking-wider"
             >
               {link.name}
             </Link>
@@ -111,7 +111,7 @@ export function Nav() {
             <Link
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center h-[48px] px-8 border border-[#F5F5F0] text-[#F5F5F0] text-[12px] uppercase tracking-widest hover:bg-[#F5F5F0] hover:text-[#0A0A0A] transition-colors duration-200"
+              className="inline-flex items-center justify-center h-[48px] px-8 border border-[#ffffff] text-[#ffffff] text-[12px] uppercase tracking-widest hover:bg-[#ffffff] hover:text-[#000000] transition-colors duration-200"
             >
               Let&apos;s Talk
             </Link>

@@ -58,7 +58,7 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="min-h-screen py-24 md:py-[96px] border-b border-[#2A2A2A] bg-[#0A0A0A]">
+    <section id="services" className="min-h-screen py-24 md:py-[96px] border-b border-[#161616] bg-[#000000]">
       <div className="container flex flex-col gap-12">
         
         {/* Header Row */}
@@ -78,7 +78,7 @@ export function Services() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: [0.25, 0.1, 0.25, 1], delay: shouldReduceMotion ? 0 : 0.2 }}
-            className="h-[1px] w-full bg-[#2A2A2A] origin-left hidden md:block mt-2 md:mt-0"
+            className="h-[1px] w-full bg-[#161616] origin-left hidden md:block mt-2 md:mt-0"
           />
 
           <m.h2 
@@ -86,7 +86,7 @@ export function Services() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.1 }}
-            className="shrink-0 font-display text-4xl md:text-[64px] leading-[1] tracking-tight text-[#F5F5F0]"
+            className="shrink-0 font-display font-black text-4xl md:text-[64px] leading-[1] tracking-tighter text-[#ffffff] uppercase"
           >
             What We Do
           </m.h2>
@@ -97,7 +97,7 @@ export function Services() {
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: [0.25, 0.1, 0.25, 1], delay: shouldReduceMotion ? 0 : 0.2 }}
-            className="h-[1px] w-full bg-[#2A2A2A] origin-left block md:hidden mt-2"
+            className="h-[1px] w-full bg-[#161616] origin-left block md:hidden mt-2"
           />
         </div>
 
@@ -107,7 +107,7 @@ export function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
-          className="w-full h-[400px] md:h-[500px] lg:h-[600px] relative border border-[#2A2A2A] overflow-hidden"
+          className="w-full h-[400px] md:h-[500px] lg:h-[600px] relative border border-[#161616] overflow-hidden"
         >
           {/* [IMAGE: Modern Workspace with Desktop Computer (2).png] */}
           <Image 
@@ -126,20 +126,20 @@ export function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[#2A2A2A]"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[#161616]"
         >
           {services.map((service, i) => (
             <m.div 
               key={i}
               variants={itemVariants}
-              className="group relative flex flex-col justify-between px-[28px] py-[32px] bg-transparent border-r border-b border-[#2A2A2A] hover:bg-[#111111] transition-colors duration-200 cursor-default min-h-[240px]"
+              className="group relative flex flex-col justify-between px-[28px] py-[32px] bg-transparent border-r border-b border-[#161616] hover:bg-[#090909] transition-colors duration-200 cursor-default min-h-[240px]"
             >
               <div className="flex flex-col gap-8">
                 <span className="absolute top-[12px] left-[12px] font-mono text-[10px] text-[#888888]">
                   {service.num}
                 </span>
                 <div className="flex flex-col gap-4 mt-6">
-                  <h3 className="font-sans text-[20px] font-medium text-[#F5F5F0] leading-snug">
+                  <h3 className="font-sans text-[20px] font-bold text-[#ffffff] leading-snug">
                     {service.title}
                   </h3>
                   <p className="font-sans text-[15px] leading-[1.65] text-[#888888]">
@@ -151,8 +151,8 @@ export function Services() {
               {/* Bottom interactive element */}
               <div className="absolute bottom-[28px] right-[28px] overflow-hidden h-[24px] flex items-end">
                 <div className="flex items-center transform translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-[0.16,1,0.3,1]">
-                  <div className="h-[1px] bg-[#555555] w-8 mr-4" />
-                  <span className="font-sans text-[#F5F5F0] text-sm">→</span>
+                  <div className="h-[1px] bg-[#eb3f25] w-8 mr-4" />
+                  <span className="font-sans text-[#eb3f25] font-bold text-sm">→</span>
                 </div>
               </div>
             </m.div>
@@ -165,10 +165,10 @@ export function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
-          className="w-full bg-[#111111] border border-[#2A2A2A] p-8 md:p-16 flex flex-col lg:flex-row gap-12 items-start lg:items-center justify-between"
+          className="w-full bg-[#090909] border border-[#161616] p-8 md:p-16 flex flex-col lg:flex-row gap-12 items-start lg:items-center justify-between"
         >
           <div className="max-w-2xl">
-            <p className="font-display text-2xl md:text-[28px] text-[#F5F5F0] leading-[1.4]">
+            <p className="font-display font-black text-3xl md:text-[40px] text-[#ffffff] leading-[1.1] tracking-tighter uppercase">
               &quot;We don&apos;t just write code — we build systems that solve real business problems.&quot;
             </p>
           </div>
@@ -179,7 +179,7 @@ export function Services() {
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center h-[48px] px-8 bg-[#F5F5F0] text-[#0A0A0A] font-sans text-sm uppercase tracking-widest hover:bg-transparent hover:text-[#F5F5F0] border border-[#F5F5F0] transition-colors duration-300 w-fit"
+              className="inline-flex items-center justify-center h-[48px] px-8 bg-[#eb3f25] text-[#ffffff] font-sans font-medium text-[11px] uppercase tracking-widest hover:bg-transparent hover:text-[#eb3f25] border border-[#eb3f25] transition-colors duration-300 w-fit"
             >
               Start a Project →
             </a>
