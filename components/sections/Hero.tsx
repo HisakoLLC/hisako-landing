@@ -7,10 +7,9 @@ export function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   const headlineLines = [
-    "WE BUILD",
-    "THE SYSTEMS",
-    "YOUR BUSINESS",
-    "RUNS ON.",
+    "ENGINEER",
+    "YOUR",
+    "WORLD"
   ];
 
   return (
@@ -70,7 +69,7 @@ export function Hero() {
                   ease: [0.16, 1, 0.3, 1], // reveal easing
                 }}
                 className={`font-display text-[clamp(2.5rem,8vw,4.5rem)] md:text-[clamp(4rem,9vw,9rem)] leading-[0.92] tracking-tight text-[#F5F5F0] ${
-                  i === 3 ? "pr-8" : ""
+                  i === headlineLines.length - 1 ? "pr-8" : ""
                 }`}
               >
                 {text}
