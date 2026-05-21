@@ -86,7 +86,7 @@ export function Services() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.6, delay: shouldReduceMotion ? 0 : 0.1 }}
-            className="shrink-0 font-display text-4xl md:text-[64px] font-bold leading-[1] tracking-tight text-[#F5F5F0]"
+            className="shrink-0 font-display text-4xl md:text-[64px] leading-[1] tracking-tight text-[#F5F5F0]"
           >
             What We Do
           </m.h2>
@@ -107,14 +107,14 @@ export function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
-          className="w-full h-[320px] relative border border-[#2A2A2A] overflow-hidden"
+          className="w-full h-[400px] md:h-[500px] lg:h-[600px] relative border border-[#2A2A2A] overflow-hidden"
         >
-          {/* [IMAGE: Modern Workspace Setup.png] */}
+          {/* [IMAGE: Modern Workspace with Desktop Computer (2).png] */}
           <Image 
-            src="/images/Modern Workspace Setup.png"
+            src="/images/Modern Workspace with Desktop Computer (2).png"
             alt="Services Workspace"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             style={{ filter: "grayscale(15%) contrast(1.05)" }}
           />
           <div className="absolute inset-0 bg-black/40 pointer-events-none" />
@@ -168,7 +168,7 @@ export function Services() {
           className="w-full bg-[#111111] border border-[#2A2A2A] p-8 md:p-16 flex flex-col lg:flex-row gap-12 items-start lg:items-center justify-between"
         >
           <div className="max-w-2xl">
-            <p className="font-display italic text-2xl md:text-[28px] text-[#F5F5F0] leading-[1.4]">
+            <p className="font-display text-2xl md:text-[28px] text-[#F5F5F0] leading-[1.4]">
               &quot;We don&apos;t just write code — we build systems that solve real business problems.&quot;
             </p>
           </div>

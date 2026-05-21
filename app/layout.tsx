@@ -1,29 +1,28 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Bebas_Neue, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { LazyMotionProvider } from "@/components/providers/LazyMotionProvider";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 
-const playfair = Playfair_Display({
+const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
+  weight: ["400"],
+  variable: "--font-bebas",
   display: "swap",
 });
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500"],
   variable: "--font-dm-sans",
   display: "swap",
 });
 
-const ibmPlex = IBM_Plex_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400"],
-  variable: "--font-ibm-plex",
+  variable: "--font-jetbrains-mono",
   display: "swap",
 });
 
@@ -40,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${playfair.variable} ${dmSans.variable} ${ibmPlex.variable} font-sans antialiased bg-[#0A0A0A] text-[#F5F5F0]`}
+        className={`${bebasNeue.variable} ${dmSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#0A0A0A] text-[#F5F5F0]`}
       >
         <LazyMotionProvider>
           <Nav />

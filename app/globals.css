@@ -57,9 +57,9 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   
-  --font-display: var(--font-playfair);
+  --font-display: var(--font-bebas);
   --font-sans: var(--font-dm-sans);
-  --font-mono: var(--font-ibm-plex);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 * {

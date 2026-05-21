@@ -69,8 +69,8 @@ export function Hero() {
                   delay: shouldReduceMotion ? 0 : 0.3 + i * 0.12,
                   ease: [0.16, 1, 0.3, 1], // reveal easing
                 }}
-                className={`font-display font-black text-[clamp(2.5rem,8vw,4.5rem)] md:text-[clamp(4rem,9vw,9rem)] leading-[0.92] tracking-tight text-[#F5F5F0] ${
-                  i === 3 ? "italic pr-8" : ""
+                className={`font-display text-[clamp(2.5rem,8vw,4.5rem)] md:text-[clamp(4rem,9vw,9rem)] leading-[0.92] tracking-tight text-[#F5F5F0] ${
+                  i === 3 ? "pr-8" : ""
                 }`}
               >
                 {text}
@@ -102,11 +102,11 @@ export function Hero() {
           
           <div className="flex flex-col sm:flex-row gap-12 lg:ml-auto w-full lg:w-auto">
             <div>
-              <div className="font-display font-bold text-5xl md:text-[48px] text-[#F5F5F0] leading-none mb-4">12+</div>
+              <div className="font-display text-5xl md:text-[48px] text-[#F5F5F0] leading-none mb-4">12+</div>
               <div className="font-mono text-[10px] text-[#888888] uppercase tracking-widest">Projects Delivered</div>
             </div>
             <div>
-              <div className="font-display font-bold text-5xl md:text-[48px] text-[#F5F5F0] leading-none mb-4">2+</div>
+              <div className="font-display text-5xl md:text-[48px] text-[#F5F5F0] leading-none mb-4">2+</div>
               <div className="font-mono text-[10px] text-[#888888] uppercase tracking-widest">Products in Development</div>
             </div>
           </div>

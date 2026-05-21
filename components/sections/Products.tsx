@@ -47,7 +47,7 @@ export function Products() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: shouldReduceMotion ? 0 : 0.2 }}
           >
-            <h3 className="font-display italic text-2xl md:text-[32px] text-[#888888] mb-8">
+            <h3 className="font-display text-2xl md:text-[32px] text-[#888888] mb-8">
               We build for ourselves too.
             </h3>
             <p className="font-sans text-[16px] text-[#F5F5F0] leading-[1.6] max-w-[480px]">
@@ -93,7 +93,7 @@ export function Products() {
               </span>
               
               <div>
-                <h3 className="font-display font-black text-5xl md:text-[72px] text-[#F5F5F0] leading-none mb-2">
+                <h3 className="font-display text-5xl md:text-[72px] text-[#F5F5F0] leading-none mb-2">
                   VendoFlow
                 </h3>
                 <p className="font-sans text-[22px] text-[#888888] leading-[1.4]">
@@ -163,7 +163,7 @@ export function Products() {
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="font-display italic text-3xl md:text-[40px] text-[#F5F5F0]"
+            className="font-display text-3xl md:text-[40px] text-[#F5F5F0]"
           >
             More from the Studio
           </m.h3>
