@@ -58,8 +58,8 @@ export function Services() {
   };
 
   return (
-    <section id="services" className="min-h-screen py-20 md:py-32 px-6 border-b border-[#2A2A2A] bg-[#0A0A0A]">
-      <div className="max-w-[1280px] w-full mx-auto flex flex-col gap-16 md:gap-24">
+    <section id="services" className="min-h-screen py-24 md:py-[96px] border-b border-[#2A2A2A] bg-[#0A0A0A]">
+      <div className="container flex flex-col gap-12">
         
         {/* Header Row */}
         <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 w-full">
@@ -126,19 +126,19 @@ export function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-[#2A2A2A]"
         >
           {services.map((service, i) => (
             <m.div 
               key={i}
               variants={itemVariants}
-              className="group relative flex flex-col justify-between p-8 bg-transparent border border-[#2A2A2A] hover:border-[#555555] hover:-translate-y-[3px] transition-all duration-200 cursor-default min-h-[280px]"
+              className="group relative flex flex-col justify-between px-[28px] py-[32px] bg-transparent border-r border-b border-[#2A2A2A] hover:bg-[#111111] transition-colors duration-200 cursor-default min-h-[240px]"
             >
               <div className="flex flex-col gap-8">
-                <span className="font-mono text-[10px] text-[#888888]">
+                <span className="absolute top-[12px] left-[12px] font-mono text-[10px] text-[#888888]">
                   {service.num}
                 </span>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 mt-4">
                   <h3 className="font-sans text-[20px] font-medium text-[#F5F5F0] leading-snug">
                     {service.title}
                   </h3>
@@ -149,8 +149,8 @@ export function Services() {
               </div>
 
               {/* Bottom interactive element */}
-              <div className="mt-8 pt-4 overflow-hidden h-[40px] flex items-end">
-                <div className="flex items-center transform -translate-x-8 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-[0.16,1,0.3,1]">
+              <div className="absolute bottom-[28px] right-[28px] overflow-hidden h-[24px] flex items-end">
+                <div className="flex items-center transform translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 ease-[0.16,1,0.3,1]">
                   <div className="h-[1px] bg-[#555555] w-8 mr-4" />
                   <span className="font-sans text-[#F5F5F0] text-sm">→</span>
                 </div>

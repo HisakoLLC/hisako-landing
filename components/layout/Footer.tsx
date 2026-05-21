@@ -11,7 +11,7 @@ export function Footer() {
 
   return (
     <footer className="w-full border-t border-[#2A2A2A] bg-[#0A0A0A] pt-16">
-      <div className="px-6 grid grid-cols-1 md:grid-cols-3 gap-12 pb-16 max-w-[1280px] mx-auto">
+      <div className="container grid grid-cols-1 md:grid-cols-3 gap-8 pb-16">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
             <Image src="/logo.png" alt="Hisako Logo" width={24} height={24} className="h-[24px] w-auto grayscale" />
@@ -44,8 +44,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="w-full border-t border-[#2A2A2A] p-4 text-center">
-        <p className="font-mono text-[10px] md:text-[11px] uppercase tracking-[0.3em] text-[#888888] w-full break-words">
+      <div className="w-full border-t border-[#2A2A2A] py-4 text-center overflow-hidden flex items-center justify-center">
+        <p className="font-mono text-[clamp(0.55rem,1.2vw,0.75rem)] uppercase tracking-[0.2em] text-[#888888] whitespace-nowrap">
           BUILDING THE SYSTEMS THAT POWER MODERN BUSINESSES
         </p>
       </div>

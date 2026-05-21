@@ -8,8 +8,8 @@ export function About() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="about" className="min-h-screen py-20 md:py-32 px-6 border-b border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden">
-      <div className="max-w-[1280px] w-full mx-auto flex flex-col gap-16 md:gap-24">
+    <section id="about" className="min-h-screen py-20 md:py-32 border-b border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden">
+      <div className="container flex flex-col gap-16 md:gap-24">
         
         <m.span 
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
@@ -21,7 +21,7 @@ export function About() {
         </m.span>
 
         {/* Two-column Layout */}
-        <div className="flex flex-col md:flex-row gap-12 lg:gap-24">
+        <div className="flex flex-col md:flex-row gap-20">
           
           {/* Left Column 50% */}
           <m.div 
@@ -59,7 +59,7 @@ export function About() {
               <span className="font-mono text-[10px] text-[#888888] uppercase tracking-widest">
                 [ OUR IDENTITY ]
               </span>
-              <h3 className="font-display text-4xl md:text-[52px] text-[#F5F5F0] leading-none tracking-tight">
+              <h3 className="font-display text-4xl md:text-[52px] text-[#F5F5F0] leading-none tracking-tight uppercase">
                 We are builders.
               </h3>
             </div>
@@ -95,7 +95,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
-          className="w-full border-t border-b border-[#2A2A2A] py-16 md:py-24 flex items-center justify-center my-8 md:my-16"
+          className="w-full border-t border-b border-[#2A2A2A] py-16 md:py-24 flex items-center justify-center mt-16 mb-16"
         >
           <h4 className="font-display text-3xl md:text-[40px] text-[#F5F5F0] text-center px-4 max-w-4xl leading-tight">
             &quot;Build once. Own it. Scale globally.&quot;

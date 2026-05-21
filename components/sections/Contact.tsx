@@ -8,7 +8,7 @@ export function Contact() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="contact" className="relative min-h-screen py-20 md:py-32 px-6 border-b border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden flex items-center">
+    <section id="contact" className="relative min-h-screen py-20 md:py-32 border-b border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden flex items-center">
       
       {/* Decorative Asterisk */}
       <div className="absolute left-[-200px] bottom-[-200px] pointer-events-none z-0 hidden lg:block">
@@ -21,7 +21,7 @@ export function Contact() {
         />
       </div>
 
-      <div className="max-w-[1280px] w-full mx-auto flex flex-col gap-16 md:gap-24 relative z-10">
+      <div className="container flex flex-col gap-16 md:gap-24 relative z-10">
         
         <m.span 
           initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
@@ -32,7 +32,7 @@ export function Contact() {
           [ 04  CONTACT ]
         </m.span>
 
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row gap-20">
           
           {/* Left Column 50% */}
           <m.div 
@@ -43,7 +43,7 @@ export function Contact() {
             className="w-full lg:w-1/2 flex flex-col gap-12"
           >
             <div className="flex flex-col gap-6">
-              <h2 className="font-display text-5xl md:text-[56px] text-[#F5F5F0] leading-none tracking-tight">
+              <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] text-[#F5F5F0] leading-[1.1] tracking-tight uppercase">
                 Let&apos;s build something serious.
               </h2>
               <p className="font-sans text-[16px] md:text-[18px] text-[#F5F5F0] leading-[1.6] max-w-[480px]">
@@ -88,7 +88,7 @@ export function Contact() {
             className="w-full lg:w-1/2 flex flex-col pt-4"
           >
             <form className="flex flex-col w-full" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex flex-col mb-4">
+              <div className="flex flex-col mb-[20px]">
                 <label htmlFor="name" className="font-mono text-[10px] text-[#888888] uppercase tracking-widest mb-2">Name</label>
                 <input 
                   type="text" 
@@ -98,7 +98,7 @@ export function Contact() {
                 />
               </div>
 
-              <div className="flex flex-col mb-4">
+              <div className="flex flex-col mb-[20px]">
                 <label htmlFor="email" className="font-mono text-[10px] text-[#888888] uppercase tracking-widest mb-2">Email</label>
                 <input 
                   type="email" 
@@ -108,7 +108,7 @@ export function Contact() {
                 />
               </div>
 
-              <div className="flex flex-col mb-8">
+              <div className="flex flex-col mb-[20px]">
                 <label htmlFor="message" className="font-mono text-[10px] text-[#888888] uppercase tracking-widest mb-2">What are you building?</label>
                 <textarea 
                   id="message" 

@@ -45,13 +45,13 @@ export function Nav() {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-6">
+        <div className="hidden md:flex items-center">
+          <div className="flex items-center gap-8">
             {links.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="uppercase font-sans text-[11px] tracking-widest text-[#888888] hover:text-[#F5F5F0] transition-colors duration-200"
+                className="uppercase font-sans font-medium text-[11px] tracking-widest text-[#888888] hover:text-[#F5F5F0] transition-colors duration-200"
               >
                 {link.name}
               </Link>
@@ -59,7 +59,7 @@ export function Nav() {
           </div>
           <Link
             href="#contact"
-            className="flex items-center justify-center h-[32px] px-5 border border-[#F5F5F0] text-[#F5F5F0] text-[11px] uppercase tracking-widest hover:bg-[#F5F5F0] hover:text-[#0A0A0A] transition-colors duration-200"
+            className="flex items-center justify-center min-w-[100px] h-[32px] px-[20px] ml-6 border border-[#F5F5F0] text-[#F5F5F0] font-mono text-[10px] uppercase tracking-widest hover:bg-[#F5F5F0] hover:text-[#0A0A0A] transition-colors duration-200 rounded-none"
           >
             Let&apos;s Talk
           </Link>

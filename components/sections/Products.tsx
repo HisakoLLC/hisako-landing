@@ -7,7 +7,7 @@ export function Products() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="products" className="min-h-screen pt-20 md:pt-32 pb-20 md:pb-32 px-6 border-b border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden">
+    <section id="products" className="min-h-screen pt-20 md:pt-32 pb-20 md:pb-32 border-b border-[#2A2A2A] bg-[#0A0A0A] overflow-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marquee-right {
           0% { transform: translateX(-50%); }
@@ -18,10 +18,10 @@ export function Products() {
         }
       `}} />
 
-      <div className="max-w-[1280px] w-full mx-auto flex flex-col gap-16 md:gap-24">
+      <div className="container flex flex-col">
         
         {/* Intro */}
-        <div className="flex flex-col max-w-2xl">
+        <div className="flex flex-col max-w-2xl mb-12">
           <m.span 
             initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export function Products() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ delay: shouldReduceMotion ? 0 : 0.3 }}
-        className="w-full border-t border-b border-[#2A2A2A] py-6 my-16 md:my-24 bg-[#0A0A0A]"
+        className="w-full border-t border-b border-[#2A2A2A] py-6 bg-[#0A0A0A]"
       >
         <div className="animate-marquee-right flex w-max font-mono text-[24px] md:text-[32px] text-[#F5F5F0] uppercase tracking-widest">
           {[...Array(10)].map((_, i) => (
@@ -75,7 +75,7 @@ export function Products() {
         </div>
       </m.div>
 
-      <div className="max-w-[1280px] w-full mx-auto flex flex-col gap-16 md:gap-24">
+      <div className="container flex flex-col gap-16 md:gap-24 mt-0">
         
         {/* VendoFlow Feature Block */}
         <m.div 
@@ -86,7 +86,7 @@ export function Products() {
           className="w-full bg-[#111111] border border-[#2A2A2A] flex flex-col lg:flex-row overflow-hidden"
         >
           {/* Left Side 60% */}
-          <div className="w-full lg:w-[60%] p-8 md:p-16 flex flex-col justify-between">
+          <div className="w-full lg:w-[60%] p-[64px] flex flex-col justify-between">
             <div className="flex flex-col gap-6">
               <span className="font-mono text-[10px] text-[#888888] uppercase tracking-widest">
                 [ FLAGSHIP PRODUCT ]
