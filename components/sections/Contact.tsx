@@ -1,8 +1,18 @@
 "use client";
 
 import { m } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function Contact() {
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // In a real implementation, you would send the form data to your backend or a service like Resend/Formspree here.
+    // For now, we simulate a successful submission and redirect.
+    router.push("/success");
+  };
+
   return (
     <section id="contact" className="hs-section hs-contact">
       <div className="hs-mono-label" style={{ marginBottom: "20px" }}>
@@ -54,18 +64,18 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
         >
-          <form onSubmit={(e) => e.preventDefault()}>
+          <form onSubmit={handleSubmit}>
             <div className="hs-form-group">
               <label className="hs-form-label">Name</label>
-              <input className="hs-form-input" type="text" />
+              <input className="hs-form-input" type="text" required />
             </div>
             <div className="hs-form-group">
               <label className="hs-form-label">Email</label>
-              <input className="hs-form-input" type="email" />
+              <input className="hs-form-input" type="email" required />
             </div>
             <div className="hs-form-group">
               <label className="hs-form-label">What are you building?</label>
-              <textarea className="hs-form-textarea" placeholder="Tell us about your business and what you're trying to automate, build, or improve with AI..."></textarea>
+              <textarea className="hs-form-textarea" required placeholder="Tell us about your business and what you're trying to automate, build, or improve with AI..."></textarea>
             </div>
             <button type="submit" className="hs-submit">Send Message →</button>
           </form>
