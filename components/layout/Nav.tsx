@@ -1,22 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { m, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { m, AnimatePresence } from "framer-motion";
 
-export function Nav() {
+export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const shouldReduceMotion = useReducedMotion();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
+      setScrolled(window.scrollY > 60);
 
-      // Scroll Spy Logic
       const sections = ["hero", "services", "process", "work", "about", "contact"];
       let currentSection = "";
       
@@ -33,6 +29,7 @@ export function Nav() {
       setActiveSection(currentSection);
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -46,104 +43,98 @@ export function Nav() {
 
   return (
     <>
-      <m.nav
-        initial={{ backgroundColor: "rgba(10, 10, 10, 0)", borderBottomColor: "rgba(42, 42, 42, 0)" }}
-        animate={{
-          backgroundColor: scrolled ? "rgba(10, 10, 10, 0.85)" : "rgba(10, 10, 10, 0)",
-          borderBottomColor: scrolled ? "rgba(42, 42, 42, 1)" : "rgba(42, 42, 42, 0)",
-          backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
-        }}
-        transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
-        className="fixed top-0 left-0 w-full h-[64px] z-[100] flex items-center justify-between px-6 border-b border-transparent"
+      <nav 
+        className={`fixed top-0 left-0 right-0 h-[64px] z-[100] transition-all duration-300 ease-in-out ${
+          scrolled ? "bg-[rgba(10,10,10,0.92)] backdrop-blur-[16px] border-b border-[#1E1E1E]" : "bg-transparent border-b-transparent"
+        }`}
       >
-        <div className="flex items-center gap-4">
-          <Link href="/" className="flex items-center gap-3">
-            <Image src="/logo.png" alt="Hisako Logo" width={28} height={28} priority className="h-[28px] w-auto" />
-            <span className="font-mono text-[11px] tracking-[0.2em] text-[#ffffff]">HISAKO</span>
-            <div className="h-[14px] w-[1px] bg-[#2A2A2A]"></div>
-            <span className="font-mono text-[9px] text-[#666666] tracking-[0.15em]" style={{ fontFamily: '"JetBrains Mono", monospace' }}>AI AGENCY</span>
-          </Link>
-        </div>
-
-        <div className="hidden md:flex items-center">
-          <div className="flex items-center gap-8">
-            {links.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`font-mono text-[11px] uppercase tracking-widest transition-colors duration-200 ${
-                  activeSection === link.href.substring(1) 
-                    ? "text-[#F5F5F0]" 
-                    : "text-[#555555] hover:text-[#F5F5F0]"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+        <div className="container h-full flex items-center justify-between">
+          
+          {/* LEFT */}
+          <div className="flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" height="22" alt="Hisako" className="h-[22px] w-auto" />
+            <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[11px] text-[#F5F5F0] tracking-[0.2em] ml-[10px]">
+              HISAKO
+            </span>
+            <div className="w-[1px] h-[14px] bg-[#2A2A2A] mx-[12px]"></div>
+            <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[9px] text-[#555] tracking-[0.15em]">
+              AI AGENCY
+            </span>
           </div>
-          <Link
-            href="#contact"
-            className="ml-6 min-w-[100px] h-[32px] inline-flex items-center justify-center bg-[#eb3f25] text-[#ffffff] font-sans font-medium text-[10px] uppercase tracking-[0.15em] hover:bg-transparent hover:text-[#eb3f25] border border-[#eb3f25] transition-colors duration-200"
-          >
-            Start a Project
-          </Link>
-        </div>
 
-        <button
-          className="md:hidden text-[#ffffff]"
-          onClick={() => setMobileMenuOpen(true)}
-          aria-expanded={mobileMenuOpen}
-          aria-label="Open menu"
-        >
-          <Menu className="w-5 h-5" />
-        </button>
-      </m.nav>
-
-      {/* Mobile Menu */}
-      <m.div
-        initial={{ y: "-100%" }}
-        animate={{ y: mobileMenuOpen ? "0%" : "-100%" }}
-        transition={{ duration: shouldReduceMotion ? 0 : 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-        className="fixed inset-0 z-[200] bg-[#000000] flex flex-col px-6 py-8"
-      >
-        <div className="flex justify-between items-center h-[64px] -mt-8 -mx-6 px-6 border-b border-[#161616]">
-          <Link href="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
-            <Image src="/logo.png" alt="Hisako Logo" width={28} height={28} priority className="h-[28px] w-auto" />
-            <span className="font-mono text-[11px] tracking-[0.2em] text-[#ffffff]">HISAKO</span>
-            <div className="h-[14px] w-[1px] bg-[#2A2A2A]"></div>
-            <span className="font-mono text-[9px] text-[#666666] tracking-[0.15em]" style={{ fontFamily: '"JetBrains Mono", monospace' }}>AI AGENCY</span>
-          </Link>
-          <button
-            className="text-[#ffffff]"
-            onClick={() => setMobileMenuOpen(false)}
-            aria-expanded={mobileMenuOpen}
-            aria-label="Close menu"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-        <div className="flex flex-col gap-6 mt-12">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="uppercase font-display text-2xl text-[#ffffff] tracking-wider"
-            >
-              {link.name}
-            </Link>
-          ))}
-          <div className="mt-8">
+          {/* RIGHT (Desktop) */}
+          <div className="hidden md:flex items-center">
+            <div className="flex items-center gap-[40px]">
+              {links.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-[12px] uppercase tracking-[0.08em] transition-colors duration-150 ${
+                    activeSection === link.href.substring(1) ? "text-[#F5F5F0]" : "text-[#666] hover:text-[#F5F5F0]"
+                  }`}
+                  style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 400 }}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            
             <Link
               href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="inline-flex items-center justify-center h-[48px] px-8 border border-[#ffffff] text-[#ffffff] text-[12px] uppercase tracking-widest hover:bg-[#ffffff] hover:text-[#000000] transition-colors duration-200"
+              className="ml-[32px] h-[36px] px-[20px] bg-[#E8400C] text-[#F5F5F0] text-[11px] uppercase tracking-[0.1em] flex items-center justify-center hover:bg-[#C73509] transition-colors duration-150"
+              style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 500 }}
             >
               Start a Project
             </Link>
           </div>
+
+          {/* MOBILE HAMBURGER */}
+          <button 
+            className="md:hidden flex flex-col gap-[5px] justify-center"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <div className="w-[24px] h-[1px] bg-[#F5F5F0]"></div>
+            <div className="w-[24px] h-[1px] bg-[#F5F5F0]"></div>
+            <div className="w-[24px] h-[1px] bg-[#F5F5F0]"></div>
+          </button>
         </div>
-      </m.div>
+      </nav>
+
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[90] bg-[#0A0A0A] flex flex-col items-center justify-center"
+          >
+            <div className="flex flex-col items-center gap-8">
+              {links.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-[32px] text-[#F5F5F0]"
+                  style={{ fontFamily: "var(--font-bebas-neue)" }}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Link
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-8 text-[32px] text-[#E8400C]"
+                style={{ fontFamily: "var(--font-bebas-neue)" }}
+              >
+                START A PROJECT
+              </Link>
+            </div>
+          </m.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

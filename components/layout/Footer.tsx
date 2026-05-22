@@ -1,7 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client";
 
-export function Footer() {
+import Link from "next/link";
+
+export default function Footer() {
   const links = [
     { name: "Services", href: "#services" },
     { name: "Process", href: "#process" },
@@ -11,41 +12,57 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full border-t border-[#161616] bg-[#000000] pt-16">
-      <div className="container grid grid-cols-1 md:grid-cols-3 gap-8 pb-16">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <Image src="/logo.png" alt="Hisako Logo" width={24} height={24} className="h-[24px] w-auto grayscale" />
-            <span className="font-mono font-bold text-[11px] tracking-[0.2em] text-[#ffffff]">HISAKO</span>
+    <footer className="bg-[#080808] border-t border-[#1E1E1E] pt-[64px] pb-[40px]">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[48px] md:gap-0">
+          
+          {/* Col 1 */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <div className="flex items-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" height="20" alt="Hisako" className="h-[20px] w-auto" />
+              <span style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[11px] text-[#F5F5F0] tracking-[0.2em] ml-[8px]">
+                HISAKO
+              </span>
+            </div>
+            <div style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 400 }} className="text-[13px] text-[#444] mt-[12px]">
+              AI Agency — Nairobi, Kenya
+            </div>
           </div>
-          <p className="text-[13px] text-[#555555] max-w-[200px] leading-relaxed" style={{ fontFamily: '"DM Sans", sans-serif' }}>
-            AI Agency — Nairobi, Kenya
-          </p>
+
+          {/* Col 2 */}
+          <div className="flex flex-col items-center gap-[12px]">
+            {links.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 400 }}
+                className="text-[12px] text-[#444] hover:text-[#F5F5F0] transition-colors duration-150"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Col 3 */}
+          <div className="flex flex-col items-center md:items-end text-center md:text-right justify-end">
+            <div style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] text-[#333]">
+              © 2026 Hisako Technologies Limited.
+            </div>
+            <div style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] text-[#333] mt-[4px]">
+              Nairobi, Kenya.
+            </div>
+          </div>
+
         </div>
 
-        <div className="flex flex-col gap-3">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="font-mono text-[11px] uppercase tracking-widest text-[#888888] hover:text-[#eb3f25] transition-colors duration-200 w-fit"
-            >
-              {link.name}
-            </Link>
-          ))}
+        {/* BOTTOM STRIP */}
+        <div className="mt-[48px] border-t border-[#111] pt-[20px] text-center">
+          <div style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[9px] text-[#2A2A2A] tracking-[0.2em] uppercase">
+            AI AGENTS · WORKFLOW AUTOMATION · LLM INTEGRATION · HISAKO ·
+          </div>
         </div>
 
-        <div className="flex flex-col gap-3 md:items-end text-left md:text-right">
-          <p className="font-mono text-[11px] text-[#888888] uppercase">
-            © 2026 Hisako Technologies Limited. Nairobi, Kenya.
-          </p>
-        </div>
-      </div>
-
-      <div className="w-full border-t border-[#161616] py-4 text-center overflow-hidden flex items-center justify-center">
-        <p className="font-mono text-[clamp(0.55rem,1.2vw,0.75rem)] uppercase tracking-[0.2em] text-[#888888] whitespace-nowrap">
-          AI AGENTS · WORKFLOW AUTOMATION · LLM INTEGRATION · HISAKO · 
-        </p>
       </div>
     </footer>
   );

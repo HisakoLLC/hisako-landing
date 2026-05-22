@@ -1,130 +1,39 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@plugin "tailwindcss-animate";
-
-@custom-variant dark (&:is(.dark *));
-
-:root {
-  --background: #000000;
-  --foreground: #ffffff;
-  
-  --color-black: #000000;
-  --color-white: #ffffff;
-  --color-mid: #0a0a0a;
-  --color-surface: #090909;
-  --color-border: #161616;
-  --color-muted: #666666;
-  --color-accent: #eb3f25;
-
-  --card: #090909;
-  --card-foreground: #ffffff;
-  --popover: #090909;
-  --popover-foreground: #ffffff;
-  --primary: #eb3f25;
-  --primary-foreground: #000000;
-  --secondary: #0a0a0a;
-  --secondary-foreground: #ffffff;
-  --muted: #0a0a0a;
-  --muted-foreground: #666666;
-  --accent: #eb3f25;
-  --accent-foreground: #ffffff;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #ffffff;
-  --border: #161616;
-  --input: #161616;
-  --ring: #161616;
-  --radius: 0rem;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  
-  --font-display: var(--font-inter);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+  background: #0A0A0A;
+  color: #F5F5F0;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
-
-/* Accessibility Focus Visible */
-*:focus-visible {
-  outline: 2px solid #F5F5F0;
-  outline-offset: 4px;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 0;
-}
-
-/* Selection */
-::selection {
-  background: var(--foreground);
-  color: var(--background);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
+::selection { background: #F5F5F0; color: #0A0A0A; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #333; }
+*:focus-visible { outline: 2px solid #F5F5F0; outline-offset: 4px; }
 
 @layer utilities {
   .container {
-    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding-left: 80px;
     padding-right: 80px;
   }
   @media (max-width: 1024px) {
-    .container { padding-left: 48px; padding-right: 48px; }
+    .container {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
   }
   @media (max-width: 768px) {
-    .container { padding-left: 24px; padding-right: 24px; }
+    .container {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
   }
 }

@@ -1,124 +1,160 @@
 "use client";
 
-import { m, useReducedMotion } from "framer-motion";
-import Link from "next/link";
-import { ScanLine } from "@/components/ui/ScanLine";
+import { m } from "framer-motion";
 
-export function Contact() {
-  const shouldReduceMotion = useReducedMotion();
-
+export default function Contact() {
   return (
-    <section id="contact" className="relative min-h-screen py-20 md:py-32 border-t border-[#161616] bg-[#eb3f25] overflow-hidden flex items-center">
-      <ScanLine />
-      
-      <div className="container flex flex-col gap-16 md:gap-24 relative z-10">
+    <section id="contact" className="bg-[#0A0A0A] py-[160px]">
+      <div className="container">
         
-        <m.span 
-          initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="font-mono text-[10px] text-white/70 uppercase tracking-widest"
-        >
-          [ 04  CONTACT ]
-        </m.span>
+        {/* SECTION HEADER */}
+        <div className="mb-[80px]">
+          <div style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] text-[#444]">
+            [ 05 CONTACT ]
+          </div>
+        </div>
 
-        <div className="flex flex-col lg:flex-row gap-20">
-          
-          {/* Left Column 50% */}
-          <m.div 
-            initial={{ opacity: 0, x: shouldReduceMotion ? 0 : -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full lg:w-1/2 flex flex-col gap-12"
+        {/* HEADLINE */}
+        <div style={{ fontFamily: "var(--font-bebas-neue)" }} className="text-[clamp(3.5rem,7vw,7rem)] text-[#F5F5F0] leading-[0.88]">
+          <m.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="flex flex-col gap-6">
-              <h2 className="font-display font-black text-[clamp(3.5rem,8vw,6rem)] text-[#ffffff] leading-[0.85] tracking-tighter uppercase">
-                Let&apos;s build<br/>something<br/>serious.
-              </h2>
-              <p className="font-sans text-[16px] md:text-[18px] text-white/90 leading-[1.6] max-w-[480px]">
-                We work with startups and businesses building serious AI systems and products. If you know what you want to build — or need help figuring it out — let&apos;s talk.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-4 mt-4 border-t border-white/20 pt-8">
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-[12px] text-white/70 w-28">EMAIL</span>
-                <span className="font-mono text-[12px] text-white/70">→</span>
-                <a href="mailto:hello@hisako.eu" className="font-mono text-[12px] text-[#ffffff] hover:text-black transition-colors">hello@hisako.eu</a>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-[12px] text-white/70 w-28">LOCATION</span>
-                <span className="font-mono text-[12px] text-white/70">→</span>
-                <span className="font-mono text-[12px] text-[#ffffff]">Nairobi, Kenya</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="font-mono text-[12px] text-white/70 w-28">AVAILABILITY</span>
-                <span className="font-mono text-[12px] text-white/70">→</span>
-                <span className="font-mono text-[12px] text-[#ffffff]">Open to AI Projects</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-8 mt-4">
-              <Link href="#" className="font-mono text-[11px] text-white/70 uppercase tracking-widest hover:text-black transition-colors">
-                LinkedIn
-              </Link>
-              <Link href="#" className="font-mono text-[11px] text-white/70 uppercase tracking-widest hover:text-black transition-colors">
-                GitHub
-              </Link>
-            </div>
+            LET&apos;S BUILD
           </m.div>
-
-          {/* Right Column 50% */}
-          <m.div 
-            initial={{ opacity: 0, x: shouldReduceMotion ? 0 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.8, delay: shouldReduceMotion ? 0 : 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full lg:w-1/2 flex flex-col pt-4 lg:pt-0"
+          <m.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <form className="flex flex-col w-full h-full justify-center" onSubmit={(e) => e.preventDefault()}>
-              <div className="flex flex-col mb-[20px]">
-                <label htmlFor="name" className="font-mono text-[10px] text-white/70 uppercase tracking-widest mb-2">Name</label>
+            SOMETHING
+          </m.div>
+          <m.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            SERIOUS.
+          </m.div>
+        </div>
+
+        {/* CONTENT GRID */}
+        <div className="mt-[64px] flex flex-col md:flex-row gap-[80px] items-start">
+          
+          {/* LEFT (45%) */}
+          <div className="md:w-[45%]">
+            <p style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 400 }} className="text-[15px] text-[#666] leading-[1.8] max-w-[380px]">
+              We work with startups and businesses building serious AI systems and products. If you know what you want to build — or need help figuring it out — let&apos;s talk.
+            </p>
+
+            <div className="mt-[48px] flex flex-col gap-[16px]">
+              <div className="flex items-center">
+                <div style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] text-[#333] tracking-[0.12em] w-[100px] uppercase">
+                  EMAIL
+                </div>
+                <div className="text-[#333] mx-[16px]">→</div>
+                <div style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 400 }} className="text-[14px] text-[#666]">
+                  hello@hisako.eu
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] text-[#333] tracking-[0.12em] w-[100px] uppercase">
+                  LOCATION
+                </div>
+                <div className="text-[#333] mx-[16px]">→</div>
+                <div style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 400 }} className="text-[14px] text-[#666]">
+                  Nairobi, Kenya
+                </div>
+              </div>
+
+              <div className="flex items-center">
+                <div style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] text-[#333] tracking-[0.12em] w-[100px] uppercase">
+                  AVAILABILITY
+                </div>
+                <div className="text-[#333] mx-[16px]">→</div>
+                <div style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 400 }} className="text-[14px] text-[#666]">
+                  Open to AI Projects
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-[32px] flex flex-row gap-[24px]">
+              <a href="#" style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] text-[#333] uppercase tracking-[0.12em] hover:text-[#F5F5F0] transition-colors duration-150">
+                LINKEDIN
+              </a>
+              <a href="#" style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="text-[10px] text-[#333] uppercase tracking-[0.12em] hover:text-[#F5F5F0] transition-colors duration-150">
+                GITHUB
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT (55%) */}
+          <m.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="md:w-[55%] w-full"
+          >
+            <form className="flex flex-col w-full" onSubmit={(e) => e.preventDefault()}>
+              
+              <div className="mb-[20px]">
+                <label htmlFor="name" style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="block text-[10px] text-[#444] uppercase tracking-[0.12em] mb-[8px]">
+                  NAME
+                </label>
                 <input 
+                  id="name"
                   type="text" 
-                  id="name" 
-                  className="w-full bg-transparent border-b border-white/30 text-[#ffffff] px-0 py-3 outline-none focus:border-[#ffffff] transition-colors duration-300 font-sans text-[16px] placeholder:text-white/30" 
-                  required
+                  placeholder=""
+                  style={{ fontFamily: "var(--font-dm-sans)" }}
+                  className="w-full bg-transparent border-b border-[#222] text-[#F5F5F0] text-[15px] py-[12px] outline-none focus:border-[#F5F5F0] transition-colors duration-200 placeholder-[#333]"
                 />
               </div>
 
-              <div className="flex flex-col mb-[20px]">
-                <label htmlFor="email" className="font-mono text-[10px] text-white/70 uppercase tracking-widest mb-2">Email</label>
+              <div className="mb-[20px]">
+                <label htmlFor="email" style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="block text-[10px] text-[#444] uppercase tracking-[0.12em] mb-[8px]">
+                  EMAIL
+                </label>
                 <input 
+                  id="email"
                   type="email" 
-                  id="email" 
-                  className="w-full bg-transparent border-b border-white/30 text-[#ffffff] px-0 py-3 outline-none focus:border-[#ffffff] transition-colors duration-300 font-sans text-[16px] placeholder:text-white/30" 
-                  required
+                  placeholder=""
+                  style={{ fontFamily: "var(--font-dm-sans)" }}
+                  className="w-full bg-transparent border-b border-[#222] text-[#F5F5F0] text-[15px] py-[12px] outline-none focus:border-[#F5F5F0] transition-colors duration-200 placeholder-[#333]"
                 />
               </div>
 
-              <div className="flex flex-col mb-[40px]">
-                <label htmlFor="message" className="font-mono text-[10px] text-white/70 uppercase tracking-widest mb-2">What are you building?</label>
+              <div className="mb-[20px]">
+                <label htmlFor="message" style={{ fontFamily: "var(--font-jetbrains-mono)" }} className="block text-[10px] text-[#444] uppercase tracking-[0.12em] mb-[8px]">
+                  WHAT ARE YOU BUILDING?
+                </label>
                 <textarea 
-                  id="message" 
-                  rows={4}
-                  className="w-full bg-transparent border-b border-white/30 text-[#ffffff] px-0 py-3 outline-none focus:border-[#ffffff] transition-colors duration-300 font-sans text-[16px] resize-none placeholder:text-white/30"
+                  id="message"
+                  rows={5}
                   placeholder="Tell us about your business and what you're trying to automate, build, or improve with AI..."
-                  required
-                ></textarea>
+                  style={{ fontFamily: "var(--font-dm-sans)", resize: "none" }}
+                  className="w-full bg-transparent border-b border-[#222] text-[#F5F5F0] text-[15px] py-[12px] outline-none focus:border-[#F5F5F0] transition-colors duration-200 placeholder-[#333]"
+                />
               </div>
 
               <button 
-                type="submit" 
-                className="w-full h-[64px] bg-[#ffffff] text-[#eb3f25] font-sans font-medium text-[12px] uppercase tracking-[0.2em] hover:bg-[#000000] hover:text-[#ffffff] transition-colors duration-300"
+                type="submit"
+                style={{ fontFamily: "var(--font-dm-sans)", fontWeight: 500 }}
+                className="mt-[32px] w-full bg-[#F5F5F0] text-[#0A0A0A] text-[12px] uppercase tracking-[0.15em] h-[52px] flex items-center justify-center hover:bg-[#E0E0D8] transition-colors duration-150"
               >
-                Submit Inquiry →
+                SEND MESSAGE →
               </button>
+
             </form>
           </m.div>
 
         </div>
+
       </div>
     </section>
   );
