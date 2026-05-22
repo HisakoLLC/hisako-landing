@@ -19,8 +19,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hisako Technologies — Software Agency & Product Studio",
-  description: "Building the systems that power modern businesses",
+  title: "Hisako — AI Agency",
+  description: "Hisako is an AI agency that builds custom AI agents, workflow automation, and intelligent systems for global startups and businesses.",
+  openGraph: {
+    title: "Hisako — AI Agency",
+  }
 };
 
 export default function RootLayout({

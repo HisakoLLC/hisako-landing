@@ -2,12 +2,14 @@
 
 import { m, useReducedMotion } from "framer-motion";
 import Link from "next/link";
+import { ScanLine } from "@/components/ui/ScanLine";
 
 export function Contact() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
     <section id="contact" className="relative min-h-screen py-20 md:py-32 border-t border-[#161616] bg-[#eb3f25] overflow-hidden flex items-center">
+      <ScanLine />
       
       <div className="container flex flex-col gap-16 md:gap-24 relative z-10">
         
@@ -35,7 +37,7 @@ export function Contact() {
                 Let&apos;s build<br/>something<br/>serious.
               </h2>
               <p className="font-sans text-[16px] md:text-[18px] text-white/90 leading-[1.6] max-w-[480px]">
-                We work with businesses, founders, and teams who are building products that matter.
+                We work with startups and businesses building serious AI systems and products. If you know what you want to build — or need help figuring it out — let's talk.
               </p>
             </div>
 
@@ -53,7 +55,7 @@ export function Contact() {
               <div className="flex items-center gap-4">
                 <span className="font-mono text-[12px] text-white/70 w-28">AVAILABILITY</span>
                 <span className="font-mono text-[12px] text-white/70">→</span>
-                <span className="font-mono text-[12px] text-[#ffffff]">Open to Projects</span>
+                <span className="font-mono text-[12px] text-[#ffffff]">Open to AI Projects</span>
               </div>
             </div>
 
@@ -101,7 +103,8 @@ export function Contact() {
                 <textarea 
                   id="message" 
                   rows={4}
-                  className="w-full bg-transparent border-b border-white/30 text-[#ffffff] px-0 py-3 outline-none focus:border-[#ffffff] transition-colors duration-300 font-sans text-[16px] resize-none placeholder:text-white/30" 
+                  className="w-full bg-transparent border-b border-white/30 text-[#ffffff] px-0 py-3 outline-none focus:border-[#ffffff] transition-colors duration-300 font-sans text-[16px] resize-none placeholder:text-white/30"
+                  placeholder="Tell us about your business and what you're trying to automate, build, or improve with AI..."
                   required
                 ></textarea>
               </div>

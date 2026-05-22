@@ -9,11 +9,28 @@ import { Menu, X } from "lucide-react";
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80);
+
+      // Scroll Spy Logic
+      const sections = ["hero", "services", "process", "work", "about", "contact"];
+      let currentSection = "";
+      
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section;
+            break;
+          }
+        }
+      }
+      setActiveSection(currentSection);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -43,8 +60,8 @@ export function Nav() {
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="Hisako Logo" width={28} height={28} priority className="h-[28px] w-auto" />
             <span className="font-mono text-[11px] tracking-[0.2em] text-[#ffffff]">HISAKO</span>
-            <div className="h-[14px] w-[1px] bg-[#161616]" />
-            <span className="font-mono text-[9px] text-[#666666] tracking-[0.15em]">AI AGENCY</span>
+            <div className="h-[14px] w-[1px] bg-[#2A2A2A]"></div>
+            <span className="font-mono text-[9px] text-[#666666] tracking-[0.15em]" style={{ fontFamily: '"JetBrains Mono", monospace' }}>AI AGENCY</span>
           </Link>
         </div>
 
@@ -54,7 +71,11 @@ export function Nav() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="font-mono text-[11px] uppercase tracking-widest text-[#888888] hover:text-[#eb3f25] transition-colors duration-200"
+                className={`font-mono text-[11px] uppercase tracking-widest transition-colors duration-200 ${
+                  activeSection === link.href.substring(1) 
+                    ? "text-[#F5F5F0]" 
+                    : "text-[#555555] hover:text-[#F5F5F0]"
+                }`}
               >
                 {link.name}
               </Link>
@@ -89,8 +110,8 @@ export function Nav() {
           <Link href="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
             <Image src="/logo.png" alt="Hisako Logo" width={28} height={28} priority className="h-[28px] w-auto" />
             <span className="font-mono text-[11px] tracking-[0.2em] text-[#ffffff]">HISAKO</span>
-            <div className="h-[14px] w-[1px] bg-[#161616]" />
-            <span className="font-mono text-[9px] text-[#666666] tracking-[0.15em]">AI AGENCY</span>
+            <div className="h-[14px] w-[1px] bg-[#2A2A2A]"></div>
+            <span className="font-mono text-[9px] text-[#666666] tracking-[0.15em]" style={{ fontFamily: '"JetBrains Mono", monospace' }}>AI AGENCY</span>
           </Link>
           <button
             className="text-[#ffffff]"
