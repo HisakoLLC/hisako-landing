@@ -2,15 +2,28 @@
 
 import { m } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { sendContactEmail } from "@/app/actions/contact";
 
 export default function Contact() {
   const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // In a real implementation, you would send the form data to your backend or a service like Resend/Formspree here.
-    // For now, we simulate a successful submission and redirect.
-    router.push("/success");
+    setIsSubmitting(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+    const result = await sendContactEmail(formData);
+
+    if (result.error) {
+      setError(result.error);
+      setIsSubmitting(false);
+    } else {
+      router.push("/success");
+    }
   };
 
   return (
@@ -67,17 +80,24 @@ export default function Contact() {
           <form onSubmit={handleSubmit}>
             <div className="hs-form-group">
               <label className="hs-form-label">Name</label>
-              <input className="hs-form-input" type="text" required />
+              <input className="hs-form-input" name="name" type="text" required disabled={isSubmitting} />
             </div>
             <div className="hs-form-group">
               <label className="hs-form-label">Email</label>
-              <input className="hs-form-input" type="email" required />
+              <input className="hs-form-input" name="email" type="email" required disabled={isSubmitting} />
             </div>
             <div className="hs-form-group">
               <label className="hs-form-label">What are you building?</label>
-              <textarea className="hs-form-textarea" required placeholder="Tell us about your business and what you're trying to automate, build, or improve with AI..."></textarea>
+              <textarea className="hs-form-textarea" name="message" required placeholder="Tell us about your business and what you're trying to automate, build, or improve with AI..." disabled={isSubmitting}></textarea>
             </div>
-            <button type="submit" className="hs-submit">Send Message →</button>
+            {error && (
+              <div style={{ color: "#E8400C", fontSize: "12px", fontFamily: "var(--font-dm-sans), sans-serif", marginTop: "12px" }}>
+                {error}
+              </div>
+            )}
+            <button type="submit" className="hs-submit" disabled={isSubmitting}>
+              {isSubmitting ? "TRANSMITTING..." : "SEND MESSAGE →"}
+            </button>
           </form>
         </m.div>
       </div>
