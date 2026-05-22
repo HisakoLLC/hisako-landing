@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="hs-footer">
@@ -17,11 +19,15 @@ export default function Footer() {
         </div>
         
         <div className="hs-footer-links">
-          <a href="#services" className="hs-footer-link">Services</a>
-          <a href="#process" className="hs-footer-link">Process</a>
-          <a href="#work" className="hs-footer-link">Work</a>
-          <a href="#about" className="hs-footer-link">About</a>
-          <a href="#contact" className="hs-footer-link">Contact</a>
+          <Link href="/#services" className="hs-footer-link" style={{ textDecoration: 'none' }}>Services</Link>
+          <Link href="/#process" className="hs-footer-link" style={{ textDecoration: 'none' }}>Process</Link>
+          <Link href="/#work" className="hs-footer-link" style={{ textDecoration: 'none' }}>Work</Link>
+          <Link href="/#about" className="hs-footer-link" style={{ textDecoration: 'none' }}>About</Link>
+          <Link href="/#contact" className="hs-footer-link" style={{ textDecoration: 'none' }}>Contact</Link>
+          <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <Link href="/terms" className="hs-footer-link" style={{ textDecoration: 'none' }}>Terms of Service</Link>
+            <Link href="/privacy" className="hs-footer-link" style={{ textDecoration: 'none' }}>Privacy Policy</Link>
+          </div>
         </div>
         
         <div className="hs-footer-copy">
