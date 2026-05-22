@@ -1,7 +1,5 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
-
 export function Proof() {
   return (
     <section id="work" className="min-h-screen py-20 md:py-32 border-b border-[#161616] bg-[#000000] overflow-hidden">

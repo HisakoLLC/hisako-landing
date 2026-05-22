@@ -127,4 +127,21 @@ body {
   @media (max-width: 768px) {
     .container { padding-left: 24px; padding-right: 24px; }
   }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes pulse-live {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.3; }
+  }
+
+  .animate-blink {
+    animation: blink 800ms steps(2, start) infinite;
+  }
+  .animate-pulse-live {
+    animation: pulse-live 2s ease-in-out infinite;
+  }
 }
