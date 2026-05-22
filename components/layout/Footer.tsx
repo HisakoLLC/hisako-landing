@@ -4,7 +4,8 @@ import Image from "next/image";
 export function Footer() {
   const links = [
     { name: "Services", href: "#services" },
-    { name: "Products", href: "#products" },
+    { name: "Process", href: "#process" },
+    { name: "Work", href: "#work" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ];
@@ -36,17 +37,14 @@ export function Footer() {
 
         <div className="flex flex-col gap-3 md:items-end text-left md:text-right">
           <p className="font-mono text-[11px] text-[#888888] uppercase">
-            © 2025 Hisako Technologies Limited
-          </p>
-          <p className="font-mono text-[11px] text-[#888888] uppercase">
-            Nairobi, Kenya
+            © 2026 Hisako Technologies Limited. Nairobi, Kenya.
           </p>
         </div>
       </div>
 
       <div className="w-full border-t border-[#161616] py-4 text-center overflow-hidden flex items-center justify-center">
         <p className="font-mono text-[clamp(0.55rem,1.2vw,0.75rem)] uppercase tracking-[0.2em] text-[#888888] whitespace-nowrap">
-          BUILDING THE SYSTEMS THAT POWER MODERN BUSINESSES
+          AI AGENTS · WORKFLOW AUTOMATION · LLM INTEGRATION · AI STRATEGY · HISAKO · 
         </p>
       </div>
     </footer>

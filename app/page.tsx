@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
-import { Products } from "@/components/sections/Products";
+import { Process } from "@/components/sections/Process";
+import { Proof } from "@/components/sections/Proof";
 import { About } from "@/components/sections/About";
 import { Contact } from "@/components/sections/Contact";
 
@@ -27,7 +28,8 @@ export default function Home() {
     <>
       <Hero />
       <Services />
-      <Products />
+      <Process />
+      <Proof />
       <About />
       <Contact />
 

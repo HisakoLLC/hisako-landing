@@ -21,7 +21,8 @@ export function Nav() {
 
   const links = [
     { name: "Services", href: "#services" },
-    { name: "Products", href: "#products" },
+    { name: "Process", href: "#process" },
+    { name: "Work", href: "#work" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ];
@@ -42,6 +43,8 @@ export function Nav() {
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="Hisako Logo" width={28} height={28} priority className="h-[28px] w-auto" />
             <span className="font-mono text-[11px] tracking-[0.2em] text-[#ffffff]">HISAKO</span>
+            <div className="h-[14px] w-[1px] bg-[#161616]" />
+            <span className="font-mono text-[9px] text-[#666666] tracking-[0.15em]">AI AGENCY</span>
           </Link>
         </div>
 
@@ -61,7 +64,7 @@ export function Nav() {
             href="#contact"
             className="ml-6 min-w-[100px] h-[32px] inline-flex items-center justify-center bg-[#eb3f25] text-[#ffffff] font-sans font-medium text-[10px] uppercase tracking-[0.15em] hover:bg-transparent hover:text-[#eb3f25] border border-[#eb3f25] transition-colors duration-200"
           >
-            Let&apos;s Talk
+            Start a Project
           </Link>
         </div>
 
@@ -86,6 +89,8 @@ export function Nav() {
           <Link href="/" className="flex items-center gap-3" onClick={() => setMobileMenuOpen(false)}>
             <Image src="/logo.png" alt="Hisako Logo" width={28} height={28} priority className="h-[28px] w-auto" />
             <span className="font-mono text-[11px] tracking-[0.2em] text-[#ffffff]">HISAKO</span>
+            <div className="h-[14px] w-[1px] bg-[#161616]" />
+            <span className="font-mono text-[9px] text-[#666666] tracking-[0.15em]">AI AGENCY</span>
           </Link>
           <button
             className="text-[#ffffff]"
@@ -113,7 +118,7 @@ export function Nav() {
               onClick={() => setMobileMenuOpen(false)}
               className="inline-flex items-center justify-center h-[48px] px-8 border border-[#ffffff] text-[#ffffff] text-[12px] uppercase tracking-widest hover:bg-[#ffffff] hover:text-[#000000] transition-colors duration-200"
             >
-              Let&apos;s Talk
+              Start a Project
             </Link>
           </div>
         </div>

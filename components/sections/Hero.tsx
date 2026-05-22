@@ -145,7 +145,7 @@ export function Hero() {
         <div className="animate-ticker flex w-max font-mono text-[11px] text-[#888888] uppercase tracking-widest">
           {[...Array(10)].map((_, i) => (
             <span key={i} className="pl-4 whitespace-nowrap">
-              SOFTWARE AGENCY · PRODUCT STUDIO · VENDOFLOW · PASSR · DESIGN STUDIO · NAIROBI · GLOBAL · UI/UX · WEB & MOBILE DEVELOPMENT
+              AI AGENTS · WORKFLOW AUTOMATION · LLM INTEGRATION · AI STRATEGY · CUSTOM AI SYSTEMS · GLOBAL · 
             </span>
           ))}
         </div>
