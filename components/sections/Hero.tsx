@@ -105,11 +105,10 @@ export function Hero() {
 
   // Typewriter Animation
   useEffect(() => {
-    let timeoutId: NodeJS.Timeout;
     let intervalId: NodeJS.Timeout;
     let blinkIntervalId: NodeJS.Timeout;
 
-    timeoutId = setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       let currentIndex = 0;
       setCursorVisible(true);
 

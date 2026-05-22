@@ -140,7 +140,7 @@ export function Services() {
           className={`${bebasNeue.className} text-[28px] text-[#F5F5F0] max-w-[600px] leading-tight`}
           style={{ fontStyle: 'italic' }}
         >
-          We don't add AI as a feature. We build systems where AI is the foundation.
+          We don&apos;t add AI as a feature. We build systems where AI is the foundation.
         </h3>
         <Link
           href="#contact"
@@ -153,7 +153,7 @@ export function Services() {
   );
 }
 
-function ServiceCard({ card, index, isInView }: { card: any, index: number, isInView: boolean }) {
+function ServiceCard({ card, index, isInView }: { card: { num: string; title: string; desc: string }, index: number, isInView: boolean }) {
   const [isHovered, setIsHovered] = useState(false);
   const [pulseKey, setPulseKey] = useState(0);
 

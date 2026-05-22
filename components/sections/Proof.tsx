@@ -67,10 +67,10 @@ export function Proof() {
               [ BUILT BY BUILDERS ]
             </span>
             <p className={`${dmSans.className} text-[16px] text-[#888888] leading-[1.8] max-w-[480px]`}>
-              We don't just consult on AI — we build and operate our own AI-powered products. VendoFlow, our retail operating system, is built on the same architecture we deploy for clients. When we recommend an approach, it's because we've shipped it ourselves.
+              We don&apos;t just consult on AI — we build and operate our own AI-powered products. VendoFlow, our retail operating system, is built on the same architecture we deploy for clients. When we recommend an approach, it&apos;s because we&apos;ve shipped it ourselves.
             </p>
             <p className={`${dmSans.className} font-medium text-[15px] text-[#F5F5F0] mt-[32px] leading-[1.6]`}>
-              That's the difference between an agency that talks about AI and one that lives in it.
+              That&apos;s the difference between an agency that talks about AI and one that lives in it.
             </p>
           </m.div>
 

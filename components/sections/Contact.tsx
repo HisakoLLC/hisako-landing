@@ -37,7 +37,7 @@ export function Contact() {
                 Let&apos;s build<br/>something<br/>serious.
               </h2>
               <p className="font-sans text-[16px] md:text-[18px] text-white/90 leading-[1.6] max-w-[480px]">
-                We work with startups and businesses building serious AI systems and products. If you know what you want to build — or need help figuring it out — let's talk.
+                We work with startups and businesses building serious AI systems and products. If you know what you want to build — or need help figuring it out — let&apos;s talk.
               </p>
             </div>
 
