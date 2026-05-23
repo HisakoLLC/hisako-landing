@@ -145,7 +145,7 @@ export default function FAQPage() {
                 How is an AI agency different from a traditional software agency?
               </h3>
               <p className="font-normal text-[#666]" style={{ fontSize: '15px', lineHeight: '1.85', maxWidth: '720px' }}>
-                A traditional software agency builds what you specify. An AI agency helps you identify what to build, then builds systems that can learn, reason, and act autonomously. The core difference is that AI systems evolve with use — they don't just execute instructions, they make decisions. Hisako specializes exclusively in AI-native architecture: every system we build has intelligence at its foundation, not bolted on.
+                A traditional software agency builds what you specify. An AI agency helps you identify what to build, then builds systems that can learn, reason, and act autonomously. The core difference is that AI systems evolve with use — they don&apos;t just execute instructions, they make decisions. Hisako specializes exclusively in AI-native architecture: every system we build has intelligence at its foundation, not bolted on.
               </p>
             </div>
 
@@ -215,7 +215,7 @@ export default function FAQPage() {
                 Can you integrate AI into our existing software without rebuilding it?
               </h3>
               <p className="font-normal text-[#666]" style={{ fontSize: '15px', lineHeight: '1.85', maxWidth: '720px' }}>
-                Yes — and this is often the right approach. Most LLM integrations are additive: we expose AI capabilities through your existing product's API layer or UI without requiring a ground-up rebuild. Common patterns include adding an AI layer to an existing SaaS product, building AI-powered internal tools that connect to existing databases, and creating agent pipelines that orchestrate existing business software.
+                Yes — and this is often the right approach. Most LLM integrations are additive: we expose AI capabilities through your existing product&apos;s API layer or UI without requiring a ground-up rebuild. Common patterns include adding an AI layer to an existing SaaS product, building AI-powered internal tools that connect to existing databases, and creating agent pipelines that orchestrate existing business software.
               </p>
             </div>
 
@@ -229,7 +229,7 @@ export default function FAQPage() {
             
             <div className="border-b border-[#111]" style={{ marginBottom: '40px', paddingBottom: '40px' }}>
               <h3 className="font-medium text-[#F5F5F0]" style={{ fontSize: '18px', marginBottom: '12px' }}>
-                How does Hisako's engagement process work?
+                How does Hisako&apos;s engagement process work?
               </h3>
               <p className="font-normal text-[#666]" style={{ fontSize: '15px', lineHeight: '1.85', maxWidth: '720px' }}>
                 We work in four phases. Discover: we audit your operations and identify where AI creates real leverage. Architect: we design the complete system — models, data flows, integrations, and infrastructure — before writing code. Build: we build and iterate fast, with working systems delivered in weeks. Deploy & Evolve: we ship to production and stay engaged to monitor, retrain, and improve the system as your business grows.

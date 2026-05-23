@@ -40,7 +40,7 @@ export default function BlogPage() {
               First article coming soon.
             </h2>
             <p className="text-[#555]" style={{ fontSize: '14px', fontFamily: 'var(--font-dm-sans), sans-serif', marginBottom: '32px', lineHeight: '1.6' }}>
-              We're drafting deep-dive guides on AI agents, LLM integration, and operational strategy. Get notified when we publish.
+              We&apos;re drafting deep-dive guides on AI agents, LLM integration, and operational strategy. Get notified when we publish.
             </p>
             
             <form onSubmit={(e) => e.preventDefault()}>

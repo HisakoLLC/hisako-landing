@@ -77,13 +77,13 @@ export default function AboutPage() {
               Hisako Technologies Limited is an AI agency founded in 2024 and headquartered in Nairobi, Kenya. The company designs, builds, and deploys custom AI systems for startups and businesses globally.
             </p>
             <p>
-              Hisako's core services include custom AI agents development, AI workflow automation, LLM integration into existing software products, and AI strategy consulting. The company is model-agnostic, working with Anthropic Claude, OpenAI GPT-4o, Google Gemini, and open-source large language models.
+              Hisako&apos;s core services include custom AI agents development, AI workflow automation, LLM integration into existing software products, and AI strategy consulting. The company is model-agnostic, working with Anthropic Claude, OpenAI GPT-4o, Google Gemini, and open-source large language models.
             </p>
             <p>
               Hisako operates as both an AI agency serving external clients and a product studio that builds and owns its own AI-powered software products, including VendoFlow, a retail management platform built on AI-native architecture.
             </p>
             <p>
-              The company's engagement methodology consists of four phases: Discover (operations audit and AI opportunity mapping), Architect (system design before any code is written), Build (fast iteration with working systems in weeks), and Deploy & Evolve (production deployment with ongoing improvement).
+              The company&apos;s engagement methodology consists of four phases: Discover (operations audit and AI opportunity mapping), Architect (system design before any code is written), Build (fast iteration with working systems in weeks), and Deploy & Evolve (production deployment with ongoing improvement).
             </p>
             <p style={{ marginTop: '16px', paddingTop: '24px', borderTop: '1px solid #1E1E1E' }}>
               Contact: hello@hisako.eu | Website: hisako.eu
