@@ -43,7 +43,7 @@ export default function BlogPage() {
               We&apos;re drafting deep-dive guides on AI agents, LLM integration, and operational strategy. Get notified when we publish.
             </p>
             
-            <form onSubmit={(e) => e.preventDefault()}>
+            <form action="">
               <div className="hs-form-group" style={{ marginBottom: '16px' }}>
                 <label 
                   htmlFor="email" 
