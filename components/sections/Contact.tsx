@@ -27,16 +27,16 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="hs-section hs-contact">
+    <section id="contact" className="hs-section hs-contact" aria-label="Contact">
       <div className="hs-mono-label" style={{ marginBottom: "20px" }}>
         [ 05&nbsp;&nbsp;CONTACT ]
       </div>
       
-      <div className="hs-contact-headline">
+      <h2 className="hs-contact-headline">
         <m.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>LET&apos;S BUILD</m.div>
         <m.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>SOMETHING</m.div>
         <m.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>SERIOUS.</m.div>
-      </div>
+      </h2>
       
       <div className="hs-contact-grid">
         <m.div 
@@ -79,16 +79,16 @@ export default function Contact() {
         >
           <form onSubmit={handleSubmit}>
             <div className="hs-form-group">
-              <label className="hs-form-label">Name</label>
-              <input className="hs-form-input" name="name" type="text" required disabled={isSubmitting} />
+              <label htmlFor="name" className="hs-form-label">Name</label>
+              <input id="name" className="hs-form-input" name="name" type="text" required disabled={isSubmitting} />
             </div>
             <div className="hs-form-group">
-              <label className="hs-form-label">Email</label>
-              <input className="hs-form-input" name="email" type="email" required disabled={isSubmitting} />
+              <label htmlFor="email" className="hs-form-label">Email</label>
+              <input id="email" className="hs-form-input" name="email" type="email" required disabled={isSubmitting} />
             </div>
             <div className="hs-form-group">
-              <label className="hs-form-label">What are you building?</label>
-              <textarea className="hs-form-textarea" name="message" required placeholder="Tell us about your business and what you're trying to automate, build, or improve with AI..." disabled={isSubmitting}></textarea>
+              <label htmlFor="message" className="hs-form-label">What are you building?</label>
+              <textarea id="message" className="hs-form-textarea" name="message" required placeholder="Tell us about your business and what you're trying to automate, build, or improve with AI..." disabled={isSubmitting}></textarea>
             </div>
             {error && (
               <div style={{ color: "#E8400C", fontSize: "12px", fontFamily: "var(--font-dm-sans), sans-serif", marginTop: "12px" }}>

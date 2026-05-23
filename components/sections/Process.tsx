@@ -27,13 +27,13 @@ export default function Process() {
   ];
 
   return (
-    <section id="process" className="hs-section hs-section-dark">
+    <section id="process" className="hs-section hs-section-dark" aria-label="How We Work">
       
       <div className="hs-mono-label" style={{ marginBottom: "20px" }}>
         [ 02&nbsp;&nbsp;HOW WE WORK ]
       </div>
       
-      <m.div 
+      <m.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -44,7 +44,7 @@ export default function Process() {
         <span style={{ fontFamily: "var(--font-jetbrains-mono), monospace", fontSize: "11px", color: "#444", verticalAlign: "middle", marginLeft: "12px" }}>
           [ end-to-end ]
         </span>
-      </m.div>
+      </m.h2>
       
       <p style={{ fontSize: "14px", color: "#555", marginTop: "16px", maxWidth: "380px", fontFamily: "var(--font-dm-sans), sans-serif" }}>
         Four phases. No surprises. Working AI systems in weeks.
@@ -60,7 +60,7 @@ export default function Process() {
               transition={{ delay: i * 0.1 }}
             >
               <div className="hs-step-num">{step.num}</div>
-              <div className="hs-step-name">{step.title}</div>
+              <h3 className="hs-step-name">{step.title}</h3>
               <div className="hs-step-desc">{step.desc}</div>
             </m.div>
             <div className="hs-step-bar-bg">

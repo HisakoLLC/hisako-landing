@@ -4,7 +4,7 @@ import { m } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" className="hs-section hs-section-dark">
+    <section id="about" className="hs-section hs-section-dark" aria-label="About Hisako">
       <div className="hs-about-grid">
         
         <m.div 
@@ -22,7 +22,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <div className="hs-mono-label">[ 04&nbsp;&nbsp;ABOUT ]</div>
-          <div className="hs-about-headline">We are builders.</div>
+          <h2 className="hs-about-headline">We are builders.</h2>
           <p className="hs-about-body">
             Hisako is an AI agency and tech studio based in Nairobi, operating globally. We build custom AI systems for client businesses while simultaneously developing and owning our own AI-powered software products.
           </p>
@@ -32,15 +32,15 @@ export default function About() {
           
           <div style={{ marginTop: "32px" }}>
             <div className="hs-principle">
-              <div className="hs-principle-label">Precision</div>
+              <h3 className="hs-principle-label">Precision</h3>
               <div className="hs-principle-body">We design before we build. Architecture decisions made early save months later.</div>
             </div>
             <div className="hs-principle">
-              <div className="hs-principle-label">Velocity</div>
+              <h3 className="hs-principle-label">Velocity</h3>
               <div className="hs-principle-body">Working systems in weeks, not quarters. We move fast without breaking foundations.</div>
             </div>
             <div className="hs-principle">
-              <div className="hs-principle-label">Ownership</div>
+              <h3 className="hs-principle-label">Ownership</h3>
               <div className="hs-principle-body">We treat client systems like our own. Because we know what it means to own what you ship.</div>
             </div>
           </div>

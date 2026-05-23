@@ -27,7 +27,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="hs-section">
+    <section id="services" className="hs-section" aria-label="AI Services">
       
       <div className="hs-section-hdr">
         <div className="hs-section-hdr-left">
@@ -41,14 +41,14 @@ export default function Services() {
           className="hs-hdr-rule" 
         />
         <div className="hs-section-hdr-right">
-          <m.div 
+          <m.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="hs-section-headline"
           >
             AI SYSTEMS.<br/>BUILT FOR SCALE.
-          </m.div>
+          </m.h2>
         </div>
       </div>
 
@@ -63,8 +63,8 @@ export default function Services() {
             className="hs-card"
           >
             <div className="hs-card-num">{service.num}</div>
-            <div className="hs-card-name">{service.title}</div>
-            <div className="hs-card-desc">{service.desc}</div>
+            <h3 className="hs-card-name">{service.title}</h3>
+            <p className="hs-card-desc">{service.desc}</p>
             <div className="hs-card-arrow">→</div>
           </m.div>
         ))}

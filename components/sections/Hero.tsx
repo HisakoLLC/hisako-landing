@@ -4,7 +4,7 @@ import { m } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="hero" className="hs-hero">
+    <section id="hero" className="hs-hero" aria-label="Hero">
       
       {/* Top Meta */}
       <div className="hs-hero-meta">

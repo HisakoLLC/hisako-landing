@@ -18,7 +18,7 @@ export default function Footer() {
           <div className="hs-footer-tagline">AI Agency — Nairobi, Kenya</div>
         </div>
         
-        <div className="hs-footer-links">
+        <nav className="hs-footer-links" aria-label="Footer navigation">
           <Link href="/#services" className="hs-footer-link" style={{ textDecoration: 'none' }}>Services</Link>
           <Link href="/#process" className="hs-footer-link" style={{ textDecoration: 'none' }}>Process</Link>
           <Link href="/#work" className="hs-footer-link" style={{ textDecoration: 'none' }}>Work</Link>
@@ -28,7 +28,7 @@ export default function Footer() {
             <Link href="/terms" className="hs-footer-link" style={{ textDecoration: 'none' }}>Terms of Service</Link>
             <Link href="/privacy" className="hs-footer-link" style={{ textDecoration: 'none' }}>Privacy Policy</Link>
           </div>
-        </div>
+        </nav>
         
         <div className="hs-footer-copy">
           © 2026 Hisako Technologies Limited.<br/>Nairobi, Kenya.

@@ -4,13 +4,13 @@ import { m } from "framer-motion";
 
 export default function Proof() {
   return (
-    <section id="work" className="hs-section">
+    <section id="work" className="hs-section" aria-label="Proof of Work">
       
       <div className="hs-mono-label" style={{ marginBottom: "20px" }}>
         [ 03&nbsp;&nbsp;PROOF OF WORK ]
       </div>
       
-      <m.div 
+      <m.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -19,7 +19,7 @@ export default function Proof() {
         <div style={{ color: "#F5F5F0" }}>WE BUILD.</div>
         <div style={{ color: "#F5F5F0" }}>WE SHIP.</div>
         <div style={{ color: "#3A3A3A" }}>WE OWN IT.</div>
-      </m.div>
+      </m.h2>
       
       <m.div 
         initial={{ scaleX: 0 }}
@@ -53,17 +53,17 @@ export default function Proof() {
         >
           <div className="hs-cap-point">
             <div className="hs-cap-tag">AI Agent Systems</div>
-            <div className="hs-cap-title">Conversational & Autonomous Agents</div>
+            <h3 className="hs-cap-title">Conversational & Autonomous Agents</h3>
             <div className="hs-cap-body">Intake agents, triage systems, and autonomous workflow agents — built, tested, and shipped.</div>
           </div>
           <div className="hs-cap-point">
             <div className="hs-cap-tag">LLM-Powered Products</div>
-            <div className="hs-cap-title">Multi-Tenant SaaS with AI Layers</div>
+            <h3 className="hs-cap-title">Multi-Tenant SaaS with AI Layers</h3>
             <div className="hs-cap-body">Embedded AI across analytics, automation, and intelligence in production SaaS platforms.</div>
           </div>
           <div className="hs-cap-point">
             <div className="hs-cap-tag">End-to-End Delivery</div>
-            <div className="hs-cap-title">Architecture to Production</div>
+            <h3 className="hs-cap-title">Architecture to Production</h3>
             <div className="hs-cap-body">We own the full stack: system design, engineering, AI integration, and deployment.</div>
           </div>
         </m.div>
