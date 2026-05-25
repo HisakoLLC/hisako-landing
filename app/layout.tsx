@@ -119,6 +119,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#FFFFFF" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <StructuredData />
       </head>
       <body
@@ -129,7 +130,7 @@ export default function RootLayout({
         </LazyMotionProvider>
         <Script
           src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="lazyOnload"
+          strategy="beforeInteractive"
         />
       </body>
     </html>
