@@ -24,7 +24,7 @@ export default function About() {
           <div className="hs-mono-label">[ 04&nbsp;&nbsp;ABOUT ]</div>
           <h2 className="hs-about-headline">We are builders.</h2>
           <p className="hs-about-body">
-            Hisako is an AI agency and tech studio based in Nairobi, operating globally. We build custom AI systems for client businesses while simultaneously developing and owning our own AI-powered software products.
+            Hisako is a B2B AI automation agency based in Nairobi, operating globally. We build autonomous pipelines that replace the manual operations holding businesses back — using n8n, Make, custom code, and large language models.
           </p>
           <p className="hs-about-body" style={{ marginTop: "14px" }}>
             The agency sharpens our execution. The products prove our architecture. Both make us better at what we do.
@@ -37,7 +37,7 @@ export default function About() {
             </div>
             <div className="hs-principle">
               <h3 className="hs-principle-label">Velocity</h3>
-              <div className="hs-principle-body">Working systems in weeks, not quarters. We move fast without breaking foundations.</div>
+              <div className="hs-principle-body">Working pipelines in days, not months. We move fast, test in production, and iterate based on what the data shows.</div>
             </div>
             <div className="hs-principle">
               <h3 className="hs-principle-label">Ownership</h3>

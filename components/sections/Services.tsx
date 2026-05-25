@@ -6,23 +6,23 @@ export default function Services() {
   const services = [
     {
       num: "01",
-      title: "Custom AI Agents",
-      desc: "Autonomous systems that do real work. We build AI agents that handle complex, repeatable tasks — research, outreach, operations, data processing — without human intervention."
+      title: "Lead & Outreach Automation",
+      desc: "We build pipelines that find, qualify, and contact your ideal prospects automatically. Lead research, scoring, personalised outreach sequences, and CRM updates — running 24/7 without a sales rep touching it."
     },
     {
       num: "02",
-      title: "AI Workflow Automation",
-      desc: "We map your most expensive manual processes and replace them with intelligent, automated pipelines. Less overhead. Faster execution. Compounding operational returns."
+      title: "Client Onboarding Pipelines",
+      desc: "Every new client triggers the same manual checklist. We automate it. Contract delivery, welcome sequences, data collection, account setup, and internal notifications — done in minutes, not days."
     },
     {
       num: "03",
-      title: "LLM Integration",
-      desc: "Claude, GPT-4o, Gemini, open-source — we integrate large language models into your existing software stack. Your product gets AI capabilities without a ground-up rebuild."
+      title: "Sales Pipeline Automation",
+      desc: "We connect your CRM, calendar, email, and data sources into a single automated pipeline. Follow-ups sent, deals updated, tasks created — your sales process runs itself while your team focuses on closing."
     },
     {
       num: "04",
-      title: "AI Strategy Consulting",
-      desc: "Before you build, you need a plan. We identify where AI creates real leverage in your business, architect the right approach, and help you avoid the expensive mistakes."
+      title: "Internal Ops & Admin",
+      desc: "Reporting, data sync, invoice processing, meeting notes, task assignment — the operational overhead that eats your team's time. We map it, automate it, and give you the hours back."
     }
   ];
 
@@ -31,7 +31,7 @@ export default function Services() {
       
       <div className="hs-section-hdr">
         <div className="hs-section-hdr-left">
-          <div className="hs-mono-label">[ 01&nbsp;&nbsp;WHAT WE BUILD ]</div>
+          <div className="hs-mono-label">[ 01&nbsp;&nbsp;WHAT WE AUTOMATE ]</div>
         </div>
         <m.div 
           initial={{ scaleX: 0 }}
@@ -47,7 +47,7 @@ export default function Services() {
             viewport={{ once: true }}
             className="hs-section-headline"
           >
-            AI SYSTEMS.<br/>BUILT FOR SCALE.
+            PIPELINES.<br/>NOT PROMISES.
           </m.h2>
         </div>
       </div>
@@ -78,14 +78,14 @@ export default function Services() {
         style={{ borderTop: '1px solid #1E1E1E', marginTop: '56px', paddingTop: '40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}
       >
         <p style={{ fontSize: '17px', fontStyle: 'italic', color: '#555', maxWidth: '560px', lineHeight: '1.6', fontFamily: "var(--font-dm-sans), sans-serif" }}>
-          &quot;We don&apos;t add AI as a feature. We build systems where AI is the foundation.&quot;
+          &quot;We don&apos;t sell AI. We replace the manual work that&apos;s slowing your business down.&quot;
         </p>
         <button 
           className="hs-btn-ghost" 
           style={{ whiteSpace: 'nowrap' }}
           onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
         >
-          Start a Project →
+          Book a Free Call →
         </button>
       </m.div>
 

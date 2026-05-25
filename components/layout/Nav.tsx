@@ -36,9 +36,9 @@ export default function Nav() {
           </Link>
         </div>
         <div className="hs-nav-links">
-          <Link href="/#services" className="hs-nav-link">Services</Link>
-          <Link href="/#process" className="hs-nav-link">Process</Link>
-          <Link href="/#work" className="hs-nav-link">Work</Link>
+          <Link href="/#services" className="hs-nav-link">What We Automate</Link>
+          <Link href="/#process" className="hs-nav-link">How We Work</Link>
+          <Link href="/#work" className="hs-nav-link">Our Work</Link>
           <Link href="/#about" className="hs-nav-link">About</Link>
           <Link href="/#contact" className="hs-nav-link">Contact</Link>
           <a 

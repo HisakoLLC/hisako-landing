@@ -15,13 +15,13 @@ export default function Footer() {
             </svg>
             <span className="hs-footer-brand">HISAKO</span>
           </div>
-          <div className="hs-footer-tagline">AI Agency — Nairobi, Kenya</div>
+          <div className="hs-footer-tagline">B2B AI Automation — Nairobi, Kenya</div>
         </div>
         
         <nav className="hs-footer-links" aria-label="Footer navigation">
-          <Link href="/#services" className="hs-footer-link" style={{ textDecoration: 'none' }}>Services</Link>
-          <Link href="/#process" className="hs-footer-link" style={{ textDecoration: 'none' }}>Process</Link>
-          <Link href="/#work" className="hs-footer-link" style={{ textDecoration: 'none' }}>Work</Link>
+          <Link href="/#services" className="hs-footer-link" style={{ textDecoration: 'none' }}>What We Automate</Link>
+          <Link href="/#process" className="hs-footer-link" style={{ textDecoration: 'none' }}>How We Work</Link>
+          <Link href="/#work" className="hs-footer-link" style={{ textDecoration: 'none' }}>Our Work</Link>
           <Link href="/#about" className="hs-footer-link" style={{ textDecoration: 'none' }}>About</Link>
           <Link href="/#contact" className="hs-footer-link" style={{ textDecoration: 'none' }}>Contact</Link>
           <div style={{ marginTop: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -34,7 +34,7 @@ export default function Footer() {
           © 2026 Hisako Technologies Limited.<br/>Nairobi, Kenya.
         </div>
       </div>
-      <div className="hs-footer-strip">AI AGENTS · WORKFLOW AUTOMATION · LLM INTEGRATION · HISAKO ·</div>
+      <div className="hs-footer-strip">LEAD AUTOMATION · ONBOARDING · SALES PIPELINES · OPS · N8N · MAKE · HISAKO ·</div>
     </footer>
   );
 }

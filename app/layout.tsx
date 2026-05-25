@@ -29,23 +29,25 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://hisako.eu'),
 
   title: {
-    default: 'Hisako — AI Agency | Custom AI Agents & Automation Systems',
-    template: '%s | Hisako AI Agency',
+    default: 'Hisako — B2B AI Automation Agency | Autonomous Pipelines for Business Operations',
+    template: '%s | Hisako',
   },
 
-  description: 'Hisako is an AI agency that builds custom AI agents, LLM integrations, and workflow automation systems for startups and businesses globally. Strategy to deployment.',
+  description: 'Hisako builds autonomous AI pipelines that replace manual B2B operations. Lead automation, client onboarding, sales pipelines, and internal ops — built in n8n, Make, and custom code for startups globally.',
 
   keywords: [
-    'AI agency',
+    'B2B AI automation',
     'AI automation agency',
-    'AI agents development',
-    'LLM integration services',
-    'AI strategy consulting',
-    'custom AI agents',
+    'autonomous pipelines',
+    'n8n agency',
+    'Make automation agency',
+    'lead qualification automation',
+    'client onboarding automation',
+    'sales pipeline automation',
     'AI workflow automation',
-    'build AI agents',
-    'AI systems development',
-    'artificial intelligence agency',
+    'business operations automation',
+    'LLM integration',
+    'AI agents for business',
   ],
 
   authors: [{ name: 'Hisako Technologies Limited', url: 'https://hisako.eu' }],
@@ -69,8 +71,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://hisako.eu',
     siteName: 'Hisako AI Agency',
-    title: 'Hisako — AI Agency | Custom AI Agents & Automation Systems',
-    description: 'We design and deploy custom AI systems for businesses that want to operate at a different level. AI agents, LLM integration, workflow automation.',
+    title: 'Hisako — B2B AI Automation Agency | Autonomous Pipelines for Business Operations',
+    description: 'Hisako builds autonomous AI pipelines that replace manual B2B operations. Lead automation, client onboarding, sales pipelines, and internal ops — built in n8n, Make, and custom code for startups globally.',
     images: [
       {
         url: '/og-image.png',
@@ -83,8 +85,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Hisako — AI Agency | Custom AI Agents & Automation Systems',
-    description: 'Custom AI agents, LLM integration, and workflow automation for startups and businesses globally.',
+    title: 'Hisako — B2B AI Automation Agency | Autonomous Pipelines for Business Operations',
+    description: 'Hisako builds autonomous AI pipelines that replace manual B2B operations. Lead automation, client onboarding, sales pipelines, and internal ops — built in n8n, Make, and custom code for startups globally.',
     images: ['/og-image.png'],
     creator: '@hisakoeu',
   },

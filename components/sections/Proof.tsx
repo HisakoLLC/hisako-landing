@@ -16,9 +16,9 @@ export default function Proof() {
         viewport={{ once: true }}
         style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "46px", lineHeight: 0.9 }}
       >
-        <div style={{ color: "#F5F5F0" }}>WE BUILD.</div>
-        <div style={{ color: "#F5F5F0" }}>WE SHIP.</div>
-        <div style={{ color: "#3A3A3A" }}>WE OWN IT.</div>
+        <div style={{ color: "#F5F5F0" }}>PIPELINES</div>
+        <div style={{ color: "#F5F5F0" }}>WE&apos;VE</div>
+        <div style={{ color: "#3A3A3A" }}>SHIPPED.</div>
       </m.h2>
       
       <m.div 
@@ -36,12 +36,12 @@ export default function Proof() {
           viewport={{ once: true }}
           className="hs-proof-left"
         >
-          <div className="hs-overline">[ BUILT BY BUILDERS ]</div>
+          <div className="hs-overline">[ BUILT IN PRODUCTION ]</div>
           <p className="hs-proof-body">
-            We don&apos;t just consult on AI — we build and operate our own AI-powered products. VendoFlow, our retail operating system, is built on the same architecture we deploy for clients. When we recommend an approach, it&apos;s because we&apos;ve shipped it ourselves.
+            Every pipeline we sell, we&apos;ve built a version of ourselves. We don&apos;t propose automations from a slide deck — we prototype fast, show you working flows, and deploy into your real stack.
           </p>
           <p className="hs-proof-highlight">
-            That&apos;s the difference between an agency that talks about AI and one that lives in it.
+            That&apos;s the difference between an automation agency that quotes and one that ships.
           </p>
         </m.div>
         
@@ -52,30 +52,31 @@ export default function Proof() {
           className="hs-proof-right"
         >
           <div className="hs-cap-point">
-            <div className="hs-cap-tag">AI Agent Systems</div>
-            <h3 className="hs-cap-title">Conversational & Autonomous Agents</h3>
-            <div className="hs-cap-body">Intake agents, triage systems, and autonomous workflow agents — built, tested, and shipped.</div>
+            <div className="hs-cap-tag">LEAD GENERATION</div>
+            <h3 className="hs-cap-title">Outreach Pipelines Running in Production</h3>
+            <div className="hs-cap-body">Automated prospect research, qualification scoring, and personalised outreach sequences — live across multiple client stacks.</div>
           </div>
           <div className="hs-cap-point">
-            <div className="hs-cap-tag">LLM-Powered Products</div>
-            <h3 className="hs-cap-title">Multi-Tenant SaaS with AI Layers</h3>
-            <div className="hs-cap-body">Embedded AI across analytics, automation, and intelligence in production SaaS platforms.</div>
+            <div className="hs-cap-tag">OPS AUTOMATION</div>
+            <h3 className="hs-cap-title">Internal Workflows Across CRM, Email & Admin</h3>
+            <div className="hs-cap-body">Data sync, reporting automation, task assignment, and document processing pipelines built and maintained in n8n and Make.</div>
           </div>
           <div className="hs-cap-point">
-            <div className="hs-cap-tag">End-to-End Delivery</div>
-            <h3 className="hs-cap-title">Architecture to Production</h3>
-            <div className="hs-cap-body">We own the full stack: system design, engineering, AI integration, and deployment.</div>
+            <div className="hs-cap-tag">CUSTOM AI PIPELINES</div>
+            <h3 className="hs-cap-title">LLM-Powered Logic in Real Business Workflows</h3>
+            <div className="hs-cap-body">Claude, GPT-4o, and open-source models embedded inside operational pipelines — not as chatbots, but as decision-making layers.</div>
           </div>
         </m.div>
       </div>
       
       <div className="hs-provider-strip">
-        <span className="hs-provider-label">BUILT WITH</span>
+        <span className="hs-provider-label">WE BUILD WITH</span>
         <div className="hs-badges">
+          <div className="hs-badge">N8N</div>
+          <div className="hs-badge">MAKE</div>
           <div className="hs-badge">CLAUDE</div>
           <div className="hs-badge">GPT-4O</div>
-          <div className="hs-badge">GEMINI</div>
-          <div className="hs-badge">OPEN SOURCE</div>
+          <div className="hs-badge">PYTHON</div>
         </div>
       </div>
 
