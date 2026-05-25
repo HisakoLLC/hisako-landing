@@ -16,9 +16,9 @@ export default function Proof() {
         viewport={{ once: true }}
         style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "46px", lineHeight: 0.9 }}
       >
-        <div style={{ color: "#F5F5F0" }}>PIPELINES</div>
-        <div style={{ color: "#F5F5F0" }}>WE&apos;VE</div>
-        <div style={{ color: "#3A3A3A" }}>SHIPPED.</div>
+        <div style={{ color: "#0A0A0A" }}>PIPELINES</div>
+        <div style={{ color: "#0A0A0A" }}>WE&apos;VE</div>
+        <div style={{ color: "#CCC" }}>SHIPPED.</div>
       </m.h2>
       
       <m.div 
@@ -26,7 +26,7 @@ export default function Proof() {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        style={{ width: "100%", height: "1px", background: "#1E1E1E", marginTop: "32px", transformOrigin: "left" }}
+        style={{ width: "100%", height: "1px", background: "#E5E5E5", marginTop: "32px", transformOrigin: "left" }}
       />
       
       <div className="hs-proof-block">

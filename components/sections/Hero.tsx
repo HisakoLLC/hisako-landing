@@ -43,7 +43,7 @@ export default function Hero() {
       <style dangerouslySetInnerHTML={{ __html: `
         #hero.hs-hero-new {
           min-height: 100svh;
-          background: #0A0A0A;
+          background: #FFFFFF;
           padding-top: 184px;
           padding-bottom: 80px;
           display: flex;
@@ -68,7 +68,7 @@ export default function Hero() {
           font-family: var(--font-bebas-neue), sans-serif;
           font-size: clamp(3.8rem, 7.5vw, 7.2rem);
           line-height: 0.90;
-          color: #F5F5F0;
+          color: #0A0A0A;
           margin: 0;
         }
         .hs-headline-line {
@@ -86,7 +86,7 @@ export default function Hero() {
         .hs-hero-rule {
           width: 100%;
           height: 1px;
-          background: #1E1E1E;
+          background: #E5E5E5;
           margin-top: 48px;
           transform-origin: left;
         }
@@ -95,14 +95,14 @@ export default function Hero() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 1px;
-          background: #1E1E1E;
-          border: 1px solid #1E1E1E;
+          background: #E5E5E5;
+          border: 1px solid #E5E5E5;
         }
         .hs-screenshot-panel {
           aspect-ratio: 16 / 9;
           position: relative;
           overflow: hidden;
-          background: #0D0D0D;
+          background: #F5F5F5;
         }
         .hs-panel-fallback {
           position: absolute;
@@ -124,18 +124,18 @@ export default function Hero() {
           width: 2px;
           height: 2px;
           border-radius: 50%;
-          background: #1E1E1E;
+          background: #E5E5E5;
         }
         .hs-panel-label {
           font-family: var(--font-jetbrains-mono), monospace;
           font-size: 9px;
-          color: #2A2A2A;
+          color: #CCC;
           letter-spacing: 0.15em;
         }
         .hs-panel-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.05) 50%, rgba(10,10,10,0.25) 100%);
+          background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0.25) 100%);
           z-index: 2;
           pointer-events: none;
         }
@@ -145,7 +145,7 @@ export default function Hero() {
           left: 0;
           right: 0;
           height: 56px;
-          background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 100%);
+          background: linear-gradient(to top, rgba(255,255,255,0.9) 0%, transparent 100%);
           z-index: 3;
           pointer-events: none;
         }
@@ -168,8 +168,8 @@ export default function Hero() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #F5F5F0;
-          color: #0A0A0A;
+          background: #0A0A0A;
+          color: #FFFFFF;
           font-family: var(--font-dm-sans), sans-serif;
           font-weight: 500;
           font-size: 13px;
@@ -184,19 +184,19 @@ export default function Hero() {
         }
         .hs-primary-cta:hover {
           background: transparent;
-          color: #F5F5F0;
-          border: 1px solid #F5F5F0;
+          color: #0A0A0A;
+          border: 1px solid #0A0A0A;
         }
         .hs-secondary-note {
           font-family: var(--font-jetbrains-mono), monospace;
           font-size: 9px;
-          color: #333;
+          color: #999;
           letter-spacing: 0.1em;
         }
         .hs-ticker-new {
           width: 100%;
-          border-top: 1px solid #1E1E1E;
-          border-bottom: 1px solid #1E1E1E;
+          border-top: 1px solid #E5E5E5;
+          border-bottom: 1px solid #E5E5E5;
           padding: 12px 0;
           overflow: hidden;
           white-space: nowrap;
@@ -206,7 +206,7 @@ export default function Hero() {
           display: inline-block;
           font-family: var(--font-jetbrains-mono), monospace;
           font-size: 10px;
-          color: #3A3A3A;
+          color: #888;
           letter-spacing: 0.12em;
           text-transform: uppercase;
           animation: ticker-new 38s linear infinite;

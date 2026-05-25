@@ -9,9 +9,9 @@ export default function Footer() {
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <line x1="12" y1="2" x2="12" y2="22" stroke="#F5F5F0" strokeWidth="2.2"/>
-              <line x1="2" y1="7" x2="22" y2="17" stroke="#F5F5F0" strokeWidth="2.2"/>
-              <line x1="2" y1="17" x2="22" y2="7" stroke="#F5F5F0" strokeWidth="2.2"/>
+              <line x1="12" y1="2" x2="12" y2="22" stroke="#0A0A0A" strokeWidth="2.2"/>
+              <line x1="2" y1="7" x2="22" y2="17" stroke="#0A0A0A" strokeWidth="2.2"/>
+              <line x1="2" y1="17" x2="22" y2="7" stroke="#0A0A0A" strokeWidth="2.2"/>
             </svg>
             <span className="hs-footer-brand">HISAKO</span>
           </div>

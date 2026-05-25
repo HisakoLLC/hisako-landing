@@ -37,13 +37,13 @@ export default function Process() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "46px", lineHeight: 0.9, color: "#F5F5F0" }}
+        style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "46px", lineHeight: 0.9, color: "#0A0A0A" }}
       >
         MAP.<br/>
         DESIGN.<br/>
         BUILD.<br/>
         RUN.
-        <span style={{ fontFamily: "var(--font-jetbrains-mono), monospace", fontSize: "11px", color: "#444", verticalAlign: "middle", marginLeft: "12px" }}>
+        <span style={{ fontFamily: "var(--font-jetbrains-mono), monospace", fontSize: "11px", color: "#666", verticalAlign: "middle", marginLeft: "12px" }}>
           [ 2–4 weeks to live ]
         </span>
       </m.h2>

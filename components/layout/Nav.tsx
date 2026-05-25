@@ -26,9 +26,9 @@ export default function Nav() {
         <div className="hs-nav-left">
           <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none' }}>
             <svg className="hs-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="12" y1="2" x2="12" y2="22" stroke="#F5F5F0" strokeWidth="2.2"/>
-              <line x1="2" y1="7" x2="22" y2="17" stroke="#F5F5F0" strokeWidth="2.2"/>
-              <line x1="2" y1="17" x2="22" y2="7" stroke="#F5F5F0" strokeWidth="2.2"/>
+              <line x1="12" y1="2" x2="12" y2="22" stroke="#0A0A0A" strokeWidth="2.2"/>
+              <line x1="2" y1="7" x2="22" y2="17" stroke="#0A0A0A" strokeWidth="2.2"/>
+              <line x1="2" y1="17" x2="22" y2="7" stroke="#0A0A0A" strokeWidth="2.2"/>
             </svg>
             <span className="hs-brand">HISAKO</span>
             <div className="hs-divider"></div>
