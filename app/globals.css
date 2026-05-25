@@ -186,19 +186,3 @@ body {
   .hs-footer-grid { grid-template-columns: 1fr; text-align: left; gap: 40px; }
   .hs-footer-copy { text-align: left; }
 }
-/* Fix Calendly Close Button Visibility */
-.calendly-close-overlay {
-  color: #0A0A0A !important;
-}
-.calendly-popup-close {
-  color: #0A0A0A !important;
-  background: #E5E5E5 !important;
-  border-radius: 50%;
-  width: 32px !important;
-  height: 32px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  top: 20px !important;
-  right: 20px !important;
-}

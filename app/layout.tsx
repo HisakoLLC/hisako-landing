@@ -3,6 +3,7 @@ import { Bebas_Neue, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { LazyMotionProvider } from "@/components/providers/LazyMotionProvider";
 import StructuredData from "@/components/StructuredData";
+import Script from "next/script";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -126,6 +127,10 @@ export default function RootLayout({
         <LazyMotionProvider>
           {children}
         </LazyMotionProvider>
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

@@ -3,18 +3,11 @@
 import { m, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { PopupModal } from "react-calendly";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
-  const [mounted, setMounted] = useState(false);
   const [img1Error, setImg1Error] = useState(false);
   const [img2Error, setImg2Error] = useState(false);
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const fadeUp = (y: number, delay: number, duration: number) => ({
     initial: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y },
@@ -27,8 +20,6 @@ export default function Hero() {
     animate: { scaleX: 1 },
     transition: shouldReduceMotion ? { duration: 0 } : { duration, delay, ease: "easeOut" as const }
   });
-
-  const calendlyUrl = "https://calendly.com/hello-hisako/30min"; // TODO: replace with actual Calendly URL
 
   const renderDots = () => (
     <div className="hs-dot-grid">
@@ -328,14 +319,8 @@ export default function Hero() {
           {/* CTA Block */}
           <m.div className="hs-cta-block" {...fadeUp(16, 1.05, 0.5)}>
             <a 
-              href={calendlyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="hs-primary-cta"
-              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-                e.preventDefault();
-                setIsCalendlyOpen(true);
-              }}
             >
               Book a Free Strategy Call →
             </a>
@@ -352,15 +337,6 @@ export default function Hero() {
           </div>
         </m.div>
       </section>
-
-      {mounted && typeof document !== "undefined" && (
-        <PopupModal
-          url={calendlyUrl}
-          onModalClose={() => setIsCalendlyOpen(false)}
-          open={isCalendlyOpen}
-          rootElement={document.body}
-        />
-      )}
     </>
   );
 }

@@ -2,15 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { PopupModal } from "react-calendly";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
@@ -18,7 +14,15 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const calendlyUrl = "https://calendly.com/hello-hisako/30min"; // TODO: replace with actual Calendly URL
+  function openCalendly() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if (typeof window !== "undefined" && (window as any).Calendly) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ;(window as any).Calendly.initPopupWidget({
+        url: "https://calendly.com/hello-hisako/30min",
+      });
+    }
+  }
 
   return (
     <>
@@ -41,30 +45,27 @@ export default function Nav() {
           <Link href="/#work" className="hs-nav-link">Our Work</Link>
           <Link href="/#about" className="hs-nav-link">About</Link>
           <Link href="/#contact" className="hs-nav-link">Contact</Link>
-          <a 
-            href={calendlyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hs-cta-btn"
-            style={{ textDecoration: 'none' }}
-            onClick={(e) => {
-              e.preventDefault();
-              setIsCalendlyOpen(true);
+          <button
+            onClick={openCalendly}
+            style={{
+              background: '#E8400C',
+              color: '#FFFFFF',
+              border: 'none',
+              height: '36px',
+              padding: '0 20px',
+              fontFamily: 'var(--font-dm-sans), sans-serif',
+              fontWeight: 500,
+              fontSize: '11px',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              marginLeft: '32px',
             }}
           >
             Book a Call
-          </a>
+          </button>
         </div>
       </nav>
-
-      {mounted && typeof document !== "undefined" && (
-        <PopupModal
-          url={calendlyUrl}
-          onModalClose={() => setIsCalendlyOpen(false)}
-          open={isCalendlyOpen}
-          rootElement={document.body}
-        />
-      )}
     </>
   );
 }
