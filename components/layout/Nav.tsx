@@ -2,14 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { PopupModal } from "react-calendly";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
-  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -59,12 +57,12 @@ export default function Nav() {
         </div>
       </nav>
 
-      {mounted && (
+      {mounted && typeof document !== "undefined" && (
         <PopupModal
           url={calendlyUrl}
           onModalClose={() => setIsCalendlyOpen(false)}
           open={isCalendlyOpen}
-          rootElement={typeof document !== 'undefined' ? document.body : undefined as any}
+          rootElement={document.body}
         />
       )}
     </>

@@ -353,12 +353,12 @@ export default function Hero() {
         </m.div>
       </section>
 
-      {mounted && (
+      {mounted && typeof document !== "undefined" && (
         <PopupModal
           url={calendlyUrl}
           onModalClose={() => setIsCalendlyOpen(false)}
           open={isCalendlyOpen}
-          rootElement={typeof document !== 'undefined' ? document.body : undefined as any}
+          rootElement={document.body}
         />
       )}
     </>
