@@ -19,13 +19,13 @@ export default function Hero() {
   const fadeUp = (y: number, delay: number, duration: number) => ({
     initial: shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y },
     animate: { opacity: 1, y: 0 },
-    transition: shouldReduceMotion ? { duration: 0 } : { duration, delay, ease: "easeOut" }
+    transition: shouldReduceMotion ? { duration: 0 } : { duration, delay, ease: "easeOut" as const }
   });
 
   const scaleRight = (delay: number, duration: number) => ({
     initial: shouldReduceMotion ? { scaleX: 1 } : { scaleX: 0 },
     animate: { scaleX: 1 },
-    transition: shouldReduceMotion ? { duration: 0 } : { duration, delay, ease: "easeOut" }
+    transition: shouldReduceMotion ? { duration: 0 } : { duration, delay, ease: "easeOut" as const }
   });
 
   const calendlyUrl = "https://calendly.com/hello-hisako/30min"; // TODO: replace with actual Calendly URL
