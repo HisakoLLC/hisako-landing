@@ -14,14 +14,14 @@ export default function Terms() {
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
           
           <div className="hs-mono-label" style={{ marginBottom: "20px" }}>[ LEGAL ]</div>
-          <h1 style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(48px, 8vw, 80px)", lineHeight: 0.9, color: "#F5F5F0", marginBottom: "64px" }}>
+          <h1 style={{ fontFamily: "var(--font-bebas-neue), sans-serif", fontSize: "clamp(48px, 8vw, 80px)", lineHeight: 0.9, color: "#0A0A0A", marginBottom: "64px" }}>
             TERMS OF SERVICE
           </h1>
           
           <div style={{ display: "flex", flexDirection: "column", gap: "48px", fontFamily: "var(--font-dm-sans), sans-serif" }}>
             
             <section>
-              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#F5F5F0", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #1E1E1E", paddingBottom: "12px" }}>
+              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#0A0A0A", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #E5E5E5", paddingBottom: "12px" }}>
                 1. Acceptance of Terms
               </h2>
               <p className="hs-body">
@@ -30,7 +30,7 @@ export default function Terms() {
             </section>
 
             <section>
-              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#F5F5F0", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #1E1E1E", paddingBottom: "12px" }}>
+              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#0A0A0A", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #E5E5E5", paddingBottom: "12px" }}>
                 2. Intellectual Property
               </h2>
               <p className="hs-body">
@@ -39,7 +39,7 @@ export default function Terms() {
             </section>
 
             <section>
-              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#F5F5F0", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #1E1E1E", paddingBottom: "12px" }}>
+              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#0A0A0A", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #E5E5E5", paddingBottom: "12px" }}>
                 3. Use License
               </h2>
               <p className="hs-body">
@@ -55,7 +55,7 @@ export default function Terms() {
             </section>
 
             <section>
-              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#F5F5F0", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #1E1E1E", paddingBottom: "12px" }}>
+              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#0A0A0A", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #E5E5E5", paddingBottom: "12px" }}>
                 4. Disclaimer
               </h2>
               <p className="hs-body">
@@ -64,7 +64,7 @@ export default function Terms() {
             </section>
 
             <section>
-              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#F5F5F0", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #1E1E1E", paddingBottom: "12px" }}>
+              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#0A0A0A", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #E5E5E5", paddingBottom: "12px" }}>
                 5. Limitations
               </h2>
               <p className="hs-body">
@@ -73,7 +73,7 @@ export default function Terms() {
             </section>
 
             <section>
-              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#F5F5F0", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #1E1E1E", paddingBottom: "12px" }}>
+              <h2 style={{ fontSize: "14px", fontWeight: 500, color: "#0A0A0A", textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: "16px", borderBottom: "1px solid #E5E5E5", paddingBottom: "12px" }}>
                 6. Revisions and Errata
               </h2>
               <p className="hs-body">
