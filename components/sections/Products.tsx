@@ -26,16 +26,16 @@ const products = [
 
 export function Products() {
   return (
-    <section id="products" className="bg-[#0A0A0A] pt-4 pb-32 px-6">
+    <section id="products" className="pt-4 pb-32 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/30 mb-3">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-brand mb-3">
             What we build
           </p>
-          <h2 className="font-bold text-4xl text-white leading-tight">
+          <h2 className="font-bold text-4xl text-foreground leading-tight">
             Our products
           </h2>
-          <p className="text-base text-white/40 mt-3">
+          <p className="text-base text-muted-foreground mt-3">
             Each one independently branded, independently focused.
           </p>
         </div>
@@ -49,28 +49,28 @@ export function Products() {
                 href={product.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-white/[0.03] rounded-2xl border border-white/8 p-7 flex flex-col gap-5 hover:bg-white/[0.05] hover:border-white/12 transition-all duration-200 cursor-pointer"
+                className="group bg-card rounded-2xl border border-border p-7 flex flex-col gap-5 hover:bg-muted hover:border-border transition-all duration-200 cursor-pointer"
               >
                 <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-[#00311F]/40 border border-[#00311F]/30 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-[#00b87a]" strokeWidth={1.75} />
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-brand/15 to-brand/5 border border-brand/20 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-brand" strokeWidth={1.75} />
                   </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-white/25 border border-white/8 px-2 py-1 rounded-full">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground border border-border px-2 py-1 rounded-full">
                     {product.category}
                   </span>
                 </div>
                 
                 <div className="mt-2">
-                  <h3 className="font-semibold text-xl text-white">
+                  <h3 className="font-semibold text-xl text-foreground">
                     {product.name}
                   </h3>
-                  <p className="text-sm text-white/50 leading-relaxed mt-2 line-clamp-2">
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-2 line-clamp-2">
                     {product.description}
                   </p>
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-white/6">
-                  <span className="text-sm font-medium text-[#00b87a] group-hover:text-[#00d68a] transition-colors inline-flex items-center">
+                <div className="mt-auto pt-4 border-t border-border">
+                  <span className="text-sm font-medium text-brand group-hover:opacity-80 transition-opacity inline-flex items-center">
                     Visit {product.name} <span aria-hidden="true" className="ml-1">&rarr;</span>
                   </span>
                 </div>

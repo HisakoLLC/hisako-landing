@@ -25,7 +25,7 @@ export function Nav() {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled 
-          ? "bg-[#0A0A0A]/90 backdrop-blur-sm border-b border-white/6" 
+          ? "bg-background/90 backdrop-blur-sm border-b border-border" 
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -34,9 +34,9 @@ export function Nav() {
           <img 
             src="/logo.png" 
             alt="Hisako" 
-            className="w-8 h-8 rounded-lg border border-white/10 object-cover"
+            className="w-8 h-8 rounded-lg border border-border object-cover"
           />
-          <span className="ml-2.5 font-semibold text-sm text-white">
+          <span className="ml-2.5 font-semibold text-sm text-foreground">
             Hisako
           </span>
         </Link>
@@ -45,19 +45,19 @@ export function Nav() {
         <nav className="hidden md:flex items-center gap-8">
           <Link 
             href="/products" 
-            className="text-sm font-medium text-white/50 hover:text-white transition-colors"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             Products
           </Link>
           <Link 
             href="/about" 
-            className="text-sm font-medium text-white/50 hover:text-white transition-colors"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             About
           </Link>
           <Link 
             href="/contact" 
-            className="text-sm font-medium text-white/50 hover:text-white transition-colors"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             Contact
           </Link>
@@ -65,7 +65,7 @@ export function Nav() {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden p-2 -mr-2 text-white/60 hover:text-white transition-colors"
+          className="md:hidden p-2 -mr-2 text-muted-foreground hover:text-foreground transition-colors"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -75,25 +75,25 @@ export function Nav() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden absolute top-14 left-0 right-0 bg-[#0A0A0A] border-b border-white/6 py-4 px-6 flex flex-col">
+        <div className="md:hidden absolute top-14 left-0 right-0 bg-background border-b border-border py-4 px-6 flex flex-col">
           <Link 
             href="/products" 
             onClick={() => setIsOpen(false)}
-            className="text-sm font-medium text-white/60 hover:text-white py-3 border-b border-white/6 transition-colors"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground py-3 border-b border-border transition-colors"
           >
             Products
           </Link>
           <Link 
             href="/about" 
             onClick={() => setIsOpen(false)}
-            className="text-sm font-medium text-white/60 hover:text-white py-3 border-b border-white/6 transition-colors"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground py-3 border-b border-border transition-colors"
           >
             About
           </Link>
           <Link 
             href="/contact" 
             onClick={() => setIsOpen(false)}
-            className="text-sm font-medium text-white/60 hover:text-white py-3 transition-colors"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground py-3 transition-colors"
           >
             Contact
           </Link>
