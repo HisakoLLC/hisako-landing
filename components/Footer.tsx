@@ -33,7 +33,7 @@ export function Footer() {
             <a href="https://zetafo.com" target="_blank" rel="noopener noreferrer" className="block mb-2.5 text-sm text-white/50 hover:text-white transition-colors">
               Zetafo
             </a>
-            <a href="https://vendoflow.co" target="_blank" rel="noopener noreferrer" className="block mb-2.5 text-sm text-white/50 hover:text-white transition-colors">
+            <a href="https://vendoflow.com" target="_blank" rel="noopener noreferrer" className="block mb-2.5 text-sm text-white/50 hover:text-white transition-colors">
               VendoFlow
             </a>
             <a href="https://passr.eu" target="_blank" rel="noopener noreferrer" className="block mb-2.5 text-sm text-white/50 hover:text-white transition-colors">

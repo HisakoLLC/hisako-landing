@@ -13,7 +13,7 @@ const products = [
     icon: ShoppingBag,
     category: "Retail SaaS",
     description: "Point-of-sale and inventory management for fashion boutiques. M-Pesa native, built for the shop floor.",
-    link: "https://vendoflow.co",
+    link: "https://vendoflow.com",
   },
   {
     name: "Passr",
