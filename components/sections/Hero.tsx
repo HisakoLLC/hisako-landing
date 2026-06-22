@@ -1,45 +1,40 @@
-import { ChevronDown } from "lucide-react";
-
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center flex flex-col items-center">
-        {/* Eyebrow pill */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card text-xs font-medium text-muted-foreground mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-          Hisako Technologies
+    <section className="bg-background min-h-screen pt-32 pb-24 px-6 flex items-center">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        {/* LEFT COLUMN */}
+        <div>
+          <h1 className="font-bold text-[56px] md:text-[72px] leading-[1.02] text-foreground text-left">
+            Software built to last.
+          </h1>
+          
+          <p className="mt-6 max-w-sm text-lg text-muted-foreground leading-relaxed text-left">
+            Hisako Technologies builds independent software products across AI automation, retail, and compliance.
+          </p>
+          
+          <div className="mt-10 flex gap-4 items-center">
+            <a 
+              href="#products" 
+              className="px-5 py-2.5 bg-brand text-white text-sm font-medium rounded-lg hover:bg-[#004d2e] transition-colors"
+            >
+              See our products
+            </a>
+            <a 
+              href="#about" 
+              className="text-foreground text-sm font-medium underline underline-offset-4 hover:text-brand transition-colors"
+            >
+              About us
+            </a>
+          </div>
         </div>
 
-        {/* Headline */}
-        <h1 className="font-bold text-[52px] md:text-[72px] leading-[1.02] text-foreground">
-          Building software for the next decade.
-        </h1>
-
-        {/* Subheadline */}
-        <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
-          We are a product company. We build focused, independent software products across AI, retail, and compliance.
-        </p>
-
-        {/* CTA row */}
-        <div className="mt-10 flex gap-4 justify-center">
-          <a 
-            href="#products" 
-            className="px-5 py-2.5 bg-brand hover:opacity-90 text-white text-sm font-medium rounded-lg transition-colors"
-          >
-            See our products
-          </a>
-          <a 
-            href="#about" 
-            className="px-5 py-2.5 bg-card hover:bg-muted border border-border text-foreground text-sm font-medium rounded-lg transition-colors"
-          >
-            About us
-          </a>
+        {/* RIGHT COLUMN */}
+        <div className="w-full h-[520px] rounded-2xl overflow-hidden bg-border flex items-center justify-center">
+          {/* Replace with stock image: search "team working office minimal" on Unsplash — pick something architectural or environmental, no posed stock photos */}
+          <span className="text-sm text-muted-foreground">
+            [ Hero image ]
+          </span>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <ChevronDown className="w-4 h-4 text-muted-foreground animate-bounce" />
       </div>
     </section>
   );
