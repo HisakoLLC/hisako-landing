@@ -30,19 +30,19 @@ export function Nav() {
               Products
             </Link>
             <Link 
-              href="#about" 
+              href="/about" 
               className="text-sm font-medium text-[#6B6860] hover:text-[#0F0F0F] transition-colors"
             >
               About
             </Link>
           </nav>
           
-          <a 
-            href="mailto:hello@hisako.eu" 
+          <Link 
+            href="/contact" 
             className="ml-6 px-4 py-2 bg-[#0F0F0F] text-white text-sm font-medium rounded-lg hover:bg-[#2a2a2a] transition-colors"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -66,20 +66,20 @@ export function Nav() {
             Products
           </Link>
           <Link 
-            href="#about" 
+            href="/about" 
             onClick={() => setIsOpen(false)}
             className="text-sm font-medium text-[#6B6860] hover:text-[#0F0F0F] py-3 border-b border-[#E0DDD9] transition-colors"
           >
             About
           </Link>
           <div className="py-3">
-            <a 
-              href="mailto:hello@hisako.eu" 
+            <Link 
+              href="/contact" 
               onClick={() => setIsOpen(false)}
               className="inline-block px-4 py-2 bg-[#0F0F0F] text-white text-sm font-medium rounded-lg hover:bg-[#2a2a2a] transition-colors"
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       )}

@@ -43,12 +43,12 @@ export function Footer() {
               <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-white/30 mb-4">
                 Company
               </p>
-              <Link href="#about" className="text-sm text-white/50 hover:text-white transition-colors block mb-3">
+              <Link href="/about" className="text-sm text-white/50 hover:text-white transition-colors block mb-3">
                 About
               </Link>
-              <a href="mailto:hello@hisako.eu" className="text-sm text-white/50 hover:text-white transition-colors block mb-3">
+              <Link href="/contact" className="text-sm text-white/50 hover:text-white transition-colors block mb-3">
                 Contact
-              </a>
+              </Link>
             </div>
 
             {/* Col 3 */}

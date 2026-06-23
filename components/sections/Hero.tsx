@@ -22,7 +22,7 @@ export function Hero() {
               See our products
             </a>
             <a 
-              href="#about" 
+              href="/about" 
               className="text-foreground text-sm font-medium underline underline-offset-4 hover:text-brand transition-colors"
             >
               About us
