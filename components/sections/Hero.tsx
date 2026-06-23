@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Hero() {
   return (
     <section className="bg-background min-h-screen pt-32 pb-24 px-6 flex items-center">
@@ -29,11 +31,14 @@ export function Hero() {
         </div>
 
         {/* RIGHT COLUMN */}
-        <div className="w-full h-[520px] rounded-2xl overflow-hidden bg-border flex items-center justify-center">
-          {/* Replace with stock image: search "team working office minimal" on Unsplash — pick something architectural or environmental, no posed stock photos */}
-          <span className="text-sm text-muted-foreground">
-            [ Hero image ]
-          </span>
+        <div className="w-full h-[520px] rounded-2xl overflow-hidden bg-border relative">
+          <Image 
+            src="/Hero.png"
+            alt="Hero image"
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
       </div>
     </section>

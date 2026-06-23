@@ -1,13 +1,17 @@
+import Image from "next/image";
+
 export function About() {
   return (
     <section id="about" className="bg-[#F5F2EE] py-28 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
         {/* LEFT COLUMN — Image block */}
-        <div className="rounded-2xl overflow-hidden h-[480px] bg-[#E0DDD9] flex items-center justify-center">
-          {/* Replace with stock image: search "hands on laptop close up" or "code screen dark monitor" on Unsplash */}
-          <span className="text-sm text-[#6B6860]">
-            [ About image ]
-          </span>
+        <div className="rounded-2xl overflow-hidden h-[480px] bg-[#E0DDD9] relative">
+          <Image
+            src="/About.png"
+            alt="About us"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* RIGHT COLUMN — Text */}
