@@ -33,7 +33,7 @@ export function Hero() {
         {/* RIGHT COLUMN */}
         <div className="w-full h-[520px] rounded-2xl overflow-hidden bg-border relative">
           <Image 
-            src="/Hero.png"
+            src="/Product section.png"
             alt="Hero image"
             fill
             className="object-cover"

@@ -7,7 +7,7 @@ export function About() {
         {/* LEFT COLUMN — Image block */}
         <div className="rounded-2xl overflow-hidden h-[480px] bg-[#E0DDD9] relative">
           <Image
-            src="/About.png"
+            src="/CTA.png"
             alt="About us"
             fill
             className="object-cover"
