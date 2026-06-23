@@ -1,82 +1,81 @@
-import { Bot, ShoppingBag, Shield } from "lucide-react";
-
 const products = [
   {
+    number: "01",
     name: "Zetafo",
-    icon: Bot,
-    category: "AI Agency",
-    description: "AI automation and agent infrastructure for US B2B companies. We build and deploy custom AI workflows.",
+    category: "AI Automation",
+    description: "AI workflows and agent infrastructure for US B2B companies.",
     link: "https://zetafo.com",
   },
   {
+    number: "02",
     name: "VendoFlow",
-    icon: ShoppingBag,
     category: "Retail SaaS",
-    description: "Point-of-sale and inventory management for fashion boutiques. M-Pesa native, built for the shop floor.",
+    description: "Point-of-sale and inventory management for fashion boutiques.",
     link: "https://vendoflow.com",
   },
   {
+    number: "03",
     name: "Passr",
-    icon: Shield,
     category: "Compliance SaaS",
-    description: "Digital Product Passport infrastructure for EU outdoor brands. Built for ESPR, AGEC, and PFAS compliance.",
+    description: "Digital Product Passport infrastructure for EU outdoor brands.",
     link: "https://passr.eu",
   },
 ];
 
 export function Products() {
   return (
-    <section id="products" className="pt-4 pb-32 px-6">
+    <section id="products" className="bg-[#FFFFFF] py-28 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-brand mb-3">
-            What we build
-          </p>
-          <h2 className="font-bold text-4xl text-foreground leading-tight">
+        <div className="mb-16">
+          <p className="text-xs font-medium uppercase tracking-[0.12em] text-[#6B6860] mb-4">
             Our products
-          </h2>
-          <p className="text-base text-muted-foreground mt-3">
-            Each one independently branded, independently focused.
           </p>
+          <h2 className="font-bold text-[42px] leading-[1.05] text-[#0F0F0F]">
+            Three products. One team.
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {products.map((product) => {
-            const Icon = product.icon;
-            return (
-              <a
-                key={product.name}
-                href={product.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-card rounded-2xl border border-border p-7 flex flex-col gap-5 hover:bg-muted hover:border-border transition-all duration-200 cursor-pointer"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-brand/15 to-brand/5 border border-brand/20 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-brand" strokeWidth={1.75} />
-                  </div>
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground border border-border px-2 py-1 rounded-full">
-                    {product.category}
-                  </span>
-                </div>
-                
-                <div className="mt-2">
-                  <h3 className="font-semibold text-xl text-foreground">
-                    {product.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mt-2 line-clamp-2">
-                    {product.description}
-                  </p>
-                </div>
+        <div className="flex flex-col">
+          {products.map((product, index) => (
+            <div 
+              key={product.name} 
+              className={`grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 py-12 items-start ${
+                index !== products.length - 1 ? "border-b border-[#E0DDD9]" : ""
+              }`}
+            >
+              <div className="md:col-span-1">
+                <span className="text-sm font-medium text-[#6B6860] font-mono md:pt-1 block">
+                  {product.number}
+                </span>
+              </div>
+              
+              <div className="md:col-span-4">
+                <h3 className="font-bold text-2xl text-[#0F0F0F]">
+                  {product.name}
+                </h3>
+                <p className="text-xs font-medium uppercase tracking-[0.1em] text-[#6B6860] mt-1">
+                  {product.category}
+                </p>
+              </div>
 
-                <div className="mt-auto pt-4 border-t border-border">
-                  <span className="text-sm font-medium text-brand group-hover:opacity-80 transition-opacity inline-flex items-center">
-                    Visit {product.name} <span aria-hidden="true" className="ml-1">&rarr;</span>
-                  </span>
-                </div>
-              </a>
-            );
-          })}
+              <div className="md:col-span-4">
+                <p className="text-base text-[#6B6860] leading-relaxed">
+                  {product.description}
+                </p>
+              </div>
+
+              <div className="md:col-span-3 md:text-right mt-2 md:mt-0">
+                <a 
+                  href={product.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-[#0F0F0F] hover:text-[#00311F] transition-colors underline underline-offset-4"
+                >
+                  Visit &rarr;
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
