@@ -8,10 +8,7 @@ export function Footer() {
           {/* LEFT BLOCK */}
           <div>
             <div className="flex items-center">
-              <div className="w-7 h-7 bg-white/10 rounded-md flex items-center justify-center text-white font-bold text-base leading-none">
-                *
-              </div>
-              <span className="font-semibold text-sm text-white ml-2">
+              <span className="font-semibold text-sm text-white">
                 Hisako
               </span>
             </div>

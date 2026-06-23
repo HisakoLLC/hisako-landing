@@ -11,10 +11,7 @@ export function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#F5F2EE] border-b border-[#E0DDD9] h-[60px]">
       <div className="h-full max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* LEFT — Logo */}
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
-          <div className="w-7 h-7 bg-[#0F0F0F] rounded-md flex items-center justify-center text-white font-bold text-base leading-none">
-            *
-          </div>
+        <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
           <span className="font-semibold text-sm text-[#0F0F0F] tracking-tight">
             Hisako
           </span>
