@@ -7,25 +7,25 @@ export function Hero() {
         {/* LEFT COLUMN */}
         <div>
           <h1 className="font-bold text-[56px] md:text-[72px] leading-[1.02] text-foreground text-left">
-            Software built to last.
+            We build, fund, and engineer software.
           </h1>
           
-          <p className="mt-6 max-w-sm text-lg text-muted-foreground leading-relaxed text-left">
-            Hisako Technologies builds independent software products across AI automation, retail, and compliance.
+          <p className="mt-6 max-w-md text-lg text-muted-foreground leading-relaxed text-left">
+            Hisako is a venture studio co-founding software companies, a capital provider backing early-stage technical founders, and a software company building proprietary tools.
           </p>
           
-          <div className="mt-10 flex gap-4 items-center">
+          <div className="mt-10 flex gap-6 items-center">
             <a 
-              href="#products" 
-              className="px-5 py-2.5 bg-brand text-white text-sm font-medium rounded-lg hover:bg-[#004d2e] transition-colors"
+              href="/#studio" 
+              className="px-5 py-2.5 bg-brand text-white text-sm font-medium rounded-lg hover:bg-[#002918] transition-colors"
             >
-              See our products
+              Explore our studio
             </a>
             <a 
-              href="/about" 
+              href="/contact" 
               className="text-foreground text-sm font-medium underline underline-offset-4 hover:text-brand transition-colors"
             >
-              About us
+              Pitch for capital
             </a>
           </div>
         </div>

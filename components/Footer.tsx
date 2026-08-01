@@ -13,16 +13,16 @@ export function Footer() {
               </span>
             </div>
             <span className="mt-3 block text-xs text-white/40 max-w-[180px] leading-relaxed">
-              Software built to last.
+              Studio. Capital. Software.
             </span>
           </div>
 
-          {/* THREE LINK COLUMNS */}
-          <div className="flex flex-col sm:flex-row gap-10 md:gap-16">
-            {/* Col 1 */}
+          {/* FOUR LINK COLUMNS */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-10 md:gap-16">
+            {/* Col 1: Studio */}
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-white/30 mb-4">
-                Products
+                Studio
               </p>
               <a href="https://zetafo.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors block mb-3">
                 Zetafo
@@ -35,7 +35,17 @@ export function Footer() {
               </a>
             </div>
 
-            {/* Col 2 */}
+            {/* Col 2: Capital */}
+            <div>
+              <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-white/30 mb-4">
+                Capital
+              </p>
+              <Link href="/contact" className="text-sm text-white/50 hover:text-white transition-colors block mb-3">
+                Pitch Us
+              </Link>
+            </div>
+
+            {/* Col 3: Company */}
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-white/30 mb-4">
                 Company
@@ -48,7 +58,7 @@ export function Footer() {
               </Link>
             </div>
 
-            {/* Col 3 */}
+            {/* Col 4: Legal */}
             <div>
               <p className="text-[10px] font-medium uppercase tracking-[0.12em] text-white/30 mb-4">
                 Legal
@@ -65,7 +75,7 @@ export function Footer() {
 
         {/* BOTTOM BAR */}
         <div className="mt-16 pt-8 border-t border-white/8 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/25">
-          <p>© 2026 Hisako Technologies. All rights reserved.</p>
+          <p>© 2026 Hisako. All rights reserved.</p>
           <p>hisako.eu</p>
         </div>
       </div>

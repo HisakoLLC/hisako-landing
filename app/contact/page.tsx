@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Get in touch with Hisako Technologies.",
+  description: "Get in touch with Hisako for partnerships, venture studio projects, or investment opportunities.",
 };
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
 
         {/* Paragraph */}
         <p className="mt-5 text-base text-muted-foreground leading-relaxed">
-          For product enquiries, partnerships, or anything else — reach us directly.
+          For venture studio partnerships, capital pitches, product enquiries, or general outreach — reach us directly.
         </p>
 
         {/* Email link */}

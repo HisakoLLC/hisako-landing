@@ -24,14 +24,14 @@ const products = [
 
 export function Products() {
   return (
-    <section id="products" className="bg-[#FFFFFF] py-28 px-6">
+    <section id="studio" className="bg-[#FFFFFF] py-28 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-[#6B6860] mb-4">
-            Our products
+            Venture Studio
           </p>
           <h2 className="font-bold text-[42px] leading-[1.05] text-[#0F0F0F]">
-            Three products. One team.
+            Companies we co-found and build.
           </h2>
         </div>
 

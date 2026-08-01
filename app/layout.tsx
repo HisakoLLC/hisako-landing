@@ -11,23 +11,23 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Hisako Technologies',
-    template: '%s | Hisako Technologies',
+    default: 'Hisako | Venture Studio, Capital & Software',
+    template: '%s | Hisako',
   },
-  description: 'We build software products that solve hard problems. Three products, one team, one mission.',
+  description: 'Hisako is a venture studio, early-stage capital provider, and independent software company.',
   metadataBase: new URL('https://hisako.eu'),
   openGraph: {
-    title: 'Hisako Technologies',
-    description: 'We build software products that solve hard problems.',
+    title: 'Hisako | Venture Studio, Capital & Software',
+    description: 'Hisako is a venture studio, early-stage capital provider, and independent software company.',
     url: 'https://hisako.eu',
-    siteName: 'Hisako Technologies',
+    siteName: 'Hisako',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hisako Technologies',
-    description: 'We build software products that solve hard problems.',
+    title: 'Hisako | Venture Studio, Capital & Software',
+    description: 'Hisako is a venture studio, early-stage capital provider, and independent software company.',
   },
   robots: {
     index: true,

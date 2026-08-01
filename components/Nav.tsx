@@ -21,10 +21,22 @@ export function Nav() {
         <div className="hidden md:flex items-center">
           <nav className="flex items-center gap-8">
             <Link 
-              href="#products" 
+              href="/#studio" 
               className="text-sm font-medium text-[#6B6860] hover:text-[#0F0F0F] transition-colors"
             >
-              Products
+              Studio
+            </Link>
+            <Link 
+              href="/#capital" 
+              className="text-sm font-medium text-[#6B6860] hover:text-[#0F0F0F] transition-colors"
+            >
+              Capital
+            </Link>
+            <Link 
+              href="/#software" 
+              className="text-sm font-medium text-[#6B6860] hover:text-[#0F0F0F] transition-colors"
+            >
+              Software
             </Link>
             <Link 
               href="/about" 
@@ -56,11 +68,25 @@ export function Nav() {
       {isOpen && (
         <div className="md:hidden absolute top-[60px] left-0 right-0 bg-[#F5F2EE] border-b border-[#E0DDD9] py-4 px-6 flex flex-col gap-2">
           <Link 
-            href="#products" 
+            href="/#studio" 
             onClick={() => setIsOpen(false)}
             className="text-sm font-medium text-[#6B6860] hover:text-[#0F0F0F] py-3 border-b border-[#E0DDD9] transition-colors"
           >
-            Products
+            Studio
+          </Link>
+          <Link 
+            href="/#capital" 
+            onClick={() => setIsOpen(false)}
+            className="text-sm font-medium text-[#6B6860] hover:text-[#0F0F0F] py-3 border-b border-[#E0DDD9] transition-colors"
+          >
+            Capital
+          </Link>
+          <Link 
+            href="/#software" 
+            onClick={() => setIsOpen(false)}
+            className="text-sm font-medium text-[#6B6860] hover:text-[#0F0F0F] py-3 border-b border-[#E0DDD9] transition-colors"
+          >
+            Software
           </Link>
           <Link 
             href="/about" 
