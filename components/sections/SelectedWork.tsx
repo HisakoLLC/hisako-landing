@@ -1,8 +1,8 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-label"
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
-import { ImagePlaceholder } from "@/components/ui/image-placeholder"
 
 const projects = [
   {
@@ -12,6 +12,11 @@ const projects = [
     description:
       "An AI-powered operating system for modern agencies, combining CRM, projects, proposals, invoicing, onboarding, reporting and automation.",
     href: "/work/ai-agency-operations",
+    image: {
+      src: "/images/ai-agency-abstract.png",
+      alt: "AI Agency Operations Platform visual - Abstract Color Harmony",
+      contain: false,
+    },
   },
   {
     index: "02",
@@ -20,6 +25,11 @@ const projects = [
     description:
       "Compliance infrastructure for physical products entering regulated markets, including product information and digital product passport technology.",
     href: "/work/passr",
+    image: {
+      src: "/images/passr-wordmark.png",
+      alt: "Passr digital product passport visual - Passr wordmark logo",
+      contain: true,
+    },
   },
   {
     index: "03",
@@ -28,6 +38,11 @@ const projects = [
     description:
       "Digital operations software for fashion businesses, covering inventory, sales and business management.",
     href: "/work/vendoflow",
+    image: {
+      src: "/images/vendoflow.png",
+      alt: "VendoFlow retail commerce operations software visual",
+      contain: true,
+    },
   },
 ]
 
@@ -69,13 +84,18 @@ export function SelectedWork() {
               className="flex flex-col justify-between p-5 sm:p-6 bg-background hover:border-primary/40 transition-colors shadow-2xs"
             >
               <div className="space-y-4 sm:space-y-5">
-                {/* Image Area Placeholder */}
-                <div className="overflow-hidden rounded-md border border-border">
-                  <ImagePlaceholder
-                    aspectRatio="16/9"
-                    label={`${project.title} Visual`}
-                    dimensions="Project Visual Container"
-                    variant="light"
+                {/* Project Visual Image */}
+                <div className="relative aspect-video w-full overflow-hidden rounded-md border border-border bg-slate-50 dark:bg-card/50 flex items-center justify-center">
+                  <Image
+                    src={project.image.src}
+                    alt={project.image.alt}
+                    fill
+                    className={
+                      project.image.contain
+                        ? "object-contain p-6 sm:p-8"
+                        : "object-cover"
+                    }
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
 

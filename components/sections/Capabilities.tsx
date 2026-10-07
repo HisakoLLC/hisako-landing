@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Code2, Cpu, RefreshCw, Cloud } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-label"
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
@@ -64,9 +65,23 @@ export function Capabilities() {
               <Card
                 key={card.title}
                 variant="default"
-                className="flex flex-col justify-between p-5 sm:p-7 hover:border-primary/40 hover:shadow-2xs transition-all"
+                className="group relative flex flex-col justify-between p-5 sm:p-7 hover:border-primary/40 hover:shadow-2xs transition-all overflow-hidden"
               >
-                <div className="space-y-4 sm:space-y-5">
+                {/* Background Watermark Half Icon with decreased opacity */}
+                <div
+                  className="absolute -right-4 -bottom-6 w-36 sm:w-44 h-48 sm:h-56 pointer-events-none select-none opacity-[0.06] group-hover:opacity-[0.11] transition-opacity duration-300 z-0"
+                  aria-hidden="true"
+                >
+                  <Image
+                    src="/images/icon-half-trimmed.png"
+                    alt=""
+                    width={180}
+                    height={440}
+                    className="w-full h-full object-contain object-right-bottom"
+                  />
+                </div>
+
+                <div className="relative z-10 space-y-4 sm:space-y-5">
                   <div className="flex items-center justify-between">
                     <IconBox variant="navy" size="md">
                       <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
@@ -86,7 +101,7 @@ export function Capabilities() {
                   </CardHeader>
                 </div>
 
-                <CardFooter className="p-0 pt-5 sm:pt-6 mt-4 sm:mt-6 border-t border-border/60">
+                <CardFooter className="relative z-10 p-0 pt-5 sm:pt-6 mt-4 sm:mt-6 border-t border-border/60">
                   <Link
                     href={card.href}
                     className="text-xs font-semibold text-primary inline-flex items-center gap-1.5 py-1 hover:underline min-h-[36px]"

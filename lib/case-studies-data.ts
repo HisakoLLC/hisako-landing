@@ -11,6 +11,11 @@ export interface CaseStudy {
   category: string
   projectType: ProjectType
   oneLiner: string
+  image: {
+    src: string
+    alt: string
+    contain?: boolean
+  }
   overview: string
   problem: string
   approach: string
@@ -37,6 +42,11 @@ export const caseStudies: CaseStudy[] = [
     projectType: "AI",
     oneLiner:
       "A centralized operating system combining CRM, proposal generation, invoicing, and autonomous workflow coordination for modern agencies.",
+    image: {
+      src: "/images/ai-agency-abstract.png",
+      alt: "AI Agency Operations Platform visual - Abstract Color Harmony",
+      contain: false,
+    },
     overview:
       "Modern professional service agencies often operate across fragmented stacks — juggling separate tools for prospecting, contracts, time tracking, client communication, and accounting. Hisako engineered an integrated operating platform designed to consolidate agency operations and automate repetitive administrative cycles.",
     problem:
@@ -97,6 +107,11 @@ export const caseStudies: CaseStudy[] = [
     projectType: "Software",
     oneLiner:
       "Digital product passport and compliance infrastructure for brands navigating regulatory requirements across international markets.",
+    image: {
+      src: "/images/passr-wordmark.png",
+      alt: "Passr Digital Product Passport - Passr wordmark logo visual",
+      contain: true,
+    },
     overview:
       "As regulatory frameworks like the EU Ecodesign and Digital Product Passport directives take effect, physical product brands require verified data infrastructure to track materials, supply chain provenance, lifecycle durability, and recyclability.",
     problem:
@@ -155,6 +170,11 @@ export const caseStudies: CaseStudy[] = [
     projectType: "Digital transformation",
     oneLiner:
       "Digital retail operations software engineered for multi-location inventory synchronization, point-of-sale management, and commerce analytics.",
+    image: {
+      src: "/images/vendoflow.png",
+      alt: "VendoFlow retail commerce operations software visual",
+      contain: true,
+    },
     overview:
       "Modern retail and apparel brands operating both physical storefronts and online channels face chronic inventory reconciliation errors, stockouts, and manual bookkeeping inefficiencies.",
     problem:

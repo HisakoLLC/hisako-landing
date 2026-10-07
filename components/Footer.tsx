@@ -1,12 +1,32 @@
 import Link from "next/link"
 import Image from "next/image"
+import { TangleFooter } from "@/components/ui/tangle-footer"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
     <footer className="bg-navy text-white border-t border-navy-border relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-12 sm:pt-16 pb-10 sm:pb-12">
+      {/* Tangle Kinetic Engineering Marquee Ribbon */}
+      <div className="w-full border-b border-white/10 overflow-hidden bg-navy/60 pt-6 sm:pt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <TangleFooter
+            height={190}
+            ribbon="#13233F"
+            textColor="#94A3B8"
+            background="transparent"
+            lines={[
+              "Custom software engineering built for operational scale and reliability.",
+              "AI agents & process automation reducing manual business friction.",
+              "Modernizing core enterprise systems and workflows without downtime.",
+              "High-performance cloud architectures, database systems, and integrations.",
+              "Hisako · Technology That Moves Organizations Forward.",
+            ]}
+          />
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-10 sm:pt-14 pb-10 sm:pb-12">
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 pb-10 sm:pb-14 border-b border-white/10">
           {/* Brand & Contact Area (Left) */}
@@ -14,7 +34,7 @@ export function Footer() {
             <div className="space-y-2.5">
               <Link href="/" className="inline-flex items-center gap-2.5 py-1 group">
                 <Image
-                  src="/logo.png"
+                  src="/icon.jpg"
                   alt="Hisako Logo"
                   width={28}
                   height={28}
@@ -35,10 +55,10 @@ export function Footer() {
                 Direct Inquiries
               </span>
               <a
-                href="mailto:contact@hisako.eu"
+                href="mailto:hello@hisako.eu"
                 className="font-sans text-sm font-medium text-white hover:text-primary transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-primary break-all py-1 inline-block"
               >
-                contact@hisako.eu
+                hello@hisako.eu
               </a>
             </div>
 

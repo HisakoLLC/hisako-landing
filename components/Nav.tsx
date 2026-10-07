@@ -55,7 +55,7 @@ export function Nav() {
           onClick={() => setIsOpen(false)}
         >
           <Image
-            src="/logo.png"
+            src="/icon.jpg"
             alt="Hisako"
             width={28}
             height={28}

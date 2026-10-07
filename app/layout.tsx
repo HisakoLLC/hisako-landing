@@ -43,11 +43,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.png" },
-      { url: "/logo.png" },
+      { url: "/icon.jpg" },
     ],
-    shortcut: "/icon.png",
-    apple: "/logo.png",
+    shortcut: "/icon.jpg",
+    apple: "/icon.jpg",
   },
 };
 
@@ -59,10 +58,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased scroll-smooth">
       <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,900&display=swap"
+          rel="stylesheet"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <OrganizationJsonLd />

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   // Configurable contact email rather than hardcoded value
-  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "contact@hisako.eu"
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@hisako.eu"
 
   return (
     <div className="bg-background min-h-screen py-10 sm:py-16 md:py-24">

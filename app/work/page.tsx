@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-label"
 import { Card, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
@@ -69,13 +70,18 @@ export default function WorkPage() {
                 className="flex flex-col justify-between p-5 sm:p-7 bg-background hover:border-primary/40 transition-colors shadow-2xs"
               >
                 <div className="space-y-5 sm:space-y-6">
-                  {/* Image Container Placeholder */}
-                  <div className="overflow-hidden rounded-md border border-border">
-                    <ImagePlaceholder
-                      aspectRatio="16/9"
-                      label={`${project.name} Visual`}
-                      dimensions="Project Visual Container"
-                      variant="light"
+                  {/* Project Visual Image */}
+                  <div className="relative aspect-video w-full overflow-hidden rounded-md border border-border bg-slate-50 dark:bg-card/50 flex items-center justify-center">
+                    <Image
+                      src={project.image.src}
+                      alt={project.image.alt}
+                      fill
+                      className={
+                        project.image.contain
+                          ? "object-contain p-6 sm:p-8"
+                          : "object-cover"
+                      }
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
 
@@ -158,10 +164,10 @@ export default function WorkPage() {
               </Button>
             </Link>
             <a
-              href="mailto:contact@hisako.eu"
+              href="mailto:hello@hisako.eu"
               className="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-md border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-colors"
             >
-              contact@hisako.eu
+              hello@hisako.eu
             </a>
           </div>
         </div>

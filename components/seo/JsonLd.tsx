@@ -9,7 +9,7 @@ export function OrganizationJsonLd({ url = "https://hisako.eu" }: OrganizationJs
     name: "Hisako",
     legalName: "Hisako",
     url: url,
-    logo: `${url}/logo.png`,
+    logo: `${url}/icon.jpg`,
     slogan: "Technology that moves businesses forward.",
     description:
       "Hisako is a technology company providing software, AI, automation, digital transformation and infrastructure solutions for organizations.",
@@ -21,7 +21,7 @@ export function OrganizationJsonLd({ url = "https://hisako.eu" }: OrganizationJs
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "contact@hisako.eu",
+      email: "hello@hisako.eu",
       availableLanguage: ["English"],
     },
     sameAs: [],

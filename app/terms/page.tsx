@@ -101,10 +101,10 @@ export default function TermsPage() {
             <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
               Questions regarding these terms may be directed to{" "}
               <a 
-                href="mailto:contact@hisako.eu" 
+                href="mailto:hello@hisako.eu" 
                 className="text-primary hover:underline font-mono text-sm underline-offset-4"
               >
-                contact@hisako.eu
+                hello@hisako.eu
               </a>.
             </p>
           </section>

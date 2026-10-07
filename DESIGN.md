@@ -37,12 +37,12 @@
 
 ## 3. Typography Hierarchy
 
-- **Headings & Display**: `Space Grotesk` (`--font-heading`)
+- **Headings & Display**: `Satoshi` (`--font-heading`)
   - H1: `text-3xl sm:text-4xl md:text-5xl lg:text-6xl`, tracking `tight`, leading `[1.08]`
   - H2: `text-2xl sm:text-3xl md:text-4xl`, tracking `tight`, leading `tight`
   - H3: `text-lg sm:text-xl font-semibold`
   - Applied automatically via `@layer base` for `h1`-`h6`.
-- **Body & Paragraphs**: `Inter` (`--font-sans`)
+- **Body & Paragraphs**: `Satoshi` / `Inter` (`--font-sans`)
   - Body Large: `text-base sm:text-lg`, leading `relaxed`
   - Body Normal: `text-sm sm:text-base`, leading `relaxed`
   - Body Small: `text-xs sm:text-sm`, leading `relaxed`

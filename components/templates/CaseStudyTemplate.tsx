@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-label"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
@@ -61,13 +62,20 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
       <section className="py-6 sm:py-8 md:py-12 bg-card/30 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="rounded-lg border border-border bg-card p-2 sm:p-2.5 shadow-xs">
-            <ImagePlaceholder
-              aspectRatio="16/9"
-              label={`${caseStudy.name} Primary Architecture Visual`}
-              dimensions="Hero Case Study Visual (Image to be provided)"
-              variant="light"
-              className="rounded-md"
-            />
+            <div className="relative aspect-video w-full overflow-hidden rounded-md border border-border/80 bg-slate-50 dark:bg-card flex items-center justify-center">
+              <Image
+                src={caseStudy.image.src}
+                alt={caseStudy.image.alt}
+                fill
+                priority
+                className={
+                  caseStudy.image.contain
+                    ? "object-contain p-8 sm:p-14"
+                    : "object-cover"
+                }
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -335,10 +343,10 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="mailto:contact@hisako.eu"
+              href="mailto:hello@hisako.eu"
               className="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-md border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-colors"
             >
-              contact@hisako.eu
+              hello@hisako.eu
             </a>
           </div>
         </div>
