@@ -1,12 +1,13 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next"
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/', '/_next/'],
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/api/", "/_next/"],
     },
-    sitemap: 'https://hisako.eu/sitemap.xml',
+    sitemap: "https://hisako.eu/sitemap.xml",
+    host: "https://hisako.eu",
   }
 }

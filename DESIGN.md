@@ -1,49 +1,85 @@
-DESIGN SYSTEM — hisako.eu
+# HISAKO DESIGN SYSTEM & BRAND FOUNDATION
 
-Philosophy: Clean, restrained, confident. Closer to Linear or Vercel than a 
-corporate brochure. No gradients except the scoped icon-container treatment. 
-No dark mode. No decorative elements that don't serve a purpose.
+## 1. Brand Positioning & Identity
+- **Company**: Hisako — Technology Company (not a SaaS-only company, not an AI agency).
+- **Core Positioning**: *"Technology that moves businesses forward."*
+- **Supporting Message**: *"We help organizations build, automate, integrate and modernize their technology."*
+- **Audience**: Businesses, institutions, NGOs, and enterprise organizations.
+- **Tone & Mood**: Serious, established, architectural, engineering-led, systems-oriented. High institutional trust.
 
-One-line test: "Would this look at home next to Vercel's homepage?" If yes, proceed.
+### Brand Distinction (Strict Rule)
+- **Zero overlap with Passr**:
+  - NO orange accents
+  - NO mountain or outdoor imagery
+  - NO black/cream aesthetic
+  - NO product-startup styling or VC portfolio hype
+  - Strictly maintain Hisako’s independent corporate technology identity.
 
-Colors:
-- Page background: zinc-50 (#FAFAFA)
-- Card/panel background: white (#FFFFFF)
-- Primary text: zinc-900 (#18181B)
-- Secondary/muted text: zinc-500 (#71717A)
-- Borders: zinc-200 (#E4E4E7)
-- Brand accent (the ONLY accent): #00311F
-- Accent hover: #00311F/90 or #002918 (solid)
+---
 
-Typography:
-- Font: Inter only
-- H1: Bold 700, text-[40px] leading-[1.05] — marketing headlines
-- H2: Semibold 600, text-2xl to text-3xl — section titles
-- H3: Semibold 600, text-lg — card/item titles
-- Body: Regular 400, text-sm to text-base
-- Eyebrow labels: Semibold 600, text-[11px], uppercase, tracking-[0.1em] — ONLY context for all-caps
-- Buttons: Medium 500, sentence case, NOT all-caps
+## 2. Color Palette & Tokens
 
-Radius: 0.625rem globally (10px). Large cards/modals: ~14px.
+| Token | Hex / Value | Purpose |
+|---|---|---|
+| `--navy` | `#0A1128` | Primary corporate accent, headers, high-trust containers |
+| `--navy-deep` | `#060B1A` | Deep contrast surfaces |
+| `--navy-border` | `#1E2F5C` | Borders within navy surfaces |
+| `--primary` (`--royal-blue`) | `#1E9DF1` | Interactive elements, focal points, primary CTA |
+| `--background` | `#FFFFFF` | Core canvas background |
+| `--card` (`--cool-gray`) | `#F7F8F8` | Component panels, card surfaces, quiet contrast |
+| `--foreground` (`--graphite`) | `#0F1419` | High-contrast body & heading text |
+| `--muted-foreground` | `#536471` | Secondary descriptions, technical annotations |
+| `--border` | `#E1EAEF` | Crisp, architectural 1px line separators |
+| `--accent` | `#E3ECF6` | Subtle pill badges, tag backgrounds |
+| `--radius` | `0.625rem` (10px) | Restrained rounded corners (no excessive bubbles) |
 
-Cards: bg-white rounded-xl border border-zinc-200 p-5 — no shadows.
+---
 
-Icon containers:
-<div className="w-9 h-9 rounded-lg bg-gradient-to-b from-[#00311F]/15 to-[#00311F]/5 
-border border-[#00311F]/20 flex items-center justify-center">
-  <Icon className="w-4 h-4 text-[#00311F]" strokeWidth={1.75} />
-</div>
+## 3. Typography Hierarchy
 
-Primary button: bg-[#00311F] hover:bg-[#002918] text-white text-sm font-medium 
-px-4 py-2 rounded-lg transition-colors
+- **Headings & Display**: `Space Grotesk` (`--font-heading`)
+  - H1: `text-3xl sm:text-4xl md:text-5xl lg:text-6xl`, tracking `tight`, leading `[1.08]`
+  - H2: `text-2xl sm:text-3xl md:text-4xl`, tracking `tight`, leading `tight`
+  - H3: `text-lg sm:text-xl font-semibold`
+  - Applied automatically via `@layer base` for `h1`-`h6`.
+- **Body & Paragraphs**: `Inter` (`--font-sans`)
+  - Body Large: `text-base sm:text-lg`, leading `relaxed`
+  - Body Normal: `text-sm sm:text-base`, leading `relaxed`
+  - Body Small: `text-xs sm:text-sm`, leading `relaxed`
+- **Technical Annotations & Labels**: `Menlo` / Monospace (`--font-mono`)
+  - Eyebrows, coordinate indicators (e.g. `SYS.01`), timestamps, metric labels: `text-[10px] sm:text-[11px]`, tracking `wider`, uppercase.
 
-Logo: White asterisk (*) mark on black square, paired with wordmark "Hisako" in 
-Inter Bold. On light backgrounds, invert to black square or use mark alone.
+---
 
-Do NOT:
-- Use all-caps for headlines or body
-- Use any color except #00311F as an accent
-- Add drop shadows to cards
-- Add gradients except the icon-container treatment
-- Use any font except Inter
-- Fabricate stats or traction numbers — omit sections if real numbers don't exist
+## 4. Reusable UI Components
+
+### 4.1 Buttons (`components/ui/button.tsx`)
+Restrained rounded corners (`rounded-md`), crisp 1px borders, clear hover transitions:
+- `navy`: `bg-navy text-white hover:bg-navy-muted border border-navy-border active:translate-y-px`
+- `default`: `bg-primary text-white hover:bg-royal-blue-hover border border-primary/20 active:translate-y-px`
+- `outline`: `border border-border bg-background hover:bg-card text-foreground active:translate-y-px`
+- Arrow Micro-Translation: hover state shifts trailing arrow `&rarr;` by `0.5px`–`1px` to indicate actionable direction.
+
+### 4.2 Cards (`components/ui/card.tsx`)
+Architectural panels with subtle borders:
+- `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`
+- Subtle engineered hover transitions: `duration-200 ease-out hover:border-primary/50`.
+
+### 4.3 Image Placeholders (`components/ui/image-placeholder.tsx`)
+- Architectural framing with blueprint corner brackets (`┌ ┐ └ ┘`).
+- Gentle opacity fade-in entrance with subtle hover alignment.
+
+---
+
+## 5. Restrained Interaction & Accessibility System
+
+### Interaction Principles
+- **Subtle & Engineered**: Zero bouncing, spinning, giant cinematic zooms, or glowing AI auras.
+- **Scroll Reveals**: Handled via `Reveal` component (`translate-y-2.5` to `translate-y-0` with `500ms ease-out`).
+- **Process Line Animation**: Subtle horizontal line draw on desktop (`animate-line-h`) and vertical line draw on mobile (`animate-line-v`).
+- **Navigation State**:
+  - Scroll elevation: Adds subtle backdrop blur and boundary shadow when scrolled past 10px.
+  - Active route highlighting: Automatically marks current route with active pill badge.
+- **Accessibility & Focus**:
+  - High-visibility focus ring: `focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none`.
+  - Full `prefers-reduced-motion` compliance: All animations collapse to 0.01ms duration and instant reveals when user has reduced motion enabled.

@@ -1,40 +1,53 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
+import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: {
-    default: 'Hisako | Venture Studio, Capital & Software',
-    template: '%s | Hisako',
+    default: "Hisako — Technology That Moves Businesses Forward",
+    template: "%s | Hisako",
   },
-  description: 'Hisako is a venture studio, early-stage capital provider, and independent software company.',
-  metadataBase: new URL('https://hisako.eu'),
+  description:
+    "Hisako is a technology company providing software, AI, automation, digital transformation, and infrastructure solutions for organizations.",
+  metadataBase: new URL("https://hisako.eu"),
+  alternates: {
+    canonical: "https://hisako.eu",
+  },
   openGraph: {
-    title: 'Hisako | Venture Studio, Capital & Software',
-    description: 'Hisako is a venture studio, early-stage capital provider, and independent software company.',
-    url: 'https://hisako.eu',
-    siteName: 'Hisako',
-    locale: 'en_US',
-    type: 'website',
+    title: "Hisako — Technology That Moves Businesses Forward",
+    description:
+      "Hisako is a technology company providing software, AI, automation, digital transformation, and infrastructure solutions for organizations.",
+    url: "https://hisako.eu",
+    siteName: "Hisako",
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Hisako | Venture Studio, Capital & Software',
-    description: 'Hisako is a venture studio, early-stage capital provider, and independent software company.',
+    card: "summary_large_image",
+    title: "Hisako — Technology That Moves Businesses Forward",
+    description:
+      "Hisako is a technology company providing software, AI, automation, digital transformation, and infrastructure solutions for organizations.",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
-    icon: '/logo.png',
+    icon: [
+      { url: "/icon.png" },
+      { url: "/logo.png" },
+    ],
+    shortcut: "/icon.png",
+    apple: "/logo.png",
   },
 };
 
@@ -44,10 +57,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
-      <body className="font-sans flex flex-col min-h-screen">
+    <html lang="en" className="antialiased scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
+      </head>
+      <body className="font-sans flex flex-col min-h-screen bg-background text-foreground antialiased selection:bg-primary/20 selection:text-foreground">
         <Nav />
-        <main className="pt-14 flex-grow">{children}</main>
+        <main className="pt-16 flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

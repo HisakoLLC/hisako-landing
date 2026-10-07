@@ -1,17 +1,32 @@
-import { Hero } from "@/components/sections/Hero";
-import { Products } from "@/components/sections/Products";
-import { Capital } from "@/components/sections/Capital";
-import { About } from "@/components/sections/About";
-import { Manifesto } from "@/components/sections/Manifesto";
+import { Hero } from "@/components/sections/Hero"
+import { Capabilities } from "@/components/sections/Capabilities"
+import { WhyHisako } from "@/components/sections/WhyHisako"
+import { HowWeWork } from "@/components/sections/HowWeWork"
+import { SelectedWork } from "@/components/sections/SelectedWork"
+import { Industries } from "@/components/sections/Industries"
+import { WorkWithUs } from "@/components/sections/WorkWithUs"
+import { Reveal } from "@/components/ui/reveal"
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Hero />
-      <Products />
-      <Capital />
-      <About />
-      <Manifesto />
-    </>
-  );
+      <Reveal>
+        <Capabilities />
+      </Reveal>
+      <Reveal>
+        <WhyHisako />
+      </Reveal>
+      <HowWeWork />
+      <Reveal>
+        <SelectedWork />
+      </Reveal>
+      <Reveal>
+        <Industries />
+      </Reveal>
+      <Reveal>
+        <WorkWithUs />
+      </Reveal>
+    </div>
+  )
 }
