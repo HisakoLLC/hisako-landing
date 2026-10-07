@@ -108,16 +108,31 @@ export function WhyHisako() {
           {/* Subtle architectural tech grid backdrop */}
           <div className="absolute inset-0 bg-tech-grid opacity-10 pointer-events-none" />
 
-          <div className="relative z-10 max-w-3xl space-y-2 sm:space-y-3">
-            <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-primary font-semibold block">
-              Pragmatic Engineering
-            </span>
-            <blockquote className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-snug">
-              &ldquo;Sometimes the right answer is not to build anything at all.&rdquo;
-            </blockquote>
-            <p className="font-sans text-xs sm:text-sm md:text-base text-white/70 leading-relaxed pt-1">
-              We recommend off-the-shelf tools, workflow adjustments, or system reconfigurations when custom engineering isn&rsquo;t strictly justified. Our reputation is built on delivering what works, not selling unnecessary software.
-            </p>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left: Statement Content */}
+            <div className="lg:col-span-7 space-y-2 sm:space-y-3">
+              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-primary font-semibold block">
+                Pragmatic Engineering
+              </span>
+              <blockquote className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-snug">
+                &ldquo;Sometimes the right answer is not to build anything at all.&rdquo;
+              </blockquote>
+              <p className="font-sans text-xs sm:text-sm md:text-base text-white/70 leading-relaxed pt-1">
+                We recommend off-the-shelf tools, workflow adjustments, or system reconfigurations when custom engineering isn&rsquo;t strictly justified. Our reputation is built on delivering what works, not selling unnecessary software.
+              </p>
+            </div>
+
+            {/* Right: Looping Background Video */}
+            <div className="lg:col-span-5 relative w-full aspect-video rounded-md overflow-hidden border border-white/15 bg-navy/60 shadow-2xs">
+              <video
+                src="/videos/background-6.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
