@@ -43,18 +43,18 @@ export function Industries() {
         </div>
 
         {/* Responsive Grid: 2 col mobile, 3 col small tablet, 4 col tablet, 5 col desktop */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-6 gap-y-8 sm:gap-x-8 sm:gap-y-10 lg:gap-x-10 lg:gap-y-12">
           {industries.map((ind) => {
             const Icon = ind.icon
             return (
               <div
                 key={ind.name}
-                className="p-4 sm:p-5 rounded-md border border-border bg-card/50 hover:bg-card hover:border-primary/40 transition-colors flex flex-col justify-between space-y-3 sm:space-y-4 min-h-[110px] sm:min-h-[130px]"
+                className="group flex flex-col space-y-3 sm:space-y-3.5 transition-colors"
               >
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-sm bg-accent/60 text-primary flex items-center justify-center border border-border/60 shrink-0">
-                  <Icon className="w-4 h-4" strokeWidth={1.75} />
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-md bg-primary/10 text-primary flex items-center justify-center shrink-0 transition-colors group-hover:bg-primary group-hover:text-white">
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.75} />
                 </div>
-                <span className="font-heading font-semibold text-xs sm:text-sm text-foreground leading-snug">
+                <span className="font-heading font-semibold text-xs sm:text-sm md:text-[15px] text-foreground group-hover:text-primary transition-colors leading-snug">
                   {ind.name}
                 </span>
               </div>
