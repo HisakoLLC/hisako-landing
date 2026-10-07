@@ -1,23 +1,23 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react"
+import { ArrowLeft, ArrowRight, CheckCircle2, AlertTriangle, ArrowRightCircle } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-label"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { ImagePlaceholder } from "@/components/ui/image-placeholder"
-import { Button } from "@/components/ui/button"
-import { CaseStudy, getCaseStudyBySlug } from "@/lib/case-studies-data"
+import { Project, getRelatedProjects, getAdjacentProjects } from "@/lib/projects-data"
 
 interface CaseStudyTemplateProps {
-  caseStudy: CaseStudy
+  caseStudy: Project
 }
 
 export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
-  const nextProject = getCaseStudyBySlug(caseStudy.nextProjectSlug)
+  const relatedProjects = getRelatedProjects(caseStudy.slug)
+  const { prev, next } = getAdjacentProjects(caseStudy.slug)
 
   return (
     <article className="bg-background min-h-screen">
       {/* =========================================================================
-          1, 2, 3: CATEGORY, PROJECT NAME, ONE-LINE DESCRIPTION & BACK LINK
+          01, 02, 03: CATEGORY, TITLE, ONE-LINE DESCRIPTION & BACK LINK
           ========================================================================= */}
       <section className="relative pt-8 sm:pt-12 md:pt-16 pb-8 sm:pb-12 border-b border-border bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-4 sm:space-y-6">
@@ -33,55 +33,97 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
           </div>
 
           <div className="space-y-3 sm:space-y-4 max-w-4xl">
-            {/* 1. Project Category & Type */}
+            {/* 01. Category & Status Badges */}
             <div className="flex flex-wrap items-center gap-2">
-              <SectionLabel index="CASE STUDY" variant="default">
+              <SectionLabel index="PROJECT" variant="default">
                 {caseStudy.category}
               </SectionLabel>
-              <span className="px-2.5 py-0.5 rounded-sm bg-accent/40 border border-border text-[10px] font-mono text-muted-foreground uppercase">
-                {caseStudy.projectType}
-              </span>
+
+              {caseStudy.badgeLabel && (
+                <span className="px-2.5 py-0.5 rounded-sm bg-accent/60 border border-border text-[10px] font-mono text-foreground font-semibold uppercase tracking-wider">
+                  {caseStudy.badgeLabel}
+                </span>
+              )}
+
+              {caseStudy.status && (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-sm bg-amber-500/10 border border-amber-500/30 text-[10px] font-mono font-semibold text-amber-700 dark:text-amber-400 uppercase tracking-wider">
+                  <AlertTriangle className="w-3 h-3" />
+                  <span>{caseStudy.status}</span>
+                </span>
+              )}
             </div>
 
-            {/* 2. Project Name */}
+            {/* 02. Project Title */}
             <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] sm:leading-[1.06]">
               {caseStudy.name}
             </h1>
 
-            {/* 3. One-Line Description */}
-            <p className="font-sans text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed pt-1">
-              {caseStudy.oneLiner}
+            {/* 03. One-Line Description */}
+            <p className="font-sans text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed pt-1 max-w-3xl">
+              {caseStudy.shortDescription}
             </p>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          4. HERO IMAGE (Dedicated Architectural Visual Container)
+          04. HERO IMAGE (Clearly defined image container / placeholder)
           ========================================================================= */}
       <section className="py-6 sm:py-8 md:py-12 bg-card/30 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <div className="rounded-lg border border-border bg-card p-2 sm:p-2.5 shadow-xs">
-            <div className="relative aspect-video w-full overflow-hidden rounded-md border border-border/80 bg-slate-50 dark:bg-card flex items-center justify-center">
-              <Image
-                src={caseStudy.image.src}
-                alt={caseStudy.image.alt}
-                fill
-                priority
-                className={
-                  caseStudy.image.contain
-                    ? "object-contain p-8 sm:p-14"
-                    : "object-cover"
-                }
-                sizes="(max-width: 1280px) 100vw, 1280px"
-              />
+          <div className="rounded-lg border border-border bg-card p-2 sm:p-2.5 shadow-2xs">
+            <div className="relative aspect-video w-full overflow-hidden rounded-md border border-border/80 bg-slate-50 dark:bg-card/60 flex items-center justify-center">
+              {caseStudy.heroImage?.src ? (
+                <Image
+                  src={caseStudy.heroImage.src}
+                  alt={caseStudy.heroImage.alt}
+                  fill
+                  priority
+                  className={
+                    caseStudy.heroImage.contain
+                      ? "object-contain p-8 sm:p-14"
+                      : "object-cover"
+                  }
+                  sizes="(max-width: 1280px) 100vw, 1280px"
+                />
+              ) : (
+                <ImagePlaceholder
+                  aspectRatio="16/9"
+                  label={`${caseStudy.name} — Primary System Interface`}
+                  dimensions="Primary Visual Asset Slot"
+                  variant="light"
+                />
+              )}
             </div>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          5. OVERVIEW
+          12. PROJECT STATUS DISCLOSURE (Rendered prominently if statusNote exists)
+          ========================================================================= */}
+      {caseStudy.statusNote && (
+        <section className="py-6 sm:py-8 border-b border-border bg-amber-500/5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+            <div className="p-4 sm:p-6 rounded-lg border border-amber-500/30 bg-card/60 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="p-2 rounded-md bg-amber-500/15 text-amber-700 dark:text-amber-400 shrink-0">
+                <AlertTriangle className="w-5 h-5" />
+              </div>
+              <div className="space-y-1">
+                <h2 className="font-heading font-semibold text-sm text-foreground">
+                  Project Status: {caseStudy.status}
+                </h2>
+                <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                  {caseStudy.statusNote}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* =========================================================================
+          05. OVERVIEW
           ========================================================================= */}
       <section className="py-12 sm:py-16 md:py-20 border-b border-border bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
@@ -104,11 +146,11 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
       </section>
 
       {/* =========================================================================
-          6, 7, 8: PROBLEM, APPROACH & SOLUTION (Editorial Narrative)
+          06, 07, 08: PROBLEM, APPROACH & SOLUTION
           ========================================================================= */}
       <section className="py-12 sm:py-16 md:py-24 border-b border-border bg-card/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-10 sm:space-y-16">
-          {/* 6. The Problem */}
+          {/* 06. The Problem */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 border-b border-border/80 pb-10 sm:pb-16">
             <div className="lg:col-span-4 space-y-1.5 sm:space-y-2">
               <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold block">
@@ -125,7 +167,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
             </div>
           </div>
 
-          {/* 7. The Approach */}
+          {/* 07. The Approach */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 border-b border-border/80 pb-10 sm:pb-16">
             <div className="lg:col-span-4 space-y-1.5 sm:space-y-2">
               <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold block">
@@ -142,7 +184,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
             </div>
           </div>
 
-          {/* 8. The Solution */}
+          {/* 08. The Solution */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10">
             <div className="lg:col-span-4 space-y-1.5 sm:space-y-2">
               <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold block">
@@ -162,47 +204,72 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
       </section>
 
       {/* =========================================================================
-          9. TECHNOLOGY & 10. KEY CAPABILITIES
+          CONCEPTUAL WORKFLOW (Visual Pipeline for AI Systems)
           ========================================================================= */}
-      <section className="py-12 sm:py-16 md:py-24 border-b border-border bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-10 sm:space-y-16">
-          {/* 9. Technology Stack */}
-          <div className="space-y-4 sm:space-y-6">
+      {caseStudy.workflow && caseStudy.workflow.length > 0 && (
+        <section className="py-12 sm:py-16 md:py-20 border-b border-border bg-card/40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-6 sm:space-y-8">
             <div className="space-y-1.5 sm:space-y-2">
               <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold block">
-                05 / STACK
+                SYSTEM PIPELINE
               </span>
               <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-                Technologies & Architecture
+                Conceptual Workflow Topology
               </h2>
             </div>
-            <div className="flex flex-wrap gap-2 sm:gap-2.5">
-              {caseStudy.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-sm bg-card border border-border text-[11px] sm:text-xs font-mono text-foreground tracking-wide"
+
+            {/* Desktop Horizontal Workflow / Mobile Step Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 relative">
+              {caseStudy.workflow.map((step, idx) => (
+                <div
+                  key={step.step}
+                  className="p-4 rounded-lg border border-border bg-card flex flex-col justify-between space-y-3 relative group hover:border-primary/50 transition-colors"
                 >
-                  {tech}
-                </span>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-semibold text-primary">
+                      {step.step}
+                    </span>
+                    {idx < (caseStudy.workflow?.length || 0) - 1 && (
+                      <ArrowRightCircle className="w-3.5 h-3.5 text-muted-foreground/60 hidden lg:block" />
+                    )}
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="font-heading font-semibold text-xs sm:text-sm text-foreground">
+                      {step.title}
+                    </h3>
+                    {step.description && (
+                      <p className="font-sans text-[11px] text-muted-foreground leading-normal">
+                        {step.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
+        </section>
+      )}
 
-          {/* 10. Key Capabilities */}
-          <div className="space-y-4 sm:space-y-6 border-t border-border/80 pt-10 sm:pt-16">
+      {/* =========================================================================
+          09. KEY CAPABILITIES & 10. TECHNOLOGY
+          ========================================================================= */}
+      <section className="py-12 sm:py-16 md:py-24 border-b border-border bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-10 sm:space-y-16">
+          {/* 09. Key Capabilities */}
+          <div className="space-y-4 sm:space-y-6">
             <div className="space-y-1.5 sm:space-y-2">
               <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold block">
-                06 / SPECIFICATIONS
+                05 / CAPABILITIES
               </span>
               <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-                Key Capabilities
+                Core System Capabilities
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              {caseStudy.keyCapabilities.map((cap) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              {caseStudy.capabilities.map((cap) => (
                 <div
                   key={cap}
-                  className="p-4 sm:p-5 rounded-md border border-border bg-card/40 flex items-start gap-3"
+                  className="p-4 sm:p-5 rounded-md border border-border bg-card/40 flex items-start gap-3 hover:border-primary/40 transition-colors"
                 >
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                   <span className="font-sans text-xs sm:text-sm text-foreground leading-relaxed">
@@ -212,53 +279,40 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
               ))}
             </div>
           </div>
+
+          {/* 10. Technology Stack */}
+          <div className="space-y-4 sm:space-y-6 border-t border-border/80 pt-10 sm:pt-16">
+            <div className="space-y-1.5 sm:space-y-2">
+              <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold block">
+                06 / STACK
+              </span>
+              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+                Technologies & Tools
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-2 sm:gap-2.5">
+              {caseStudy.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-sm bg-card border border-border text-[11px] sm:text-xs font-mono text-foreground tracking-wide hover:border-primary/40 transition-colors"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* =========================================================================
-          11. RESULTS, ONLY WHEN VERIFIED
-          ========================================================================= */}
-      {caseStudy.verifiedResults && caseStudy.verifiedResults.length > 0 && (
-        <section className="py-12 sm:py-16 md:py-20 border-b border-border bg-card/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-6 sm:space-y-8">
-            <div className="space-y-1.5 sm:space-y-2">
-              <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold block">
-                07 / VERIFIED OUTCOMES
-              </span>
-              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-                Verified Results & Milestones
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              {caseStudy.verifiedResults.map((res) => (
-                <Card key={res.label} variant="default" className="p-5 sm:p-7">
-                  <CardHeader className="p-0 pb-2">
-                    <CardTitle className="text-lg sm:text-xl font-heading text-foreground">
-                      {res.label}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                      {res.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* =========================================================================
-          12. GALLERY
+          11. IMAGE GALLERY (Defined Visual Asset Slots)
           ========================================================================= */}
       {caseStudy.galleryImages && caseStudy.galleryImages.length > 0 && (
-        <section className="py-12 sm:py-16 md:py-24 border-b border-border bg-background">
+        <section className="py-12 sm:py-16 md:py-24 border-b border-border bg-card/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-6 sm:space-y-8">
             <div className="space-y-1.5 sm:space-y-2">
               <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold block">
-                08 / SYSTEM INTERFACES
+                07 / SYSTEM INTERFACES
               </span>
               <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
                 Architecture & Interface Gallery
@@ -269,7 +323,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
               {caseStudy.galleryImages.map((img) => (
                 <div
                   key={img.label}
-                  className="group overflow-hidden rounded-md border border-border bg-card flex flex-col transition-all hover:border-primary/40"
+                  className="group overflow-hidden rounded-md border border-border bg-card flex flex-col transition-all hover:border-primary/40 shadow-2xs"
                 >
                   <div className="relative aspect-video w-full overflow-hidden bg-muted/20">
                     {img.src ? (
@@ -284,7 +338,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
                       <ImagePlaceholder
                         aspectRatio={img.aspectRatio || "16/9"}
                         label={img.label}
-                        dimensions="Visual Asset Container"
+                        dimensions="Visual Asset Slot"
                         variant="light"
                       />
                     )}
@@ -302,55 +356,110 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
       )}
 
       {/* =========================================================================
-          13. NEXT PROJECT
+          13. RELATED PROJECTS
           ========================================================================= */}
-      {nextProject && (
-        <section className="py-8 sm:py-12 border-b border-border bg-card/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <Link
-              href={`/work/${nextProject.slug}`}
-              className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 sm:p-8 rounded-lg border border-border bg-card hover:border-primary/40 transition-colors"
-            >
-              <div className="space-y-1">
-                <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-                  Next Case Study &rarr;
-                </span>
-                <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                  {nextProject.name}
-                </h3>
-                <p className="font-sans text-xs text-muted-foreground">
-                  {nextProject.category}
-                </p>
-              </div>
+      {relatedProjects.length > 0 && (
+        <section className="py-12 sm:py-16 md:py-20 border-b border-border bg-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-6 sm:space-y-8">
+            <div className="space-y-1.5 sm:space-y-2">
+              <span className="font-mono text-xs uppercase tracking-widest text-primary font-semibold block">
+                08 / EXPLORE MORE
+              </span>
+              <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+                Related Technology Projects
+              </h2>
+            </div>
 
-              <div className="mt-4 sm:mt-0 inline-flex items-center gap-2 text-sm font-semibold text-primary min-h-[36px]">
-                <span>Explore Project</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </div>
-            </Link>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+              {relatedProjects.map((rel) => (
+                <Link
+                  key={rel.slug}
+                  href={`/work/${rel.slug}`}
+                  className="group p-5 sm:p-6 rounded-lg border border-border bg-card hover:border-primary/40 transition-colors flex flex-col justify-between space-y-4"
+                >
+                  <div className="space-y-2">
+                    <span className="px-2 py-0.5 rounded-sm bg-accent/60 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                      {rel.category}
+                    </span>
+                    <h3 className="font-heading text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                      {rel.name}
+                    </h3>
+                    <p className="font-sans text-xs text-muted-foreground line-clamp-2">
+                      {rel.shortDescription}
+                    </p>
+                  </div>
+
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary pt-2">
+                    <span>View project</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       )}
 
       {/* =========================================================================
-          14. CONTACT CTA
+          14. PREVIOUS / NEXT PROJECT NAVIGATION
+          ========================================================================= */}
+      <section className="py-8 sm:py-12 border-b border-border bg-card/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {/* Previous Project */}
+            <Link
+              href={`/work/${prev.slug}`}
+              className="group p-5 sm:p-6 rounded-lg border border-border bg-card hover:border-primary/40 transition-colors flex items-center justify-between"
+            >
+              <div className="space-y-1">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground flex items-center gap-1">
+                  <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
+                  <span>Previous Project</span>
+                </span>
+                <h4 className="font-heading text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                  {prev.name}
+                </h4>
+              </div>
+            </Link>
+
+            {/* Next Project */}
+            <Link
+              href={`/work/${next.slug}`}
+              className="group p-5 sm:p-6 rounded-lg border border-border bg-card hover:border-primary/40 transition-colors flex items-center justify-between text-right"
+            >
+              <div className="space-y-1 ml-auto">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-muted-foreground flex items-center justify-end gap-1">
+                  <span>Next Project</span>
+                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
+                </span>
+                <h4 className="font-heading text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                  {next.name}
+                </h4>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          15. CONTACT CTA (Standardized Exact Required Copy)
           ========================================================================= */}
       <section className="py-14 sm:py-20 md:py-24 bg-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid opacity-10 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center space-y-6 sm:space-y-8">
           <div className="inline-flex justify-center">
-            <SectionLabel variant="navy" index="ENGAGE">
-              DISCUSS YOUR SYSTEM
+            <SectionLabel variant="navy" index="CONTACT">
+              GET IN TOUCH
             </SectionLabel>
           </div>
 
           <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
             <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
-              Ready to engineer a solution for your organization?
+              Have a technology problem?
             </h2>
             <p className="font-sans text-sm sm:text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
-              Our engineering team evaluates requirements, designs custom software architectures, and deploys scalable automated systems.
+              Tell us what you&rsquo;re trying to solve.
             </p>
           </div>
 
@@ -359,8 +468,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
               href="/contact"
               className="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-md bg-primary text-white text-sm font-medium hover:bg-royal-blue-hover transition-colors shadow-2xs gap-2"
             >
-              <span>Start a project</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Start a project &rarr;</span>
             </Link>
             <a
               href="mailto:hello@hisako.eu"

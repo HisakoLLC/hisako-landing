@@ -11,7 +11,7 @@ const projects = [
     category: "Operations & AI Software",
     description:
       "An AI-powered operating system for modern agencies, combining CRM, projects, proposals, invoicing, onboarding, reporting and automation.",
-    href: "/work/ai-agency-operations",
+    href: "/work/ai-agency-operations-platform",
     image: {
       src: "/images/ai-agency-abstract.png",
       alt: "AI Agency Operations Platform visual - Abstract Color Harmony",

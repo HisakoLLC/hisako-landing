@@ -31,14 +31,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const pageUrl = `https://hisako.eu/work/${slug}`
 
   return {
-    title: `${caseStudy.name} — Case Study`,
-    description: caseStudy.oneLiner,
+    title: `${caseStudy.name} — Project Portfolio | Hisako`,
+    description: caseStudy.shortDescription,
     alternates: {
       canonical: pageUrl,
     },
     openGraph: {
-      title: `${caseStudy.name} — Case Study | Hisako`,
-      description: caseStudy.oneLiner,
+      title: `${caseStudy.name} — Hisako Project Portfolio`,
+      description: caseStudy.shortDescription,
       url: pageUrl,
       type: "article",
       siteName: "Hisako",
@@ -46,8 +46,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     },
     twitter: {
       card: "summary_large_image",
-      title: `${caseStudy.name} — Case Study | Hisako`,
-      description: caseStudy.oneLiner,
+      title: `${caseStudy.name} — Hisako Project Portfolio`,
+      description: caseStudy.shortDescription,
     },
   }
 }
@@ -64,7 +64,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
     <>
       <CaseStudyJsonLd
         title={caseStudy.name}
-        description={caseStudy.oneLiner}
+        description={caseStudy.shortDescription}
         slug={caseStudy.slug}
         category={caseStudy.category}
         technologies={caseStudy.technologies}
