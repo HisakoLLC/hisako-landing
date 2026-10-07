@@ -29,6 +29,7 @@ export interface CaseStudy {
   }[]
   galleryImages: {
     label: string
+    src?: string
     aspectRatio?: "16/9" | "4/3" | "1/1"
   }[]
   nextProjectSlug: string
@@ -87,14 +88,17 @@ export const caseStudies: CaseStudy[] = [
     galleryImages: [
       {
         label: "Operations Dashboard & Real-Time Analytics Interface",
+        src: "/images/ai-agency-console.png",
         aspectRatio: "16/9",
       },
       {
         label: "Workflow Automation Node Editor & Event Routing",
+        src: "/images/ai-agency-workflows.png",
         aspectRatio: "16/9",
       },
       {
         label: "Client Invoicing & Milestone Reconciliation View",
+        src: "/images/ai-agency-overview.png",
         aspectRatio: "16/9",
       },
     ],
@@ -108,8 +112,8 @@ export const caseStudies: CaseStudy[] = [
     oneLiner:
       "Digital product passport and compliance infrastructure for brands navigating regulatory requirements across international markets.",
     image: {
-      src: "/images/passr-wordmark.png",
-      alt: "Passr Digital Product Passport - Passr wordmark logo visual",
+      src: "/images/passr-logo.jpg",
+      alt: "Passr Digital Product Passport - Passr logo visual",
       contain: true,
     },
     overview:
@@ -150,14 +154,17 @@ export const caseStudies: CaseStudy[] = [
     galleryImages: [
       {
         label: "Digital Product Passport Consumer Interface View",
+        src: "/images/passr-dashboard.png",
         aspectRatio: "16/9",
       },
       {
         label: "Manufacturer Supply Chain Data Ingestion Grid",
+        src: "/images/passr-products.png",
         aspectRatio: "16/9",
       },
       {
         label: "Regulatory Compliance Audit & Export Console",
+        src: "/images/passr-compliance.png",
         aspectRatio: "16/9",
       },
     ],
@@ -213,14 +220,17 @@ export const caseStudies: CaseStudy[] = [
     galleryImages: [
       {
         label: "Point of Sale Touch-Optimized Register Layout",
+        src: "/images/vendoflow-pos.png",
         aspectRatio: "16/9",
       },
       {
         label: "Multi-Store Warehouse Inventory Matrix",
+        src: "/images/vendoflow-inventory.png",
         aspectRatio: "16/9",
       },
       {
         label: "Sales Velocity & Stock Analytics Dashboard",
+        src: "/images/vendoflow-analytics.png",
         aspectRatio: "16/9",
       },
     ],

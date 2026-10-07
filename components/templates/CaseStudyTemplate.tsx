@@ -267,13 +267,33 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
               {caseStudy.galleryImages.map((img) => (
-                <div key={img.label} className="overflow-hidden rounded-md border border-border">
-                  <ImagePlaceholder
-                    aspectRatio={img.aspectRatio || "16/9"}
-                    label={img.label}
-                    dimensions="Visual Asset Container"
-                    variant="light"
-                  />
+                <div
+                  key={img.label}
+                  className="group overflow-hidden rounded-md border border-border bg-card flex flex-col transition-all hover:border-primary/40"
+                >
+                  <div className="relative aspect-video w-full overflow-hidden bg-muted/20">
+                    {img.src ? (
+                      <Image
+                        src={img.src}
+                        alt={img.label}
+                        fill
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                    ) : (
+                      <ImagePlaceholder
+                        aspectRatio={img.aspectRatio || "16/9"}
+                        label={img.label}
+                        dimensions="Visual Asset Container"
+                        variant="light"
+                      />
+                    )}
+                  </div>
+                  <div className="p-3 border-t border-border/70 bg-card">
+                    <p className="font-mono text-[11px] leading-tight text-muted-foreground uppercase tracking-wider">
+                      {img.label}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

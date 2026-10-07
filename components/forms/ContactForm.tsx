@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { CheckCircle2, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { sendContactEmail } from "@/app/actions/contact"
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -67,11 +68,14 @@ export function ContactForm() {
     }
 
     try {
-      // Emulate brief submission processing
-      await new Promise((resolve) => setTimeout(resolve, 800))
-      setSubmitted(true)
+      const res = await sendContactEmail(formData)
+      if (res?.error) {
+        setError(res.error)
+      } else {
+        setSubmitted(true)
+      }
     } catch {
-      setError("An unexpected error occurred. Please try emailing us directly.")
+      setError("An unexpected error occurred. Please try emailing us directly at hello@hisako.eu.")
     } finally {
       setIsSubmitting(false)
     }

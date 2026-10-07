@@ -8,22 +8,20 @@ export function Footer() {
   return (
     <footer className="bg-navy text-white border-t border-navy-border relative overflow-hidden">
       {/* Tangle Kinetic Engineering Marquee Ribbon */}
-      <div className="w-full border-b border-white/10 overflow-hidden bg-navy/60 pt-6 sm:pt-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <TangleFooter
-            height={190}
-            ribbon="#13233F"
-            textColor="#94A3B8"
-            background="transparent"
-            lines={[
-              "Custom software engineering built for operational scale and reliability.",
-              "AI agents & process automation reducing manual business friction.",
-              "Modernizing core enterprise systems and workflows without downtime.",
-              "High-performance cloud architectures, database systems, and integrations.",
-              "Hisako · Technology That Moves Organizations Forward.",
-            ]}
-          />
-        </div>
+      <div className="w-full border-b border-white/10 overflow-hidden bg-navy/60">
+        <TangleFooter
+          height={210}
+          ribbon="#13233F"
+          textColor="#CBD5E1"
+          background="transparent"
+          lines={[
+            "Custom software engineering built for operational scale and reliability.",
+            "AI agents & process automation reducing manual business friction.",
+            "Modernizing core enterprise systems and workflows without downtime.",
+            "High-performance cloud architectures, database systems, and integrations.",
+            "Hisako · Technology That Moves Organizations Forward.",
+          ]}
+        />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-10 sm:pt-14 pb-10 sm:pb-12">

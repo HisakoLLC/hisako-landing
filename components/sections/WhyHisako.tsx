@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Briefcase, Wrench, Sparkles, TrendingUp } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-label"
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
@@ -59,9 +60,23 @@ export function WhyHisako() {
               <Card
                 key={p.tag}
                 variant="default"
-                className="flex flex-col justify-between p-5 sm:p-7 bg-card/40 hover:bg-card hover:border-primary/40 transition-all shadow-2xs"
+                className="group relative flex flex-col justify-between p-5 sm:p-7 bg-card/40 hover:bg-card hover:border-primary/40 transition-all shadow-2xs overflow-hidden"
               >
-                <div className="space-y-4 sm:space-y-5">
+                {/* Background Watermark Half Icon with increased opacity */}
+                <div
+                  className="absolute -right-4 -bottom-6 w-36 sm:w-44 h-48 sm:h-56 pointer-events-none select-none opacity-[0.16] group-hover:opacity-[0.24] transition-opacity duration-300 z-0"
+                  aria-hidden="true"
+                >
+                  <Image
+                    src="/images/icon-half-trimmed.png"
+                    alt=""
+                    width={180}
+                    height={440}
+                    className="w-full h-full object-contain object-right-bottom"
+                  />
+                </div>
+
+                <div className="relative z-10 space-y-4 sm:space-y-5">
                   <div className="flex items-center justify-between">
                     <IconBox variant="navy" size="md">
                       <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />

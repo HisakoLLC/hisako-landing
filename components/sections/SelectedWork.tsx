@@ -26,8 +26,8 @@ const projects = [
       "Compliance infrastructure for physical products entering regulated markets, including product information and digital product passport technology.",
     href: "/work/passr",
     image: {
-      src: "/images/passr-wordmark.png",
-      alt: "Passr digital product passport visual - Passr wordmark logo",
+      src: "/images/passr-logo.jpg",
+      alt: "Passr digital product passport visual - Passr logo",
       contain: true,
     },
   },

@@ -60,7 +60,7 @@ export type TangleFooterOptions = {
 export const RING_COUNT = 5;
 
 export const K = 0.5522847498;
-export const STROKE = 28;
+export const STROKE = 22;
 
 /** Mulberry32 — deterministic PRNG so rings stay stable across re-renders. */
 export function mulberry32(seed: number) {
@@ -107,9 +107,9 @@ export function buildRingCopy(
 }
 
 /**
- * Five concentric circles nested as an upper semicircle.
- * Outer radius fits both width and band height so a short band
- * still shows complete arches instead of an equatorial clip.
+ * Five concentric circles nested as a wide sweeping upper arch.
+ * Outer radius spans wide across container width so concentric rings have
+ * wide radii (> 350px) where text never squishes or collides into a knot.
  */
 export function buildRings(
   width: number,
@@ -119,20 +119,25 @@ export function buildRings(
 ): Ring[] {
   const rand = mulberry32(seed);
   const cx = width / 2;
-  const cy = bandHeight;
-  const strokePad = STROKE / 2 + 2;
-  // Full-width nest needs height ≈ width/2; if the band is shorter,
-  // shrink the nest so the upper semicircle stays fully visible.
-  const outer = Math.max(
-    Math.min(width / 2 - strokePad, bandHeight - strokePad),
-    STROKE * 4,
-  );
-  const radii = Array.from(
-    { length: RING_COUNT },
-    (_, i) => (outer * (i + 1)) / RING_COUNT,
-  );
+  const strokeWidth = STROKE;
+  const ringGap = 8;
 
-  const fontSize = Math.min(24, Math.max(15, width * 0.02));
+  // Wide, sweeping arc across the container width:
+  // Maintain a wide outer radius (minimum 520px) so text never curls into a tight circle
+  const outer = Math.max(width * 0.58, 520);
+
+  // Apex of the outermost ring peaks gracefully near the top edge of the banner
+  const topPadding = 16;
+  const cy = bandHeight > 0 ? topPadding + outer : bandHeight;
+
+  // Concentric rings distributed consecutively inwards from outer:
+  // Even the innermost ring maintains a large radius (> 380px) ensuring crystal-clear text flow!
+  const radii = Array.from({ length: RING_COUNT }, (_, i) => {
+    return outer - (RING_COUNT - 1 - i) * (strokeWidth + ringGap);
+  });
+
+  // Balanced technical typography (proportional, clear letterforms):
+  const fontSize = Math.min(12, Math.max(10, width * 0.009));
   const pool = lines.length > 0 ? lines : DEFAULT_LINES;
 
   return radii.map((r, i) => {
@@ -151,13 +156,12 @@ export function buildRings(
       d: circlePath(cx, cy, r),
       cx,
       cy,
-      strokeWidth: STROKE,
+      strokeWidth,
       fontSize,
       text,
-      // Keep angular pace lively but readable; outer rings a touch slower.
-      duration: 48 + i * 10 + rand() * 12,
+      // Calm, engineered rotational pacing:
+      duration: 52 + i * 12 + rand() * 10,
       phase: rand(),
-      // Alternate direction each ring (inner → outer)
       reverse: i % 2 === 1,
     };
   });
