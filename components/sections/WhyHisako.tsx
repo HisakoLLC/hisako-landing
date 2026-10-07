@@ -60,23 +60,21 @@ export function WhyHisako() {
               <Card
                 key={p.tag}
                 variant="default"
-                className="group relative flex flex-col justify-between p-5 sm:p-7 bg-card/40 hover:bg-card hover:border-primary/40 transition-all shadow-2xs overflow-hidden"
+                className="group flex flex-col justify-between p-4 sm:p-5 bg-card/40 hover:bg-card hover:border-primary/40 transition-all shadow-2xs overflow-hidden"
               >
-                {/* Background Watermark Half Icon with increased opacity */}
-                <div
-                  className="absolute -right-4 -bottom-6 w-36 sm:w-44 h-48 sm:h-56 pointer-events-none select-none opacity-[0.16] group-hover:opacity-[0.24] transition-opacity duration-300 z-0"
-                  aria-hidden="true"
-                >
-                  <Image
-                    src="/images/icon-half-trimmed.png"
-                    alt=""
-                    width={180}
-                    height={440}
-                    className="w-full h-full object-contain object-right-bottom"
-                  />
-                </div>
+                <div className="space-y-4 sm:space-y-5">
+                  {/* Top: Looping Background GIF Animation */}
+                  <div className="relative aspect-video w-full overflow-hidden rounded-md border border-border/80 bg-navy/20">
+                    <Image
+                      src="/videos/background-5.gif"
+                      alt=""
+                      fill
+                      unoptimized
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-                <div className="relative z-10 space-y-4 sm:space-y-5">
+                  {/* Icon & Principle Index */}
                   <div className="flex items-center justify-between">
                     <IconBox variant="navy" size="md">
                       <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
