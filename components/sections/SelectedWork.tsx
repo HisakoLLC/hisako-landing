@@ -13,8 +13,8 @@ const projects = [
       "An AI-powered operating system for modern agencies, combining CRM, projects, proposals, invoicing, onboarding, reporting and automation.",
     href: "/work/ai-agency-operations-platform",
     image: {
-      src: "/images/ai-agency-settings.png",
-      alt: "AI Agency Operations Platform visual - workspace and settings console",
+      src: "/images/Abstract Color Harmony.png",
+      alt: "AI Agency Operations Platform brand identity - Abstract Color Harmony",
       contain: false,
     },
   },
@@ -26,7 +26,7 @@ const projects = [
       "Compliance infrastructure for physical products entering regulated markets, including product information and digital product passport technology.",
     href: "/work/passr",
     image: {
-      src: "/images/passr-logo.jpg",
+      src: "/images/Passr original Logo.jpg",
       alt: "Passr digital product passport visual - Passr logo",
       contain: true,
     },
