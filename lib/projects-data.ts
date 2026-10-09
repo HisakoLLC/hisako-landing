@@ -460,9 +460,9 @@ export const projects: Project[] = [
       "OpenAPI",
     ],
     heroImage: {
-      src: "/images/passr-logo.jpg",
-      alt: "Passr Digital Product Passport visual",
-      contain: true,
+      src: "/images/passr image.png",
+      alt: "Passr Digital Product Passport platform overview",
+      contain: false,
     },
     galleryImages: [
       {
