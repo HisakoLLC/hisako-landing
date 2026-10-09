@@ -95,8 +95,8 @@ export const projects: Project[] = [
       "Automated Agent Frameworks",
     ],
     heroImage: {
-      src: "/images/ai-agency-abstract.png",
-      alt: "AI Agency Operations Platform interface visualization",
+      src: "/images/ai-agency-settings.png",
+      alt: "AI Agency Operations Platform workspace and settings console",
       contain: false,
     },
     galleryImages: [
@@ -111,8 +111,8 @@ export const projects: Project[] = [
         aspectRatio: "16/9",
       },
       {
-        label: "Client Invoicing & Milestone Reconciliation View",
-        src: "/images/ai-agency-overview.png",
+        label: "Agency Workspace & Operational Settings Console",
+        src: "/images/ai-agency-settings.png",
         aspectRatio: "16/9",
       },
     ],
