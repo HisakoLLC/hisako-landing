@@ -1,8 +1,5 @@
-import Image from "next/image"
 import { Briefcase, Wrench, Sparkles, TrendingUp } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-label"
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { IconBox } from "@/components/ui/icon-box"
 
 const principles = [
   {
@@ -52,55 +49,37 @@ export function WhyHisako() {
           </p>
         </div>
 
-        {/* 4 Core Principles Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {principles.map((p) => {
-            const Icon = p.icon
-            return (
-              <Card
-                key={p.tag}
-                variant="default"
-                className="group flex flex-col justify-between p-4 sm:p-5 bg-card/40 hover:bg-card hover:border-primary/40 transition-all shadow-2xs overflow-hidden"
-              >
-                <div className="space-y-4 sm:space-y-5">
-                  {/* Top: Looping Background GIF Animation */}
-                  <div className="relative aspect-video w-full overflow-hidden rounded-md border border-border/80 bg-navy/20">
-                    <Image
-                      src="/videos/background-5.gif"
-                      alt=""
-                      fill
-                      unoptimized
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-
-                  {/* Icon & Principle Index */}
-                  <div className="flex items-center justify-between">
-                    <IconBox variant="navy" size="md">
-                      <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                    </IconBox>
-                    <span className="font-mono text-xs text-muted-foreground/70">
-                      P.{p.index}
+        {/* 4 Core Principles — Architectural Non-Card Column Layout */}
+        <div className="border-t border-border/80 pt-8 sm:pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {principles.map((p) => {
+              const Icon = p.icon
+              return (
+                <div
+                  key={p.tag}
+                  className="flex flex-col space-y-3.5 group"
+                >
+                  {/* Technical Header Line */}
+                  <div className="flex items-center justify-between pb-3 border-b border-border/60">
+                    <span className="font-mono text-xs font-semibold tracking-wider text-primary">
+                      {p.index} // {p.tag}
                     </span>
+                    <Icon className="w-4 h-4 text-muted-foreground/60 group-hover:text-primary transition-colors" strokeWidth={1.75} />
                   </div>
 
-                  <CardHeader className="p-0 space-y-1.5 sm:space-y-2">
-                    <div>
-                      <span className="font-mono text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-primary block mb-1">
-                        {p.tag}
-                      </span>
-                      <CardTitle className="text-lg sm:text-xl font-heading text-foreground">
-                        {p.title}
-                      </CardTitle>
-                    </div>
-                    <CardDescription className="text-xs sm:text-sm text-muted-foreground leading-relaxed pt-1">
-                      {p.description}
-                    </CardDescription>
-                  </CardHeader>
+                  {/* Title */}
+                  <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground tracking-tight group-hover:text-primary transition-colors">
+                    {p.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="font-sans text-sm text-muted-foreground leading-relaxed">
+                    {p.description}
+                  </p>
                 </div>
-              </Card>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
 
         {/* Prominent Architectural Statement (Responsive typography & padding) */}
