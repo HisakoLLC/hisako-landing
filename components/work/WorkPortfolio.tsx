@@ -62,18 +62,23 @@ export function WorkPortfolio({ projects }: WorkPortfolioProps) {
             <div className="space-y-5 sm:space-y-6">
               {/* Project Image Slot */}
               <div className="relative aspect-video w-full overflow-hidden rounded-md border border-border bg-slate-50 dark:bg-card/60 flex items-center justify-center">
-                {project.heroImage?.src ? (
-                  <Image
-                    src={project.heroImage.src}
-                    alt={project.heroImage.alt}
-                    fill
-                    className={
-                      project.heroImage.contain
-                        ? "object-contain p-6 sm:p-8"
-                        : "object-cover group-hover:scale-105 transition-transform duration-500"
-                    }
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+                {(project.logo?.src || project.heroImage?.src) ? (
+                  (() => {
+                    const img = project.logo?.src ? project.logo : project.heroImage!
+                    return (
+                      <Image
+                        src={img.src!}
+                        alt={img.alt}
+                        fill
+                        className={
+                          img.contain
+                            ? "object-contain p-6 sm:p-8"
+                            : "object-cover group-hover:scale-105 transition-transform duration-500"
+                        }
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    )
+                  })()
                 ) : (
                   <ImagePlaceholder
                     aspectRatio="16/9"

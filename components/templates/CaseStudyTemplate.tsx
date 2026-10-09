@@ -53,10 +53,23 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
               )}
             </div>
 
-            {/* 02. Project Title */}
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] sm:leading-[1.06]">
-              {caseStudy.name}
-            </h1>
+            {/* 02. Project Title & Logo */}
+            <div className="flex items-center gap-3.5 sm:gap-4 pt-1">
+              {caseStudy.logo?.src && (
+                <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-md overflow-hidden border border-border bg-card/60 flex items-center justify-center shrink-0">
+                  <Image
+                    src={caseStudy.logo.src}
+                    alt={`${caseStudy.name} logo`}
+                    fill
+                    className={caseStudy.logo.contain ? "object-contain p-2" : "object-cover"}
+                    sizes="64px"
+                  />
+                </div>
+              )}
+              <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-[1.1] sm:leading-[1.06]">
+                {caseStudy.name}
+              </h1>
+            </div>
 
             {/* 03. One-Line Description */}
             <p className="font-sans text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed pt-1 max-w-3xl">
@@ -319,7 +332,13 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+            <div className={`grid gap-4 sm:gap-6 ${
+              caseStudy.galleryImages.length === 4
+                ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                : caseStudy.galleryImages.length === 2
+                ? "grid-cols-1 sm:grid-cols-2"
+                : "grid-cols-1 md:grid-cols-3"
+            }`}>
               {caseStudy.galleryImages.map((img) => (
                 <div
                   key={img.label}

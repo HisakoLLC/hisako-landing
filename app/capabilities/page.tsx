@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { Code2, Cpu, RefreshCw, Cloud, ArrowRight, CheckCircle2, AlertCircle, Clock } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-label"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
@@ -166,14 +167,17 @@ export default function CapabilitiesPage() {
           </div>
 
           {/* Architectural Blueprint Visual Area */}
-          <div className="rounded-lg border border-border bg-card/60 p-2 sm:p-2.5 shadow-2xs">
-            <ImagePlaceholder
-              aspectRatio="21/9"
-              label="Enterprise Systems & Engineering Capabilities Matrix"
-              dimensions="Capabilities Architecture Container"
-              variant="light"
-              className="rounded-md"
-            />
+          <div className="rounded-lg border border-border bg-card/60 p-2 sm:p-2.5 shadow-2xs overflow-hidden">
+            <div className="relative aspect-[21/9] w-full overflow-hidden rounded-md bg-black">
+              <Image
+                src="/images/letters animation.gif"
+                alt="Hisako Engineering & Capabilities motion visualization"
+                fill
+                unoptimized
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
+            </div>
           </div>
         </div>
       </section>

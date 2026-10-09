@@ -200,36 +200,39 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <Card variant="default" className="p-6 sm:p-7 space-y-3">
-              <div className="w-10 h-10 rounded-sm bg-navy text-white flex items-center justify-center mb-3">
-                <Building className="w-5 h-5" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 pt-4">
+            <div className="space-y-4 border-t border-border pt-6 sm:pt-8">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-semibold text-primary">01 / ROLE</span>
+                <Building className="w-4 h-4 text-muted-foreground" />
               </div>
-              <CardTitle className="text-lg">Institutional Partner</CardTitle>
-              <CardDescription className="text-xs sm:text-sm leading-relaxed">
+              <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground">Institutional Partner</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 We work directly with leadership, technical teams, and operations directors across mid-market businesses, NGOs, public entities, and growing organizations.
-              </CardDescription>
-            </Card>
+              </p>
+            </div>
 
-            <Card variant="default" className="p-6 sm:p-7 space-y-3">
-              <div className="w-10 h-10 rounded-sm bg-primary text-white flex items-center justify-center mb-3">
-                <Target className="w-5 h-5" />
+            <div className="space-y-4 border-t border-border pt-6 sm:pt-8">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-semibold text-primary">02 / FOCUS</span>
+                <Target className="w-4 h-4 text-muted-foreground" />
               </div>
-              <CardTitle className="text-lg">Outcome-Driven</CardTitle>
-              <CardDescription className="text-xs sm:text-sm leading-relaxed">
+              <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground">Outcome-Driven</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 We measure our work by the real operational friction it removes, the hours it automates, and the reliability of the systems we deploy into production.
-              </CardDescription>
-            </Card>
+              </p>
+            </div>
 
-            <Card variant="default" className="p-6 sm:p-7 space-y-3">
-              <div className="w-10 h-10 rounded-sm bg-card border border-border text-foreground flex items-center justify-center mb-3">
-                <Wrench className="w-5 h-5" />
+            <div className="space-y-4 border-t border-border pt-6 sm:pt-8">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-semibold text-primary">03 / DELIVERY</span>
+                <Wrench className="w-4 h-4 text-muted-foreground" />
               </div>
-              <CardTitle className="text-lg">Hands-On Engineering</CardTitle>
-              <CardDescription className="text-xs sm:text-sm leading-relaxed">
+              <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground">Hands-On Engineering</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 We are not high-level slide deck consultants. Our architects write production code, configure cloud infrastructure, and take personal responsibility for system uptime.
-              </CardDescription>
-            </Card>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -248,21 +251,21 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            {beliefs.map((belief) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 pt-2">
+            {beliefs.map((belief, idx) => (
               <div
                 key={belief.title}
-                className="p-5 sm:p-7 rounded-md border border-border bg-card/40 flex items-start gap-4"
+                className="border-t border-border pt-5 space-y-2"
               >
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-[11px] text-primary font-semibold">0{idx + 1}</span>
                   <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">
                     {belief.title}
                   </h3>
-                  <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {belief.description}
-                  </p>
                 </div>
+                <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed pl-6">
+                  {belief.description}
+                </p>
               </div>
             ))}
           </div>
@@ -272,7 +275,7 @@ export default function AboutPage() {
       {/* =========================================================================
           3. WHAT WE BUILD
           ========================================================================= */}
-      <section className="py-14 sm:py-20 md:py-24 border-b border-border bg-card/30">
+      <section className="py-14 sm:py-20 md:py-24 border-b border-border bg-card/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-12">
           <div className="max-w-3xl space-y-3 sm:space-y-4">
             <SectionLabel index="04" variant="subtle">
@@ -286,21 +289,20 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {whatWeBuild.map((item) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pt-4">
+            {whatWeBuild.map((item, idx) => {
               const Icon = item.icon
               return (
-                <Card key={item.title} variant="default" className="p-6 sm:p-7 flex flex-col justify-between">
-                  <div className="space-y-4">
-                    <IconBox variant="navy" size="md">
-                      <Icon className="w-5 h-5 text-white" strokeWidth={1.75} />
-                    </IconBox>
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
-                    <CardDescription className="text-xs sm:text-sm leading-relaxed">
-                      {item.description}
-                    </CardDescription>
+                <div key={item.title} className="border-t border-border pt-6 sm:pt-8 space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-semibold text-primary">0{idx + 1}</span>
+                    <Icon className="w-4 h-4 text-muted-foreground" strokeWidth={1.75} />
                   </div>
-                </Card>
+                  <h3 className="font-heading text-lg font-bold text-foreground">{item.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               )
             })}
           </div>
@@ -324,8 +326,8 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            <div className="p-5 sm:p-6 rounded-md border border-border bg-card/40 space-y-2.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pt-4">
+            <div className="border-t border-border pt-6 sm:pt-8 space-y-3">
               <span className="font-mono text-xs font-bold text-primary">STAGE 01</span>
               <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">Discovery & Audit</h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -333,7 +335,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-md border border-border bg-card/40 space-y-2.5">
+            <div className="border-t border-border pt-6 sm:pt-8 space-y-3">
               <span className="font-mono text-xs font-bold text-primary">STAGE 02</span>
               <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">System Architecture</h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -341,7 +343,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-md border border-border bg-card/40 space-y-2.5">
+            <div className="border-t border-border pt-6 sm:pt-8 space-y-3">
               <span className="font-mono text-xs font-bold text-primary">STAGE 03</span>
               <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">Iterative Build</h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -349,7 +351,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-5 sm:p-6 rounded-md border border-border bg-card/40 space-y-2.5">
+            <div className="border-t border-border pt-6 sm:pt-8 space-y-3">
               <span className="font-mono text-xs font-bold text-primary">STAGE 04</span>
               <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">Deployment & Support</h3>
               <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -363,7 +365,7 @@ export default function AboutPage() {
       {/* =========================================================================
           5. OUR CAPABILITIES
           ========================================================================= */}
-      <section className="py-14 sm:py-20 md:py-24 border-b border-border bg-card/30">
+      <section className="py-14 sm:py-20 md:py-24 border-b border-border bg-card/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-12">
           <div className="max-w-3xl space-y-3 sm:space-y-4">
             <SectionLabel index="06" variant="subtle">
@@ -377,25 +379,24 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-            {capabilitiesGrid.map((group) => (
-              <Card key={group.category} variant="default" className="p-5 sm:p-7">
-                <CardHeader className="p-0 pb-3 sm:pb-4">
-                  <CardTitle className="text-sm sm:text-base text-primary font-mono uppercase tracking-wide">
-                    {group.category}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <ul className="space-y-2 sm:space-y-2.5 text-xs font-mono text-muted-foreground">
-                    {group.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pt-4">
+            {capabilitiesGrid.map((group, idx) => (
+              <div key={group.category} className="border-t border-border pt-6 sm:pt-8 space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs font-semibold text-primary">0{idx + 1}</span>
+                </div>
+                <h3 className="text-sm sm:text-base text-foreground font-mono uppercase tracking-wide font-bold">
+                  {group.category}
+                </h3>
+                <ul className="space-y-2 sm:space-y-2.5 text-xs font-mono text-muted-foreground">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>

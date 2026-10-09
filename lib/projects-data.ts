@@ -26,6 +26,7 @@ export interface Project {
   statusNote?: string
   badgeLabel?: string
   projectType: string
+  logo?: ProjectImage
   heroImage?: ProjectImage
   overview: string
   problem: string
@@ -94,6 +95,11 @@ export const projects: Project[] = [
       "REST & Webhooks API",
       "Automated Agent Frameworks",
     ],
+    logo: {
+      src: "/images/Abstract Color Harmony.png",
+      alt: "AI Agency Operations Platform brand identity",
+      contain: false,
+    },
     heroImage: {
       src: "/images/ai-agency-settings.png",
       alt: "AI Agency Operations Platform workspace and settings console",
@@ -403,20 +409,30 @@ export const projects: Project[] = [
       "Tech Stack Detection Engines",
       "Waterfall Enrichment APIs",
     ],
+    logo: {
+      src: "/images/zetafo 4.png",
+      alt: "Zetafo logo",
+      contain: false,
+    },
     heroImage: {
-      alt: "Zetafo AI Revenue Operating System interface console",
+      src: "/images/zetafo 4.png",
+      alt: "Zetafo AI Revenue Operating System console",
+      contain: false,
     },
     galleryImages: [
       {
         label: "Account Discovery & ICP Match Strength Console",
+        src: "/images/zetafo 1.png",
         aspectRatio: "16/9",
       },
       {
         label: "Real-Time Buying Signals & Trigger Event Inspector",
+        src: "/images/zetafo 2.png",
         aspectRatio: "16/9",
       },
       {
         label: "Verified Contact Enrichment & Account Dossier View",
+        src: "/images/zetafo 3.png",
         aspectRatio: "16/9",
       },
     ],
@@ -459,6 +475,11 @@ export const projects: Project[] = [
       "GS1 Open Standards",
       "OpenAPI",
     ],
+    logo: {
+      src: "/images/Passr original Logo.jpg",
+      alt: "Passr platform logo",
+      contain: true,
+    },
     heroImage: {
       src: "/images/passr image.png",
       alt: "Passr Digital Product Passport platform overview",
@@ -522,6 +543,11 @@ export const projects: Project[] = [
       "WebSockets",
       "SQLite",
     ],
+    logo: {
+      src: "/images/vendoflow.png",
+      alt: "VendoFlow logo",
+      contain: true,
+    },
     heroImage: {
       src: "/images/og-image.png",
       alt: "VendoFlow retail commerce operations platform interface",
@@ -652,19 +678,29 @@ export const projects: Project[] = [
       "Tailwind CSS",
     ],
     heroImage: {
-      alt: "School Management System administrative portal",
+      src: "/images/skoolish 4.jpeg",
+      alt: "Skoolish School Management System administrative portal",
+      contain: false,
     },
     galleryImages: [
       {
         label: "Student Information & Academic Directory View",
+        src: "/images/skoolish 1.jpeg",
         aspectRatio: "16/9",
       },
       {
-        label: "Class Timetable & Attendance Administration Grid",
+        label: "Support Desk & AI Chatbot Assistant Interface",
+        src: "/images/skoolish 2.jpeg",
         aspectRatio: "16/9",
       },
       {
-        label: "Tuition Invoicing & Fee Collection Ledger",
+        label: "Tuition Invoicing & Finance Management Ledger",
+        src: "/images/skoolish 3.jpeg",
+        aspectRatio: "16/9",
+      },
+      {
+        label: "School Administration Platform Overview",
+        src: "/images/skoolish 4.jpeg",
         aspectRatio: "16/9",
       },
     ],
@@ -708,23 +744,17 @@ export const projects: Project[] = [
       "Chrome DeclarativeNetRequest",
       "HTML/CSS",
     ],
-    heroImage: {
-      alt: "SpyBlocker browser extension active shield interface",
+    logo: {
+      src: "/images/butterfly motion.gif",
+      alt: "SpyBlocker motion logo",
+      contain: false,
     },
-    galleryImages: [
-      {
-        label: "Browser Action Popup & Active Tracker Inspector",
-        aspectRatio: "16/9",
-      },
-      {
-        label: "Domain Permission & Whitelist Management Screen",
-        aspectRatio: "16/9",
-      },
-      {
-        label: "Network Request Interception Log & Ruleset Panel",
-        aspectRatio: "16/9",
-      },
-    ],
+    heroImage: {
+      src: "/images/butterfly motion.gif",
+      alt: "SpyBlocker motion visual",
+      contain: false,
+    },
+    galleryImages: [],
     featured: false,
     relatedProjects: [
       "inteldrop",
@@ -767,23 +797,17 @@ export const projects: Project[] = [
       "NLP Classification Models",
       "Docker",
     ],
-    heroImage: {
-      alt: "Citizen-Government Engagement Platform portal overview",
+    logo: {
+      src: "/images/butterfly motion.gif",
+      alt: "Citizen Government Engagement motion logo",
+      contain: false,
     },
-    galleryImages: [
-      {
-        label: "Citizen Request Portal & Public Service Submission Flow",
-        aspectRatio: "16/9",
-      },
-      {
-        label: "Municipal Casework Triage & Department Routing View",
-        aspectRatio: "16/9",
-      },
-      {
-        label: "Public Service Resolution Metrics & Civic Dashboard",
-        aspectRatio: "16/9",
-      },
-    ],
+    heroImage: {
+      src: "/images/butterfly motion.gif",
+      alt: "Citizen Government Engagement motion visual",
+      contain: false,
+    },
+    galleryImages: [],
     featured: false,
     relatedProjects: [
       "school-management-system",
@@ -827,23 +851,17 @@ export const projects: Project[] = [
       "Tor Hidden Service Architecture",
       "SQLite",
     ],
-    heroImage: {
-      alt: "IntelDrop open-source secure submission prototype",
+    logo: {
+      src: "/images/butterfly motion.gif",
+      alt: "IntelDrop motion logo",
+      contain: false,
     },
-    galleryImages: [
-      {
-        label: "Encrypted Drop Interface & Source Passphrase Generation",
-        aspectRatio: "16/9",
-      },
-      {
-        label: "Newsroom Inbox & In-Memory Decryption Viewer",
-        aspectRatio: "16/9",
-      },
-      {
-        label: "Automated Metadata Stripping & Security Verification Log",
-        aspectRatio: "16/9",
-      },
-    ],
+    heroImage: {
+      src: "/images/butterfly motion.gif",
+      alt: "IntelDrop motion visual",
+      contain: false,
+    },
+    galleryImages: [],
     featured: false,
     relatedProjects: [
       "spyblocker",
