@@ -299,19 +299,24 @@ export const projects: Project[] = [
       "LLM Orchestration Frameworks",
     ],
     heroImage: {
-      alt: "Autonomous Outbound AI Engine workflow orchestrator",
+      src: "/images/AOE 1.png",
+      alt: "Autonomous Outbound AI Engine workflow orchestrator and banner",
+      contain: false,
     },
     galleryImages: [
       {
-        label: "Campaign Orchestration & Workflow Topology View",
+        label: "Autonomous Pipeline Overview & Value Proposition",
+        src: "/images/AOE 1.png",
         aspectRatio: "16/9",
       },
       {
-        label: "Prospect Context & Personalization Matrix",
+        label: "Automated Pipeline Stages & Company Intelligence Inspector",
+        src: "/images/AOE 2.png",
         aspectRatio: "16/9",
       },
       {
-        label: "Inbound Response Classification Console",
+        label: "AI Multi-Touch Sequence Generation & Variant Testing Studio",
+        src: "/images/AOE 3.png",
         aspectRatio: "16/9",
       },
     ],
