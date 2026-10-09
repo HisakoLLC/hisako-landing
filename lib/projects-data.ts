@@ -523,9 +523,9 @@ export const projects: Project[] = [
       "SQLite",
     ],
     heroImage: {
-      src: "/images/vendoflow.png",
-      alt: "VendoFlow retail commerce operations software visual",
-      contain: true,
+      src: "/images/og-image.png",
+      alt: "VendoFlow retail commerce operations platform interface",
+      contain: false,
     },
     galleryImages: [
       {
