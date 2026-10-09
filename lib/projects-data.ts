@@ -587,19 +587,24 @@ export const projects: Project[] = [
       "Thermal Receipt APIs",
     ],
     heroImage: {
-      alt: "Restaurant POS System floor plan and order console",
+      src: "/images/chapchap 1.png",
+      alt: "ChapChap POS restaurant point-of-sale platform interface",
+      contain: false,
     },
     galleryImages: [
       {
-        label: "Point of Sale & Order Entry Terminal",
+        label: "Core POS Management & Feature Overview",
+        src: "/images/chapchap 2.png",
         aspectRatio: "16/9",
       },
       {
-        label: "Floor Plan & Table Status Overview",
+        label: "Subscription Tiers & Capability Matrix",
+        src: "/images/chapchap 3.png",
         aspectRatio: "16/9",
       },
       {
-        label: "Kitchen Display System (KDS) Queue Monitor",
+        label: "Order Terminal & Operations Workspace",
+        src: "/images/chapchap 1.png",
         aspectRatio: "16/9",
       },
     ],
