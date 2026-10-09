@@ -11,12 +11,12 @@ import {
   Building,
   Target,
   Wrench,
+  Sparkles,
+  Workflow,
+  ShieldCheck,
+  Terminal,
 } from "lucide-react"
 import { SectionLabel } from "@/components/ui/section-label"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { ImagePlaceholder } from "@/components/ui/image-placeholder"
-import { IconBox } from "@/components/ui/icon-box"
-import { Button } from "@/components/ui/button"
 
 export const metadata: Metadata = {
   title: "About — Technology, Built With Purpose",
@@ -42,59 +42,134 @@ export const metadata: Metadata = {
   },
 }
 
+const pillars = [
+  {
+    num: "01",
+    tag: "INSTITUTIONAL PARTNER",
+    title: "Direct Leadership & Engineering Alignment",
+    description:
+      "We work directly with founders, executive directors, and technical leads across mid-market enterprises, NGOs, and high-growth companies — bridging the gap between high-level business strategy and low-level code execution.",
+    icon: Building,
+  },
+  {
+    num: "02",
+    tag: "OUTCOME-DRIVEN",
+    title: "Measured by Real Operational Impact",
+    description:
+      "We measure our success not by lines of code written, but by the manual friction eliminated, administrative hours automated, and the enduring resilience of the systems we deliver into production.",
+    icon: Target,
+  },
+  {
+    num: "03",
+    tag: "PRODUCTION CRAFTSMANSHIP",
+    title: "Architects Who Ship Production Code",
+    description:
+      "We avoid theoretical slide-deck consulting. Our senior engineers design database schemas, configure cloud infrastructure, write resilient automated pipelines, and stand behind uptime commitments.",
+    icon: Wrench,
+  },
+]
+
 const beliefs = [
   {
+    num: "01",
     title: "Problem Before Technology",
     description:
-      "We never begin with an architectural bias. We diagnose the business bottleneck first, then engineer the simplest, most durable solution.",
+      "We never begin with an architectural bias or chase trending buzzwords. We diagnose the organizational bottleneck first, then engineer the simplest, most durable technical solution.",
   },
   {
+    num: "02",
     title: "Engineering Over Hype",
     description:
-      "We value test coverage, reliable deployments, clear documentation, and maintainability over ephemeral tech trends.",
+      "We value test coverage, reliable deployments, clear documentation, strict access controls, and long-term maintainability over ephemeral technology trends.",
   },
   {
+    num: "03",
     title: "Pragmatic AI Integration",
     description:
-      "We deploy artificial intelligence strictly where it reduces operational friction and creates measurable organizational value.",
+      "We deploy artificial intelligence strictly where it reduces operational latency, automates unstructured data pipelines, and creates measurable enterprise value.",
   },
   {
+    num: "04",
     title: "Built for Evolution",
     description:
-      "We design modular, decoupled systems that organizations can adapt, scale, and maintain as requirements evolve over years.",
+      "We architect modular, decoupled software architectures that organizations can adapt, scale, and maintain independently as requirements evolve over years.",
   },
 ]
 
-const whatWeBuild = [
+const buildDomains = [
   {
+    num: "01",
     title: "Custom Enterprise Software",
+    subtitle: "Web Platforms & Mission-Critical Portals",
     description:
-      "High-performance web platforms, mobile applications, and internal operational systems built to mirror your exact workflow requirements.",
+      "High-performance web platforms, mobile tools, and internal operational systems built to mirror your exact workflow requirements.",
     icon: Code2,
+    badge: "Core Engineering",
   },
   {
+    num: "02",
     title: "Intelligent Automation & AI",
+    subtitle: "Autonomous Agents & Structured Extraction",
     description:
-      "Autonomous workflow pipelines, structured data extraction, and intelligent agents that eliminate manual administrative drag.",
+      "Autonomous workflow pipelines, intelligent document parsers, and custom conversational agents that eliminate manual administrative drag.",
     icon: Cpu,
+    badge: "AI Systems",
   },
   {
+    num: "03",
     title: "Systems Integration",
+    subtitle: "Enterprise Connectors & Event Queues",
     description:
-      "Resilient connective tissue between disparate ERPs, CRMs, legacy databases, and third-party APIs for synchronized data flow.",
+      "Resilient connective tissue between disparate ERPs, CRMs, legacy databases, and third-party APIs for synchronized real-time data flow.",
     icon: Layers,
+    badge: "Interoperability",
   },
   {
+    num: "04",
     title: "Cloud & Digital Infrastructure",
+    subtitle: "High-Availability DevOps & Security",
     description:
-      "Modern server architectures, automated deployment pipelines, and high-availability cloud configurations with continuous observability.",
+      "Modern server architectures, automated CI/CD pipelines, containerized clusters, and continuous telemetry monitoring.",
     icon: Cloud,
+    badge: "Infrastructure",
   },
 ]
 
-const capabilitiesGrid = [
+const workflowStages = [
+  {
+    step: "01",
+    title: "Discovery & Audit",
+    phase: "Architecture Inception",
+    description:
+      "Comprehensive review of existing workflows, codebases, data bottlenecks, and stakeholder goals to define precise operational benchmarks.",
+  },
+  {
+    step: "02",
+    title: "System Architecture",
+    phase: "Technical Blueprint",
+    description:
+      "Production-ready system topologies, database schemas, security models, API contracts, and sprint milestone roadmaps.",
+  },
+  {
+    step: "03",
+    title: "Iterative Build",
+    phase: "Rapid Sprint Delivery",
+    description:
+      "Test-driven sprint cycles with weekly stakeholder demonstrations, continuous integration staging access, and rapid feedback loops.",
+  },
+  {
+    step: "04",
+    title: "Deployment & Support",
+    phase: "Production Handover",
+    description:
+      "Zero-downtime release rollout, automated telemetry alerting, team operational training, and SLA-backed maintenance retainers.",
+  },
+]
+
+const capabilityGroups = [
   {
     category: "Software Engineering",
+    icon: Terminal,
     items: [
       "Full-Stack Web & Cloud Platforms",
       "Native & Cross-Platform Mobile",
@@ -104,6 +179,7 @@ const capabilitiesGrid = [
   },
   {
     category: "AI & Automation",
+    icon: Sparkles,
     items: [
       "Custom Workflow Automation",
       "Autonomous Task Agents",
@@ -113,6 +189,7 @@ const capabilitiesGrid = [
   },
   {
     category: "Systems Integration",
+    icon: Workflow,
     items: [
       "Legacy Core Modernization",
       "ERP / CRM Data Connectors",
@@ -122,6 +199,7 @@ const capabilitiesGrid = [
   },
   {
     category: "Infrastructure & Security",
+    icon: ShieldCheck,
     items: [
       "Multi-Cloud (AWS / GCP / Azure)",
       "CI/CD Pipeline Automation",
@@ -133,138 +211,139 @@ const capabilitiesGrid = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-background min-h-screen">
+    <div className="bg-background min-h-screen selection:bg-primary/20">
       {/* =========================================================================
-          HERO SECTION — Exact Copy & Positioning
+          HERO SECTION — Editorial Typography & Nairobi Anchor
           ========================================================================= */}
-      <section className="relative pt-8 sm:pt-12 md:pt-20 pb-12 sm:pb-16 md:pb-24 border-b border-border overflow-hidden bg-background">
-        <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
+      <section className="relative pt-12 sm:pt-16 md:pt-24 pb-14 sm:pb-20 md:pb-28 overflow-hidden bg-background">
+        <div className="absolute inset-0 bg-tech-grid opacity-25 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-12">
-          <div className="max-w-3xl space-y-4 sm:space-y-6">
-            {/* Eyebrow */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-10 sm:space-y-14">
+          <div className="max-w-4xl space-y-5 sm:space-y-7">
             <SectionLabel index="01" variant="default">
               ABOUT HISAKO
             </SectionLabel>
 
-            {/* Headline */}
-            <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold tracking-tight text-foreground leading-[1.1] sm:leading-[1.08]">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold tracking-tight text-foreground leading-[1.08]">
               Technology, built with purpose.
             </h1>
 
-            {/* Three Opening Paragraphs */}
-            <div className="space-y-3 sm:space-y-4 text-sm sm:text-base md:text-lg font-sans text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-base sm:text-lg md:text-xl font-sans text-muted-foreground leading-relaxed max-w-3xl">
               <p>
-                Hisako is a technology company focused on building practical software, AI and digital infrastructure for organizations.
+                Hisako is a technology company focused on building practical software, AI, and digital infrastructure for organizations.
               </p>
               <p>
-                We combine software engineering, artificial intelligence, automation and systems thinking to solve complex operational problems.
+                We combine software engineering, artificial intelligence, automation, and systems thinking to solve complex operational problems.
               </p>
-              <p className="text-foreground font-medium">
-                Founded in Kenya, Hisako works with organizations looking to build, modernize and scale their technology.
+              <p className="text-foreground font-semibold flex items-center gap-2 pt-1 text-base sm:text-lg">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                Founded in Kenya, Hisako works with organizations looking to build, modernize, and scale their technology.
               </p>
             </div>
           </div>
 
-          {/* Dedicated Architectural Visual Area */}
-          <div className="relative rounded-lg border border-border bg-card/60 p-2 sm:p-2.5 shadow-2xs group">
-            <div className="relative overflow-hidden rounded-md border border-border/80 aspect-[16/9] sm:aspect-[21/9] bg-navy-deep">
-              <Image
-                src="/images/about-urban-tech.png"
-                alt="Urban technology infrastructure representing Hisako engineering operations"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 1200px"
-                className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-102"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-3 z-10 px-2.5 py-1 rounded-sm bg-navy/85 backdrop-blur-xs border border-white/10 text-[10px] font-mono text-white/90 shadow-xs">
+          {/* Nairobi Engineering Operations Banner */}
+          <div className="relative overflow-hidden rounded-2xl aspect-[16/9] sm:aspect-[21/9] bg-navy-deep shadow-lg">
+            <Image
+              src="/images/about-urban-tech.png"
+              alt="Urban technology infrastructure representing Hisako engineering operations in Nairobi"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 1200px"
+              className="object-cover object-center transition-transform duration-700 ease-out hover:scale-102"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/30 to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-10 flex items-center gap-3">
+              <span className="px-3 py-1.5 rounded-full bg-background/90 dark:bg-card/90 backdrop-blur-md text-[11px] font-mono tracking-wider text-foreground font-semibold shadow-xs">
                 HISAKO // ENGINEERING &bull; NAIROBI
-              </div>
+              </span>
+              <span className="hidden sm:inline-block px-3 py-1.5 rounded-full bg-primary/20 backdrop-blur-md text-[11px] font-mono tracking-wider text-white font-medium">
+                EST. 2026
+              </span>
             </div>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          1. WHO WE ARE
+          1. WHO WE ARE — Fluid Narrative Flow (Cardless Editorial Format)
           ========================================================================= */}
-      <section className="py-14 sm:py-20 md:py-24 border-b border-border bg-card/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-12">
-          <div className="max-w-3xl space-y-3 sm:space-y-4">
-            <SectionLabel index="02" variant="subtle">
-              WHO WE ARE
-            </SectionLabel>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-              An engineering-led technology company.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 pt-4">
-            <div className="space-y-4 border-t border-border pt-6 sm:pt-8">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-semibold text-primary">01 / ROLE</span>
-                <Building className="w-4 h-4 text-muted-foreground" />
-              </div>
-              <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground">Institutional Partner</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                We work directly with leadership, technical teams, and operations directors across mid-market businesses, NGOs, public entities, and growing organizations.
+      <section className="py-16 sm:py-24 md:py-28 bg-muted/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-12 sm:space-y-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+            <div className="lg:col-span-5 space-y-4 lg:sticky lg:top-24">
+              <SectionLabel index="02" variant="subtle">
+                WHO WE ARE
+              </SectionLabel>
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.12]">
+                An engineering-led technology company.
+              </h2>
+              <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed pt-2">
+                We replace bureaucratic project management layers with direct engineering craftsmanship. Our leadership team consists of active system architects who prioritize durability and measurable organizational velocity.
               </p>
             </div>
 
-            <div className="space-y-4 border-t border-border pt-6 sm:pt-8">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-semibold text-primary">02 / FOCUS</span>
-                <Target className="w-4 h-4 text-muted-foreground" />
-              </div>
-              <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground">Outcome-Driven</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                We measure our work by the real operational friction it removes, the hours it automates, and the reliability of the systems we deploy into production.
-              </p>
-            </div>
+            <div className="lg:col-span-7 space-y-10 sm:space-y-12">
+              {pillars.map((item) => {
+                const Icon = item.icon
+                return (
+                  <div
+                    key={item.title}
+                    className="group relative pl-6 sm:pl-8 border-l-2 border-primary/25 hover:border-primary transition-colors space-y-2.5"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="font-mono text-xs font-bold text-primary tracking-widest">
+                        {item.tag}
+                      </span>
+                      <span className="text-muted-foreground/40 font-mono text-xs">&bull;</span>
+                      <span className="font-mono text-xs text-muted-foreground">{item.num}</span>
+                    </div>
 
-            <div className="space-y-4 border-t border-border pt-6 sm:pt-8">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-semibold text-primary">03 / DELIVERY</span>
-                <Wrench className="w-4 h-4 text-muted-foreground" />
-              </div>
-              <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground">Hands-On Engineering</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                We are not high-level slide deck consultants. Our architects write production code, configure cloud infrastructure, and take personal responsibility for system uptime.
-              </p>
+                    <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+
+                    <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
 
       {/* =========================================================================
-          2. WHAT WE BELIEVE
+          2. WHAT WE BELIEVE — Typographic Minimalist Statements
           ========================================================================= */}
-      <section className="py-14 sm:py-20 md:py-24 border-b border-border bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-12">
-          <div className="max-w-3xl space-y-3 sm:space-y-4">
+      <section className="py-16 sm:py-24 md:py-28 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-14 sm:space-y-20">
+          <div className="max-w-3xl space-y-4">
             <SectionLabel index="03" variant="subtle">
               WHAT WE BELIEVE
             </SectionLabel>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.12]">
               Principles that govern how we build.
             </h2>
+            <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Software decisions made early compound over years. These non-negotiable principles guide our architecture, technology choices, and client relationships.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 pt-2">
-            {beliefs.map((belief, idx) => (
-              <div
-                key={belief.title}
-                className="border-t border-border pt-5 space-y-2"
-              >
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-[11px] text-primary font-semibold">0{idx + 1}</span>
-                  <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">
-                    {belief.title}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 sm:gap-y-16">
+            {beliefs.map((b) => (
+              <div key={b.title} className="group space-y-3">
+                <div className="flex items-baseline gap-4">
+                  <span className="font-mono text-3xl sm:text-4xl font-light text-primary/40 group-hover:text-primary transition-colors shrink-0">
+                    {b.num}
+                  </span>
+                  <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    {b.title}
                   </h3>
                 </div>
-                <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed pl-6">
-                  {belief.description}
+                <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed pl-12 sm:pl-14">
+                  {b.description}
                 </p>
               </div>
             ))}
@@ -273,34 +352,50 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================================================
-          3. WHAT WE BUILD
+          3. WHAT WE BUILD — Open Architectural Grid
           ========================================================================= */}
-      <section className="py-14 sm:py-20 md:py-24 border-b border-border bg-card/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-12">
-          <div className="max-w-3xl space-y-3 sm:space-y-4">
+      <section className="py-16 sm:py-24 md:py-28 bg-muted/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-14 sm:space-y-16">
+          <div className="max-w-3xl space-y-4">
             <SectionLabel index="04" variant="subtle">
               WHAT WE BUILD
             </SectionLabel>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.12]">
               Software and systems engineered for durability.
             </h2>
-            <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
-              We engineer technology across the full lifecycle — from greenfield application development to complex integrations and automated workflow systems.
+            <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed">
+              From greenfield enterprise web applications to autonomous document pipelines and cloud deployments, we build solutions across four core domains.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pt-4">
-            {whatWeBuild.map((item, idx) => {
-              const Icon = item.icon
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+            {buildDomains.map((domain) => {
+              const Icon = domain.icon
               return (
-                <div key={item.title} className="border-t border-border pt-6 sm:pt-8 space-y-4">
+                <div
+                  key={domain.title}
+                  className="group relative p-6 sm:p-8 rounded-2xl bg-background/80 hover:bg-background transition-all hover:shadow-md space-y-4"
+                >
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-semibold text-primary">0{idx + 1}</span>
-                    <Icon className="w-4 h-4 text-muted-foreground" strokeWidth={1.75} />
+                    <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary font-mono text-[11px] font-semibold tracking-wider uppercase">
+                      {domain.badge}
+                    </span>
+                    <span className="font-mono text-xs font-semibold text-muted-foreground/50">
+                      {domain.num}
+                    </span>
                   </div>
-                  <h3 className="font-heading text-lg font-bold text-foreground">{item.title}</h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
+
+                  <div className="space-y-1.5 pt-1">
+                    <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      {domain.title}
+                    </h3>
+                    <p className="font-mono text-xs text-primary font-medium">
+                      {domain.subtitle}
+                    </p>
+                  </div>
+
+                  <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {domain.description}
                   </p>
                 </div>
               )
@@ -310,92 +405,43 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================================================
-          4. HOW WE WORK
+          4. HOW WE WORK — Sequential Execution Pipeline
           ========================================================================= */}
-      <section className="py-14 sm:py-20 md:py-24 border-b border-border bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-12">
-          <div className="max-w-3xl space-y-3 sm:space-y-4">
+      <section className="py-16 sm:py-24 md:py-28 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-14 sm:space-y-20">
+          <div className="max-w-3xl space-y-4">
             <SectionLabel index="05" variant="subtle">
               HOW WE WORK
             </SectionLabel>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.12]">
               A transparent, engineering-led execution cycle.
             </h2>
-            <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Every engagement follows a structured delivery rhythm designed to minimize risk, clarify timelines, and ensure alignment.
+            <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Every engagement follows a structured delivery rhythm designed to eliminate ambiguity, demonstrate working progress weekly, and protect system reliability.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pt-4">
-            <div className="border-t border-border pt-6 sm:pt-8 space-y-3">
-              <span className="font-mono text-xs font-bold text-primary">STAGE 01</span>
-              <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">Discovery & Audit</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                We review existing workflows, codebases, and bottlenecks to define precise operational objectives.
-              </p>
-            </div>
-
-            <div className="border-t border-border pt-6 sm:pt-8 space-y-3">
-              <span className="font-mono text-xs font-bold text-primary">STAGE 02</span>
-              <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">System Architecture</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                We produce detailed system diagrams, data schemas, API contracts, and technology roadmaps.
-              </p>
-            </div>
-
-            <div className="border-t border-border pt-6 sm:pt-8 space-y-3">
-              <span className="font-mono text-xs font-bold text-primary">STAGE 03</span>
-              <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">Iterative Build</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Development happens in test-driven sprints with continuous stakeholder demos and staging access.
-              </p>
-            </div>
-
-            <div className="border-t border-border pt-6 sm:pt-8 space-y-3">
-              <span className="font-mono text-xs font-bold text-primary">STAGE 04</span>
-              <h3 className="font-heading text-base sm:text-lg font-bold text-foreground">Deployment & Support</h3>
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                Production rollout with automated monitoring, team onboarding, and ongoing SLA-backed maintenance.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          5. OUR CAPABILITIES
-          ========================================================================= */}
-      <section className="py-14 sm:py-20 md:py-24 border-b border-border bg-card/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-12">
-          <div className="max-w-3xl space-y-3 sm:space-y-4">
-            <SectionLabel index="06" variant="subtle">
-              OUR CAPABILITIES
-            </SectionLabel>
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight">
-              Technical breadth across the stack.
-            </h2>
-            <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
-              We combine enterprise engineering foundations with cutting-edge automation capabilities.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 pt-4">
-            {capabilitiesGrid.map((group, idx) => (
-              <div key={group.category} className="border-t border-border pt-6 sm:pt-8 space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs font-semibold text-primary">0{idx + 1}</span>
+          {/* Stepper Timeline */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 relative">
+            {workflowStages.map((stage, idx) => (
+              <div key={stage.title} className="group space-y-4 relative">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-primary/10 text-primary flex items-center justify-center font-mono text-xs font-bold group-hover:bg-primary group-hover:text-white transition-colors">
+                    {stage.step}
+                  </div>
+                  <span className="font-mono text-[11px] text-muted-foreground tracking-wider uppercase">
+                    {stage.phase}
+                  </span>
                 </div>
-                <h3 className="text-sm sm:text-base text-foreground font-mono uppercase tracking-wide font-bold">
-                  {group.category}
-                </h3>
-                <ul className="space-y-2 sm:space-y-2.5 text-xs font-mono text-muted-foreground">
-                  {group.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-1.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+
+                <div className="space-y-2 pl-1">
+                  <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                    {stage.title}
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                    {stage.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -403,38 +449,84 @@ export default function AboutPage() {
       </section>
 
       {/* =========================================================================
-          6. CONTACT CTA
+          5. TECHNICAL CAPABILITIES — Clean Categorized Clusters
           ========================================================================= */}
-      <section className="py-14 sm:py-20 md:py-24 bg-navy text-white relative overflow-hidden">
+      <section className="py-16 sm:py-24 md:py-28 bg-muted/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 space-y-14 sm:space-y-16">
+          <div className="max-w-3xl space-y-4">
+            <SectionLabel index="06" variant="subtle">
+              OUR CAPABILITIES
+            </SectionLabel>
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.12]">
+              Technical breadth across the stack.
+            </h2>
+            <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed">
+              We combine enterprise engineering foundations with modern automation paradigms to support complex organizational workloads.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+            {capabilityGroups.map((group) => {
+              const Icon = group.icon
+              return (
+                <div key={group.category} className="space-y-5">
+                  <div className="flex items-center gap-2.5">
+                    <Icon className="w-4 h-4 text-primary" strokeWidth={2} />
+                    <h3 className="font-mono text-xs sm:text-sm uppercase tracking-wider font-bold text-foreground">
+                      {group.category}
+                    </h3>
+                  </div>
+
+                  <ul className="space-y-3 font-mono text-xs text-muted-foreground">
+                    {group.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5 group">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                        <span className="leading-relaxed group-hover:text-foreground transition-colors">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          6. CONTACT CTA — High-Impact Navy Finale
+          ========================================================================= */}
+      <section className="py-20 sm:py-28 md:py-32 bg-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid opacity-10 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center space-y-6 sm:space-y-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-center space-y-8">
           <div className="inline-flex justify-center">
             <SectionLabel variant="navy" index="07">
               LET&rsquo;S BUILD
             </SectionLabel>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
-            <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+          <div className="max-w-3xl mx-auto space-y-4">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
               Ready to move your organization forward?
             </h2>
-            <p className="font-sans text-sm sm:text-base md:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sans text-base sm:text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl mx-auto">
               Connect with our engineering leadership to discuss upcoming software builds, system modernization, or technical retainers.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 pt-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-md bg-primary text-white text-sm font-medium hover:bg-royal-blue-hover transition-colors shadow-2xs gap-2"
+              className="inline-flex items-center justify-center min-h-[48px] px-7 py-3 rounded-xl bg-primary text-white text-sm font-semibold hover:bg-royal-blue-hover transition-colors shadow-md gap-2"
             >
               <span>Start a project</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a
               href="mailto:hello@hisako.eu"
-              className="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-md border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-colors"
+              className="inline-flex items-center justify-center min-h-[48px] px-7 py-3 rounded-xl border border-white/20 text-white text-sm font-medium hover:bg-white/10 transition-colors"
             >
               hello@hisako.eu
             </a>
