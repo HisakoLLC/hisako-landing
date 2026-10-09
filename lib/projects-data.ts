@@ -412,26 +412,26 @@ export const projects: Project[] = [
     logo: {
       src: "/images/zetafo 4.png",
       alt: "Zetafo logo",
-      contain: false,
+      contain: true,
     },
     heroImage: {
-      src: "/images/zetafo 4.png",
+      src: "/images/zetafo 2.png",
       alt: "Zetafo AI Revenue Operating System console",
       contain: false,
     },
     galleryImages: [
       {
-        label: "Account Discovery & ICP Match Strength Console",
+        label: "How Zetafo Works — Automated AI Prospect Qualification Pipeline",
         src: "/images/zetafo 1.png",
         aspectRatio: "16/9",
       },
       {
-        label: "Real-Time Buying Signals & Trigger Event Inspector",
+        label: "AI Revenue Intelligence & Account Match Strength Console",
         src: "/images/zetafo 2.png",
         aspectRatio: "16/9",
       },
       {
-        label: "Verified Contact Enrichment & Account Dossier View",
+        label: "Waitlist Onboarding & Evaluation Workspace",
         src: "/images/zetafo 3.png",
         aspectRatio: "16/9",
       },
