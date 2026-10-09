@@ -61,6 +61,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
                     src={caseStudy.logo.src}
                     alt={`${caseStudy.name} logo`}
                     fill
+                    unoptimized={caseStudy.logo.src.endsWith(".gif")}
                     className={caseStudy.logo.contain ? "object-contain p-2" : "object-cover"}
                     sizes="64px"
                   />
@@ -92,6 +93,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
                   alt={caseStudy.heroImage.alt}
                   fill
                   priority
+                  unoptimized={caseStudy.heroImage.src.endsWith(".gif")}
                   className={
                     caseStudy.heroImage.contain
                       ? "object-contain p-8 sm:p-14"
@@ -350,6 +352,7 @@ export function CaseStudyTemplate({ caseStudy }: CaseStudyTemplateProps) {
                         src={img.src}
                         alt={img.label}
                         fill
+                        unoptimized={img.src.endsWith(".gif")}
                         className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 768px) 100vw, 33vw"
                       />

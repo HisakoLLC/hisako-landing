@@ -70,6 +70,7 @@ export function WorkPortfolio({ projects }: WorkPortfolioProps) {
                         src={img.src!}
                         alt={img.alt}
                         fill
+                        unoptimized={img.src?.endsWith(".gif")}
                         className={
                           img.contain
                             ? "object-contain p-6 sm:p-8"
