@@ -313,6 +313,106 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "zetafo",
+    name: "Zetafo",
+    category: "AI / Revenue Operations",
+    filterCategories: ["AI & Automation", "Platforms"],
+    projectType: "Revenue Operating System",
+    shortDescription:
+      "An AI revenue intelligence and outbound sales operating system that identifies high-fit B2B prospects, evaluates real-time buying signals, and generates contextual sales dossiers.",
+    overview:
+      "An AI-powered revenue intelligence platform engineered by Hisako to discover target B2B accounts, score prospect fit against ideal customer profiles, and generate actionable sales dossiers equipped with verified contacts and real-time buying triggers.",
+    problem:
+      "Traditional B2B outbound workflows rely on static, bloated contact databases filled with unverified emails, stale company records, and zero timing context. Sales development teams waste hours manually sifting through low-intent lead lists, degrading domain reputation through blind mass outreach while paying high per-seat subscription taxes for generic data.",
+    approach:
+      "We engineered an asynchronous AI intelligence engine that qualifies target accounts before consuming third-party enrichment credits. The system scrapes real-time business signals (hiring milestones, leadership additions, and tech stack adoption) and uses semantic embeddings to match account characteristics with natural-language ICP models in under 15 seconds.",
+    solution:
+      "A comprehensive sales operating platform combining natural language ICP modeling, pre-enrichment scoring heuristics, waterfall contact verification, and contextual lead card generation — replacing generic spreadsheets with actionable intelligence dossiers.",
+    capabilities: [
+      "Natural language ICP modeling and semantic account discovery",
+      "Pre-enrichment qualification algorithms to eliminate wasted credit consumption",
+      "Multi-dimensional fit scoring (Company Fit, Contact Fit, Buying Signals, Data Confidence)",
+      "Real-time trigger event and hiring signal detection",
+      "Waterfall contact enrichment with multi-provider verification",
+      "Compounding entity knowledge graph to accelerate repeated domain lookups",
+      "Actionable lead dossier cards with plain-English outreach rationale",
+      "Direct CRM synchronization and structured data exports",
+    ],
+    workflow: [
+      {
+        step: "01",
+        title: "ICP Definition",
+        description:
+          "Define target customer criteria using natural language descriptions, competitor URLs, or firmographic parameters.",
+      },
+      {
+        step: "02",
+        title: "Account Discovery",
+        description:
+          "Semantic search algorithms crawl and identify matching corporate entities across global company datasets.",
+      },
+      {
+        step: "03",
+        title: "Pre-Enrichment Scoring",
+        description:
+          "Heuristic and embedding models compute match strength scores prior to spending external API enrichment credits.",
+      },
+      {
+        step: "04",
+        title: "Signal Detection",
+        description:
+          "Monitors active trigger events including open job postings, executive moves, and web technology shifts.",
+      },
+      {
+        step: "05",
+        title: "Waterfall Contact Verification",
+        description:
+          "Queries multi-source provider waterfalls with MX syntax validation to resolve verified decision-maker emails and direct dials.",
+      },
+      {
+        step: "06",
+        title: "Sales Dossier Delivery",
+        description:
+          "Synthesizes company intelligence, pain points, and why-now context into ready-to-work sales cards.",
+      },
+    ],
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Vector Embeddings",
+      "LLM Orchestration",
+      "Tech Stack Detection Engines",
+      "Waterfall Enrichment APIs",
+    ],
+    heroImage: {
+      alt: "Zetafo AI Revenue Operating System interface console",
+    },
+    galleryImages: [
+      {
+        label: "Account Discovery & ICP Match Strength Console",
+        aspectRatio: "16/9",
+      },
+      {
+        label: "Real-Time Buying Signals & Trigger Event Inspector",
+        aspectRatio: "16/9",
+      },
+      {
+        label: "Verified Contact Enrichment & Account Dossier View",
+        aspectRatio: "16/9",
+      },
+    ],
+    featured: false,
+    relatedProjects: [
+      "autonomous-outbound-ai-engine",
+      "ai-lead-qualification",
+      "ai-sales-assistant",
+    ],
+  },
+  {
     slug: "passr",
     name: "Passr",
     category: "Compliance / Product Technology",
