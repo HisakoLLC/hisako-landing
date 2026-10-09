@@ -158,19 +158,24 @@ export const projects: Project[] = [
       "Structured Search APIs",
     ],
     heroImage: {
+      src: "/images/assistant 1.png",
       alt: "AI Sales Assistant workspace interface",
+      contain: false,
     },
     galleryImages: [
       {
         label: "Account Intelligence & Prospect Dossier Inspector",
+        src: "/images/assistant 2.png",
         aspectRatio: "16/9",
       },
       {
         label: "Outreach Generation & Contextual Messaging Studio",
+        src: "/images/asssitant 3.png",
         aspectRatio: "16/9",
       },
       {
         label: "Conversation Debrief & Action Item Pipeline",
+        src: "/images/assistant 1.png",
         aspectRatio: "16/9",
       },
     ],
