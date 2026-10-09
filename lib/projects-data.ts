@@ -228,19 +228,24 @@ export const projects: Project[] = [
       "LLM Evaluation Pipelines",
     ],
     heroImage: {
-      alt: "AI Lead Qualification System evaluation console",
+      src: "/images/lead qualifier logo.png",
+      alt: "AI Lead Qualification System logo and status badge",
+      contain: true,
     },
     galleryImages: [
       {
-        label: "Inbound Pipeline Triage & Scoring Console",
+        label: "Conversational Inbound Lead Assessment & Qualification Interface",
+        src: "/images/lead qualifier 2.png",
         aspectRatio: "16/9",
       },
       {
-        label: "Lead Analysis & Parameter Evaluation Inspector",
+        label: "Objection Analysis & Multi-Turn Inquiry Evaluation Engine",
+        src: "/images/lead qualifer 4.png",
         aspectRatio: "16/9",
       },
       {
-        label: "Rule Engine & Routing Configuration Matrix",
+        label: "Automated Calendar Scheduling & Sales Pipeline Handoff",
+        src: "/images/lead qualifier 3.png",
         aspectRatio: "16/9",
       },
     ],
