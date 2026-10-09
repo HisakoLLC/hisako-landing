@@ -15,7 +15,7 @@ const projects = [
     image: {
       src: "/images/Abstract Color Harmony.png",
       alt: "AI Agency Operations Platform brand identity - Abstract Color Harmony",
-      contain: false,
+      contain: true,
     },
   },
   {

@@ -98,7 +98,7 @@ export const projects: Project[] = [
     logo: {
       src: "/images/Abstract Color Harmony.png",
       alt: "AI Agency Operations Platform brand identity",
-      contain: false,
+      contain: true,
     },
     heroImage: {
       src: "/images/ai-agency-settings.png",
